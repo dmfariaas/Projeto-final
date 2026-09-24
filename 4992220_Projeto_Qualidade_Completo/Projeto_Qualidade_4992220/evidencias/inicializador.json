@@ -1,0 +1,154 @@
+{
+  "launcher_sha256": "eca76dd12cc9c1374b582020fbabdacde270e0a63c3d5b85af043458176b6b99",
+  "launcher_isolated": true,
+  "crlf_only": true,
+  "runs": [
+    {
+      "run": 1,
+      "args": [],
+      "requested_port": null,
+      "owned_cmd_pid": 26108,
+      "url": "http://127.0.0.1:59029",
+      "pid": 28128,
+      "health": {
+        "status": "ok",
+        "environment": "local-demo"
+      },
+      "catalog_status": 200,
+      "catalog": [
+        {
+          "sku": "baiao",
+          "name": "Baião de dois",
+          "price": 2500,
+          "stock": 100
+        },
+        {
+          "sku": "suco",
+          "name": "Suco de cajá",
+          "price": 800,
+          "stock": 100
+        },
+        {
+          "sku": "tapioca",
+          "name": "Tapioca de queijo",
+          "price": 1200,
+          "stock": 100
+        }
+      ],
+      "order_status": 201,
+      "order_id": "95dc5825-1f08-4a96-a2c4-f72ddfd50997",
+      "replayed": false,
+      "database_exists": true,
+      "passed": true,
+      "owned_python_terminated": true,
+      "cmd_returncode": 15,
+      "log": "Arquivos preparados. Abrindo a demonstracao...\nDemonstração local: http://127.0.0.1:59029\nA demonstracao nao iniciou. Confira a mensagem acima.\nPress any key to continue . . . \n",
+      "server_stopped": true
+    },
+    {
+      "run": 2,
+      "args": [],
+      "requested_port": null,
+      "owned_cmd_pid": 26772,
+      "url": "http://127.0.0.1:59036",
+      "pid": 3852,
+      "health": {
+        "status": "ok",
+        "environment": "local-demo"
+      },
+      "catalog_status": 200,
+      "catalog": [
+        {
+          "sku": "baiao",
+          "name": "Baião de dois",
+          "price": 2500,
+          "stock": 100
+        },
+        {
+          "sku": "suco",
+          "name": "Suco de cajá",
+          "price": 800,
+          "stock": 99
+        },
+        {
+          "sku": "tapioca",
+          "name": "Tapioca de queijo",
+          "price": 1200,
+          "stock": 100
+        }
+      ],
+      "order_status": 200,
+      "order_id": "95dc5825-1f08-4a96-a2c4-f72ddfd50997",
+      "replayed": true,
+      "persistent_order_verified": true,
+      "database_exists": true,
+      "passed": true,
+      "owned_python_terminated": true,
+      "cmd_returncode": 15,
+      "log": "Arquivos preparados. Abrindo a demonstracao...\nDemonstração local: http://127.0.0.1:59036\nA demonstracao nao iniciou. Confira a mensagem acima.\nPress any key to continue . . . \n",
+      "server_stopped": true
+    },
+    {
+      "run": 3,
+      "args": [
+        "--port",
+        "59043"
+      ],
+      "requested_port": 59043,
+      "owned_cmd_pid": 28992,
+      "url": "http://127.0.0.1:59043",
+      "pid": 24664,
+      "health": {
+        "status": "ok",
+        "environment": "local-demo"
+      },
+      "catalog_status": 200,
+      "catalog": [
+        {
+          "sku": "baiao",
+          "name": "Baião de dois",
+          "price": 2500,
+          "stock": 100
+        },
+        {
+          "sku": "suco",
+          "name": "Suco de cajá",
+          "price": 800,
+          "stock": 99
+        },
+        {
+          "sku": "tapioca",
+          "name": "Tapioca de queijo",
+          "price": 1200,
+          "stock": 100
+        }
+      ],
+      "order_status": 200,
+      "order_id": "95dc5825-1f08-4a96-a2c4-f72ddfd50997",
+      "replayed": true,
+      "persistent_order_verified": true,
+      "explicit_port_verified": true,
+      "database_exists": true,
+      "passed": true,
+      "owned_python_terminated": true,
+      "cmd_returncode": 15,
+      "log": "Arquivos preparados. Abrindo a demonstracao...\nDemonstração local: http://127.0.0.1:59043\nA demonstracao nao iniciou. Confira a mensagem acima.\nPress any key to continue . . . \n",
+      "server_stopped": true
+    }
+  ],
+  "passed": true,
+  "version": "0.4",
+  "timestamp_utc": "2026-09-24T18:37:46.948839+00:00",
+  "consolidated_at_utc": "2026-09-24T18:44:57.638603+00:00",
+  "method": "Iniciador isolado, sem pasta prototipo vizinha, em pasta com espaços e acentos. Abertura do navegador interceptada para conferir a URL; catálogo, criação de pedido, persistência e porta explícita verificados por HTTP.",
+  "termination_note": "Os processos do teste foram encerrados após as verificações. Por isso, os logs registram código 15 e mensagem de encerramento; esses registros não indicam falha de inicialização.",
+  "embedded_sources_sha256": {
+    "api.py": "2a39c9712f7bba2ca3db9ceca522acc3f6adba10efed65481c8ad4f797d2347d",
+    "domain.py": "8073ee69012ae0daeeee92be6b6422aa82acbcbd32ac00886986c57612fdd79e",
+    "index.html": "82a0222c6eee12fb74a24fde1df3b39ad3437bd3af081f0e09fd4b43785cde2a",
+    "repository.py": "26c0b0ccaa0501b970307e5b6a134f9834148b1131a294bd1636fd461578075a",
+    "run_evidence.py": "8791da173595e2eedf5e84c827eb57b3431fdf4a97a7c3d000a123b94023c725",
+    "service.py": "0ee6f6d6b11e5114987dba5d661db5f3f5707bd481dca70e41fb5d44ce2c9a03",
+    "tests.py": "1685d318bd29faf794fd8016acf07628030916d8066fe2d5872830f617043869"
+  }
+}

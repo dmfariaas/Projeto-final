@@ -1,0 +1,11 @@
+{
+  "id": "D01",
+  "description": "Conexões SQLite não fechadas impediam limpeza do banco no Windows.",
+  "confirmed_defects": 1,
+  "affected_tests": 26,
+  "status": "CORRIGIDO",
+  "opened_at_utc": "2026-09-15T12:31:14.053Z",
+  "closed_at_utc": "2026-09-15T12:51:19.486Z",
+  "correction_hours": 0.3348426635064019,
+  "method": "Intervalo entre gravação do relatório inicial com erros e gravação do reteste final aprovado. Proxy de correção local, n=1; não é MTTR de produção."
+}

@@ -1,0 +1,40 @@
+{
+  "documento": "4992220_Projeto_Qualidade.pdf",
+  "paginas_fisicas": 45,
+  "entradas_sumario_conferidas": 80,
+  "subsecoes_com_espacamento_conferido": 72,
+  "quadros": 16,
+  "figuras": 5,
+  "formato": {
+    "paper": "A4",
+    "margins_cm": {
+      "top": 3,
+      "left": 3,
+      "right": 2,
+      "bottom": 2
+    },
+    "body_font": "Arial",
+    "body_size": 12,
+    "line_spacing": 1.5,
+    "paragraph_indent_cm": 1.25,
+    "counting": "from title page, cover excluded",
+    "visible_numbering": "textual part onwards, upper right",
+    "standards": [
+      "NBR 14724:2024",
+      "NBR 6023:2025",
+      "NBR 10520:2023",
+      "NBR 6024:2012",
+      "NBR 6027:2012",
+      "NBR 6028:2021"
+    ],
+    "missing_identity": []
+  },
+  "revisao_visual": "Páginas renderizadas e revisadas; títulos, fontes e continuidade de quadros conferidos.",
+  "identificacao_pendente": [],
+  "resultados_conferidos": {
+    "testes_aprovados": 70,
+    "media_ms": 58.867,
+    "p95_ms": 208.004
+  },
+  "sha256_pdf": "1e5e39488e49d0718a7566db939321ebade1746b50316486dc863e3aeb240059"
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp_utc": "2026-09-24T18:44:57.638603+00:00",
+  "html_sha256": "82a0222c6eee12fb74a24fde1df3b39ad3437bd3af081f0e09fd4b43785cde2a",
+  "changes": [
+    "Paleta de areia, barro e verde-mandacaru",
+    "Ilustrações vetoriais de pratos, sol e mandacaru inspiradas em xilogravura",
+    "Identidade e textos do cardápio com referências nordestinas",
+    "Layout adaptado a celular, foco visível e controles de quantidade com 44 px"
+  ],
+  "interface_tests_passed": 18,
+  "tested_widths_px": [
+    360,
+    390,
+    768,
+    1366
+  ],
+  "source": "interface.json",
+  "backend": "Conferência de pagamento pendente, recuperação de pedidos e tratamento de falhas integrados à demonstração local. Os 52 testes Python, 18 cenários de navegador e 200 pedidos de carga foram aprovados em 24 de setembro de 2026.",
+  "launcher_sha256": "eca76dd12cc9c1374b582020fbabdacde270e0a63c3d5b85af043458176b6b99",
+  "standalone_executions_passed": 3,
+  "interface_timestamp_utc": "2026-09-24T18:36:09.270000+00:00",
+  "screenshot_pixel_ratio": 2,
+  "version": "0.4"
+}

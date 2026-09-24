@@ -1,0 +1,792 @@
+Nota de portabilidade: caminhos absolutos do projeto e do interpretador foram abreviados. Mensagens de erro e resultados foram preservados.
+
+test_CC01_same_key (tests.ConcurrencyTests.test_CC01_same_key)
+CC01 | 50 tentativas concorrentes com a mesma chave geram um pedido. ... ERROR
+test_CC02_last_units (tests.ConcurrencyTests.test_CC02_last_units)
+CC02 | 50 tentativas disputam dez unidades: dez aprovações e quarenta recusas de estoque. ... ERROR
+test_API01_create_and_get (tests.HttpTests.test_API01_create_and_get)
+API01 | POST retorna 201; GET recupera os mesmos valores; repetição retorna 200. ... ERROR
+test_API02_no_session (tests.HttpTests.test_API02_no_session)
+API02 | POST sem sessão retorna 401 e não cria pedido. ... ERROR
+test_API03_malformed (tests.HttpTests.test_API03_malformed)
+API03 | JSON malformado retorna 400. ... ERROR
+test_API04_private_fields (tests.HttpTests.test_API04_private_fields)
+API04 | CPF e outros campos não previstos são rejeitados com 422. ... ok
+test_API05_size_limit (tests.HttpTests.test_API05_size_limit)
+API05 | Corpo acima de 16 KB retorna 413. ... ERROR
+test_API06_headers_catalog (tests.HttpTests.test_API06_headers_catalog)
+API06 | Catálogo correto e cabeçalhos no-store, nosniff e DENY. ... ERROR
+test_SE01_customer_isolation (tests.SecurityTests.test_SE01_customer_isolation)
+SE01 | Outro cliente não acessa pedido alheio. ... ERROR
+test_SE02_operator_isolation (tests.SecurityTests.test_SE02_operator_isolation)
+SE02 | Operador da unidade incorreta recebe 403; unidade correta consulta. ... ERROR
+test_TS01_channels (tests.SystemTests.test_TS01_channels)
+TS01 | Aprovar pedido em APP, WEB, TOTEM, BALCAO e PICKUP. ... ERROR
+test_TS02_declined (tests.SystemTests.test_TS02_declined)
+TS02 | Recusa não altera estoque nem concede pontos. ... ERROR
+test_TS03_timeout (tests.SystemTests.test_TS03_timeout)
+TS03 | Timeout fica pendente; repetição preserva o mesmo pedido. ... ERROR
+test_TS04_replay (tests.SystemTests.test_TS04_replay)
+TS04 | Repetir pedido confirmado gera um pedido, 52 pontos e um evento. ... ok
+test_TS05_changed_replay (tests.SystemTests.test_TS05_changed_replay)
+TS05 | Mesma chave com conteúdo alterado retorna conflito. ... ERROR
+test_TS06_out_of_stock (tests.SystemTests.test_TS06_out_of_stock)
+TS06 | Pedido maior que estoque restante falha sem alteração parcial. ... ERROR
+test_TS07_units (tests.SystemTests.test_TS07_units)
+TS07 | Compra em Recife preserva estoque da unidade João Pessoa. ... ERROR
+test_TS08_without_loyalty (tests.SystemTests.test_TS08_without_loyalty)
+TS08 | Compra sem fidelidade confirma com zero pontos. ... ERROR
+test_TS09_invalid_coupon (tests.SystemTests.test_TS09_invalid_coupon)
+TS09 | Cupom inexistente não cria pedido nem reduz estoque. ... ERROR
+test_TS10_zero_quantity (tests.SystemTests.test_TS10_zero_quantity)
+TS10 | Quantidade zero retorna QUANTIDADE_INVALIDA. ... ERROR
+test_TS11_empty_cart (tests.SystemTests.test_TS11_empty_cart)
+TS11 | Carrinho vazio retorna CARRINHO_INVALIDO. ... ERROR
+test_TS12_invalid_unit_channel (tests.SystemTests.test_TS12_invalid_unit_channel)
+TS12 | Unidade ou canal desconhecido é rejeitado. ... ERROR
+test_TS13_invalid_product (tests.SystemTests.test_TS13_invalid_product)
+TS13 | Produto inexistente e tentativa de injeção não alteram o banco. ... ERROR
+test_TS14_persistence (tests.SystemTests.test_TS14_persistence)
+TS14 | Nova instância recupera pedido e reconhece sua chave. ... ERROR
+test_TS15_cross_unit_loyalty (tests.SystemTests.test_TS15_cross_unit_loyalty)
+TS15 | Fidelidade acumula 104 pontos em duas unidades sem duplicação. ... ERROR
+test_TS16_gateway_rollback (tests.SystemTests.test_TS16_gateway_rollback)
+TS16 | Resposta inválida do gateway desfaz a transação integralmente. ... ERROR
+test_TS17_events (tests.SystemTests.test_TS17_events)
+TS17 | Cada resultado cria um evento sem identificador de cliente ou payload. ... ERROR
+test_TS18_get_missing (tests.SystemTests.test_TS18_get_missing)
+TS18 | Consultar pedido inexistente retorna 404. ... ERROR
+test_TU01_discount_and_points (tests.UnitTests.test_TU01_discount_and_points)
+TU01 | Valores exatos: 5800 - 580 = 5220 centavos; 52 pontos. ... ok
+test_TU02_no_coupon (tests.UnitTests.test_TU02_no_coupon)
+TU02 | Sem cupom e sem fidelidade: total 5800 e zero pontos. ... ok
+test_TU03_quantity_boundaries (tests.UnitTests.test_TU03_quantity_boundaries)
+TU03 | Aceitar 1 e 10; rejeitar 0, -1, 11, 1.5, string e booleano. ... ok
+test_TU04_duplicate_product (tests.UnitTests.test_TU04_duplicate_product)
+TU04 | Produto repetido deve ser rejeitado antes do cálculo. ... ok
+test_TU05_key_validation (tests.UnitTests.test_TU05_key_validation)
+TU05 | Rejeitar chave vazia, curta, excessiva ou com aspas. ... ok
+test_TU06_input_allowlist (tests.UnitTests.test_TU06_input_allowlist)
+TU06 | Campos extras e corpo não estruturado são rejeitados. ... ok
+
+======================================================================
+ERROR: test_CC01_same_key (tests.ConcurrencyTests.test_CC01_same_key)
+CC01 | 50 tentativas concorrentes com a mesma chave geram um pedido.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpou6lcaay\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpou6lcaay\\test.sqlite3'
+
+======================================================================
+ERROR: test_CC02_last_units (tests.ConcurrencyTests.test_CC02_last_units)
+CC02 | 50 tentativas disputam dez unidades: dez aprovações e quarenta recusas de estoque.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpwnyiemuk\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpwnyiemuk\\test.sqlite3'
+
+======================================================================
+ERROR: test_API01_create_and_get (tests.HttpTests.test_API01_create_and_get)
+API01 | POST retorna 201; GET recupera os mesmos valores; repetição retorna 200.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpo6wjq0y1\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 197, in tearDown
+    self.server.shutdown();self.server.server_close();self.thread.join();super().tearDown()
+                                                                         ^^^^^^^^^^^^^^^^^^
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpo6wjq0y1\\test.sqlite3'
+
+======================================================================
+ERROR: test_API02_no_session (tests.HttpTests.test_API02_no_session)
+API02 | POST sem sessão retorna 401 e não cria pedido.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpft3v9u9i\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 197, in tearDown
+    self.server.shutdown();self.server.server_close();self.thread.join();super().tearDown()
+                                                                         ^^^^^^^^^^^^^^^^^^
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpft3v9u9i\\test.sqlite3'
+
+======================================================================
+ERROR: test_API03_malformed (tests.HttpTests.test_API03_malformed)
+API03 | JSON malformado retorna 400.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp1quc7bay\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 197, in tearDown
+    self.server.shutdown();self.server.server_close();self.thread.join();super().tearDown()
+                                                                         ^^^^^^^^^^^^^^^^^^
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp1quc7bay\\test.sqlite3'
+
+======================================================================
+ERROR: test_API05_size_limit (tests.HttpTests.test_API05_size_limit)
+API05 | Corpo acima de 16 KB retorna 413.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp941qdmko\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 197, in tearDown
+    self.server.shutdown();self.server.server_close();self.thread.join();super().tearDown()
+                                                                         ^^^^^^^^^^^^^^^^^^
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp941qdmko\\test.sqlite3'
+
+======================================================================
+ERROR: test_API06_headers_catalog (tests.HttpTests.test_API06_headers_catalog)
+API06 | Catálogo correto e cabeçalhos no-store, nosniff e DENY.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmphap6nley\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 197, in tearDown
+    self.server.shutdown();self.server.server_close();self.thread.join();super().tearDown()
+                                                                         ^^^^^^^^^^^^^^^^^^
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmphap6nley\\test.sqlite3'
+
+======================================================================
+ERROR: test_SE01_customer_isolation (tests.SecurityTests.test_SE01_customer_isolation)
+SE01 | Outro cliente não acessa pedido alheio.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpi19zv06t\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpi19zv06t\\test.sqlite3'
+
+======================================================================
+ERROR: test_SE02_operator_isolation (tests.SecurityTests.test_SE02_operator_isolation)
+SE02 | Operador da unidade incorreta recebe 403; unidade correta consulta.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpkg1o4kt6\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpkg1o4kt6\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS01_channels (tests.SystemTests.test_TS01_channels)
+TS01 | Aprovar pedido em APP, WEB, TOTEM, BALCAO e PICKUP.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpysx0lpm2\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpysx0lpm2\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS02_declined (tests.SystemTests.test_TS02_declined)
+TS02 | Recusa não altera estoque nem concede pontos.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp9l6b7uqg\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp9l6b7uqg\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS03_timeout (tests.SystemTests.test_TS03_timeout)
+TS03 | Timeout fica pendente; repetição preserva o mesmo pedido.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp6b8lmo8u\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp6b8lmo8u\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS05_changed_replay (tests.SystemTests.test_TS05_changed_replay)
+TS05 | Mesma chave com conteúdo alterado retorna conflito.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpdirv99xq\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpdirv99xq\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS06_out_of_stock (tests.SystemTests.test_TS06_out_of_stock)
+TS06 | Pedido maior que estoque restante falha sem alteração parcial.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp5cndoi2_\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp5cndoi2_\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS07_units (tests.SystemTests.test_TS07_units)
+TS07 | Compra em Recife preserva estoque da unidade João Pessoa.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp_v9nf6rb\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp_v9nf6rb\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS08_without_loyalty (tests.SystemTests.test_TS08_without_loyalty)
+TS08 | Compra sem fidelidade confirma com zero pontos.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmplg8u3_z6\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmplg8u3_z6\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS09_invalid_coupon (tests.SystemTests.test_TS09_invalid_coupon)
+TS09 | Cupom inexistente não cria pedido nem reduz estoque.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpiu_72c_v\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpiu_72c_v\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS10_zero_quantity (tests.SystemTests.test_TS10_zero_quantity)
+TS10 | Quantidade zero retorna QUANTIDADE_INVALIDA.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpm9dho4k3\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpm9dho4k3\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS11_empty_cart (tests.SystemTests.test_TS11_empty_cart)
+TS11 | Carrinho vazio retorna CARRINHO_INVALIDO.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpx2ohh6px\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpx2ohh6px\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS12_invalid_unit_channel (tests.SystemTests.test_TS12_invalid_unit_channel)
+TS12 | Unidade ou canal desconhecido é rejeitado.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp8sau7h2w\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp8sau7h2w\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS13_invalid_product (tests.SystemTests.test_TS13_invalid_product)
+TS13 | Produto inexistente e tentativa de injeção não alteram o banco.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpqmzs7vgp\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpqmzs7vgp\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS14_persistence (tests.SystemTests.test_TS14_persistence)
+TS14 | Nova instância recupera pedido e reconhece sua chave.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpvkq60vsa\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpvkq60vsa\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS15_cross_unit_loyalty (tests.SystemTests.test_TS15_cross_unit_loyalty)
+TS15 | Fidelidade acumula 104 pontos em duas unidades sem duplicação.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpd4s3b9k1\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmpd4s3b9k1\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS16_gateway_rollback (tests.SystemTests.test_TS16_gateway_rollback)
+TS16 | Resposta inválida do gateway desfaz a transação integralmente.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp631txqt5\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp631txqt5\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS17_events (tests.SystemTests.test_TS17_events)
+TS17 | Cada resultado cria um evento sem identificador de cliente ou payload.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp17mg4qe1\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmp17mg4qe1\\test.sqlite3'
+
+======================================================================
+ERROR: test_TS18_get_missing (tests.SystemTests.test_TS18_get_missing)
+TS18 | Consultar pedido inexistente retorna 404.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[Python]\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmppjph6u2x\\test.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[Projeto]\prototipo\tests.py", line 25, in tearDown
+    self.tmp.cleanup()
+  File "[Python]\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "[Python]\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "[Python]\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[Python]\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "[Python]\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\Users\\Diego\\AppData\\Local\\Temp\\tmppjph6u2x\\test.sqlite3'
+
+----------------------------------------------------------------------
+Ran 34 tests in 6.802s
+
+FAILED (errors=26)

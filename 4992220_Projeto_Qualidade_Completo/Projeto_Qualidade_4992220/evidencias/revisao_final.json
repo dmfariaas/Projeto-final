@@ -1,0 +1,59 @@
+{
+  "version": "0.4",
+  "timestamp_utc": "2026-09-24T18:44:57.638603+00:00",
+  "testes_python": {
+    "aprovados": 52,
+    "total": 52,
+    "timestamp_utc": "2026-09-24T18:35:30.045451+00:00",
+    "python": "3.14.7",
+    "novos_casos": [
+      "PR01–PR12",
+      "API07–API08"
+    ]
+  },
+  "cenarios_interface": {
+    "aprovados": 18,
+    "total": 18,
+    "timestamp_utc": "2026-09-24T18:36:09.270000+00:00",
+    "navegador": "Google Chrome 153.0.8010.53",
+    "novos_casos": [
+      "UI09–UI18"
+    ]
+  },
+  "total_testes": 70,
+  "carga": {
+    "sucesso": 200,
+    "total": 200,
+    "media_ms": 58.867,
+    "p95_ms": 208.004,
+    "timestamp_utc": "2026-09-24T18:35:49.032975+00:00"
+  },
+  "iniciador": {
+    "execucoes_aprovadas": 3,
+    "sha256": "eca76dd12cc9c1374b582020fbabdacde270e0a63c3d5b85af043458176b6b99"
+  },
+  "fontes_sha256": {
+    "api.py": "2a39c9712f7bba2ca3db9ceca522acc3f6adba10efed65481c8ad4f797d2347d",
+    "domain.py": "8073ee69012ae0daeeee92be6b6422aa82acbcbd32ac00886986c57612fdd79e",
+    "index.html": "82a0222c6eee12fb74a24fde1df3b39ad3437bd3af081f0e09fd4b43785cde2a",
+    "repository.py": "26c0b0ccaa0501b970307e5b6a134f9834148b1131a294bd1636fd461578075a",
+    "run_evidence.py": "8791da173595e2eedf5e84c827eb57b3431fdf4a97a7c3d000a123b94023c725",
+    "service.py": "0ee6f6d6b11e5114987dba5d661db5f3f5707bd481dca70e41fb5d44ce2c9a03",
+    "tests.py": "1685d318bd29faf794fd8016acf07628030916d8066fe2d5872830f617043869"
+  },
+  "defeito_D01": {
+    "nota": "Medição histórica do ciclo inicial preservada.",
+    "correction_hours": 0.3348426635064019,
+    "amostra": 1,
+    "sha256": "eb493f9809e5e454390dc74152cd225440c65474c5df8f46979b5d02f7bbc27b"
+  },
+  "planilha": {
+    "revisao": "0.4",
+    "testes": 70,
+    "amostras_carga": 200,
+    "verificacoes_recalculo": 9,
+    "sha256": "09ee5a4a4d07173ce5eb2a4fbf6d3673d079c4b7009ed2aa33863b0edb53210b",
+    "nota": "Fórmulas preservam a distinção entre campo vazio, zero e entrada inválida. D01 mantém o valor original."
+  },
+  "limites": "Demonstração local com pagamento simulado. A recuperação no navegador depende da mesma sessão e do mesmo endereço. Disponibilidade mensal e avaliação com participantes continuam não medidas."
+}

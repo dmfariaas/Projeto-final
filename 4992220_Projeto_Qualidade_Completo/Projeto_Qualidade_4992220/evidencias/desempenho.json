@@ -1,0 +1,1215 @@
+{
+  "timestamp_utc": "2026-09-24T18:35:49.032975+00:00",
+  "requests": 200,
+  "workers": 10,
+  "warmup": 5,
+  "mean_ms": 58.867,
+  "p95_ms": 208.004,
+  "max_ms": 1204.152,
+  "duration_s": 1.347,
+  "throughput_rps": 148.45,
+  "success": 200,
+  "method": "HTTP localhost, SQLite local, gateway sem latência; p95 por posto mais próximo; warmup excluído",
+  "samples": [
+    {
+      "index": 0,
+      "elapsed_ms": 9.891,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 1,
+      "elapsed_ms": 1204.152,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 2,
+      "elapsed_ms": 56.848,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 3,
+      "elapsed_ms": 768.637,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 4,
+      "elapsed_ms": 25.321,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 5,
+      "elapsed_ms": 12.714,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 6,
+      "elapsed_ms": 25.473,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 7,
+      "elapsed_ms": 162.606,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 8,
+      "elapsed_ms": 84.118,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 9,
+      "elapsed_ms": 37.529,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 10,
+      "elapsed_ms": 63.218,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 11,
+      "elapsed_ms": 19.297,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 12,
+      "elapsed_ms": 19.402,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 13,
+      "elapsed_ms": 10.549,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 14,
+      "elapsed_ms": 147.364,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 15,
+      "elapsed_ms": 21.131,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 16,
+      "elapsed_ms": 11.001,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 17,
+      "elapsed_ms": 34.122,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 18,
+      "elapsed_ms": 14.721,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 19,
+      "elapsed_ms": 77.218,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 20,
+      "elapsed_ms": 59.67,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 21,
+      "elapsed_ms": 82.773,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 22,
+      "elapsed_ms": 29.67,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 23,
+      "elapsed_ms": 547.64,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 24,
+      "elapsed_ms": 6.369,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 25,
+      "elapsed_ms": 11.682,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 26,
+      "elapsed_ms": 28.122,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 27,
+      "elapsed_ms": 9.486,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 28,
+      "elapsed_ms": 11.092,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 29,
+      "elapsed_ms": 18.565,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 30,
+      "elapsed_ms": 18.212,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 31,
+      "elapsed_ms": 37.72,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 32,
+      "elapsed_ms": 18.541,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 33,
+      "elapsed_ms": 49.09,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 34,
+      "elapsed_ms": 16.392,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 35,
+      "elapsed_ms": 43.66,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 36,
+      "elapsed_ms": 22.028,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 37,
+      "elapsed_ms": 49.873,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 38,
+      "elapsed_ms": 30.748,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 39,
+      "elapsed_ms": 31.41,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 40,
+      "elapsed_ms": 52.363,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 41,
+      "elapsed_ms": 77.151,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 42,
+      "elapsed_ms": 28.917,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 43,
+      "elapsed_ms": 294.83,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 44,
+      "elapsed_ms": 11.653,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 45,
+      "elapsed_ms": 22.102,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 46,
+      "elapsed_ms": 34.949,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 47,
+      "elapsed_ms": 340.544,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 48,
+      "elapsed_ms": 89.044,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 49,
+      "elapsed_ms": 13.638,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 50,
+      "elapsed_ms": 45.328,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 51,
+      "elapsed_ms": 9.667,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 52,
+      "elapsed_ms": 13.01,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 53,
+      "elapsed_ms": 43.096,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 54,
+      "elapsed_ms": 10.495,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 55,
+      "elapsed_ms": 107.598,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 56,
+      "elapsed_ms": 29.378,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 57,
+      "elapsed_ms": 9.4,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 58,
+      "elapsed_ms": 29.769,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 59,
+      "elapsed_ms": 61.878,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 60,
+      "elapsed_ms": 24.202,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 61,
+      "elapsed_ms": 22.874,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 62,
+      "elapsed_ms": 11.282,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 63,
+      "elapsed_ms": 14.006,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 64,
+      "elapsed_ms": 58.364,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 65,
+      "elapsed_ms": 12.307,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 66,
+      "elapsed_ms": 11.947,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 67,
+      "elapsed_ms": 13.407,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 68,
+      "elapsed_ms": 42.274,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 69,
+      "elapsed_ms": 9.505,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 70,
+      "elapsed_ms": 42.745,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 71,
+      "elapsed_ms": 13.829,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 72,
+      "elapsed_ms": 60.094,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 73,
+      "elapsed_ms": 208.004,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 74,
+      "elapsed_ms": 59.835,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 75,
+      "elapsed_ms": 11.86,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 76,
+      "elapsed_ms": 14.196,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 77,
+      "elapsed_ms": 17.122,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 78,
+      "elapsed_ms": 47.508,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 79,
+      "elapsed_ms": 16.274,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 80,
+      "elapsed_ms": 47.062,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 81,
+      "elapsed_ms": 33.821,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 82,
+      "elapsed_ms": 11.045,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 83,
+      "elapsed_ms": 9.513,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 84,
+      "elapsed_ms": 18.847,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 85,
+      "elapsed_ms": 34.401,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 86,
+      "elapsed_ms": 56.309,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 87,
+      "elapsed_ms": 12.266,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 88,
+      "elapsed_ms": 13.5,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 89,
+      "elapsed_ms": 25.874,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 90,
+      "elapsed_ms": 15.79,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 91,
+      "elapsed_ms": 28.063,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 92,
+      "elapsed_ms": 33.77,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 93,
+      "elapsed_ms": 32.328,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 94,
+      "elapsed_ms": 37.348,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 95,
+      "elapsed_ms": 24.393,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 96,
+      "elapsed_ms": 88.247,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 97,
+      "elapsed_ms": 29.975,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 98,
+      "elapsed_ms": 60.793,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 99,
+      "elapsed_ms": 11.4,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 100,
+      "elapsed_ms": 25.829,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 101,
+      "elapsed_ms": 17.069,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 102,
+      "elapsed_ms": 104.518,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 103,
+      "elapsed_ms": 287.754,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 104,
+      "elapsed_ms": 777.011,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 105,
+      "elapsed_ms": 660.821,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 106,
+      "elapsed_ms": 8.073,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 107,
+      "elapsed_ms": 9.232,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 108,
+      "elapsed_ms": 9.744,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 109,
+      "elapsed_ms": 44.779,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 110,
+      "elapsed_ms": 8.658,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 111,
+      "elapsed_ms": 9.806,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 112,
+      "elapsed_ms": 37.305,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 113,
+      "elapsed_ms": 10.646,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 114,
+      "elapsed_ms": 12.538,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 115,
+      "elapsed_ms": 15.449,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 116,
+      "elapsed_ms": 82.504,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 117,
+      "elapsed_ms": 21.243,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 118,
+      "elapsed_ms": 26.512,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 119,
+      "elapsed_ms": 36.918,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 120,
+      "elapsed_ms": 46.727,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 121,
+      "elapsed_ms": 212.828,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 122,
+      "elapsed_ms": 6.982,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 123,
+      "elapsed_ms": 56.717,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 124,
+      "elapsed_ms": 8.57,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 125,
+      "elapsed_ms": 9.344,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 126,
+      "elapsed_ms": 110.478,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 127,
+      "elapsed_ms": 7.989,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 128,
+      "elapsed_ms": 9.525,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 129,
+      "elapsed_ms": 9.125,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 130,
+      "elapsed_ms": 11.166,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 131,
+      "elapsed_ms": 13.756,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 132,
+      "elapsed_ms": 23.399,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 133,
+      "elapsed_ms": 14.79,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 134,
+      "elapsed_ms": 31.265,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 135,
+      "elapsed_ms": 31.458,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 136,
+      "elapsed_ms": 31.659,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 137,
+      "elapsed_ms": 62.218,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 138,
+      "elapsed_ms": 9.581,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 139,
+      "elapsed_ms": 14.852,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 140,
+      "elapsed_ms": 24.385,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 141,
+      "elapsed_ms": 13.911,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 142,
+      "elapsed_ms": 20.359,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 143,
+      "elapsed_ms": 56.642,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 144,
+      "elapsed_ms": 40.364,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 145,
+      "elapsed_ms": 11.669,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 146,
+      "elapsed_ms": 17.153,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 147,
+      "elapsed_ms": 15.704,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 148,
+      "elapsed_ms": 55.581,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 149,
+      "elapsed_ms": 22.585,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 150,
+      "elapsed_ms": 114.849,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 151,
+      "elapsed_ms": 19.023,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 152,
+      "elapsed_ms": 29.013,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 153,
+      "elapsed_ms": 113.846,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 154,
+      "elapsed_ms": 12.322,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 155,
+      "elapsed_ms": 39.876,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 156,
+      "elapsed_ms": 51.0,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 157,
+      "elapsed_ms": 32.894,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 158,
+      "elapsed_ms": 15.086,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 159,
+      "elapsed_ms": 14.923,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 160,
+      "elapsed_ms": 46.383,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 161,
+      "elapsed_ms": 11.936,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 162,
+      "elapsed_ms": 14.406,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 163,
+      "elapsed_ms": 17.509,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 164,
+      "elapsed_ms": 151.569,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 165,
+      "elapsed_ms": 67.93,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 166,
+      "elapsed_ms": 11.901,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 167,
+      "elapsed_ms": 260.54,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 168,
+      "elapsed_ms": 9.244,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 169,
+      "elapsed_ms": 13.303,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 170,
+      "elapsed_ms": 32.614,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 171,
+      "elapsed_ms": 9.324,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 172,
+      "elapsed_ms": 122.364,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 173,
+      "elapsed_ms": 31.374,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 174,
+      "elapsed_ms": 76.776,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 175,
+      "elapsed_ms": 24.75,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 176,
+      "elapsed_ms": 45.777,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 177,
+      "elapsed_ms": 10.841,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 178,
+      "elapsed_ms": 14.639,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 179,
+      "elapsed_ms": 8.312,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 180,
+      "elapsed_ms": 11.292,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 181,
+      "elapsed_ms": 13.192,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 182,
+      "elapsed_ms": 15.484,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 183,
+      "elapsed_ms": 26.666,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 184,
+      "elapsed_ms": 11.362,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 185,
+      "elapsed_ms": 10.929,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 186,
+      "elapsed_ms": 65.799,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 187,
+      "elapsed_ms": 76.803,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 188,
+      "elapsed_ms": 14.776,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 189,
+      "elapsed_ms": 113.616,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 190,
+      "elapsed_ms": 31.974,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 191,
+      "elapsed_ms": 7.241,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 192,
+      "elapsed_ms": 9.56,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 193,
+      "elapsed_ms": 27.013,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 194,
+      "elapsed_ms": 8.933,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 195,
+      "elapsed_ms": 8.682,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 196,
+      "elapsed_ms": 45.374,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 197,
+      "elapsed_ms": 15.457,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 198,
+      "elapsed_ms": 25.257,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 199,
+      "elapsed_ms": 13.315,
+      "ok": true,
+      "error": ""
+    }
+  ]
+}

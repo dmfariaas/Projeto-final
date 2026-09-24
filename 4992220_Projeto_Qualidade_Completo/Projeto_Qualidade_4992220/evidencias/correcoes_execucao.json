@@ -1,0 +1,183 @@
+{
+  "version": "0.4",
+  "timestamp_utc": "2026-09-24T18:44:57.638603+00:00",
+  "changes": [
+    {
+      "description": "Cabeçalho de autorização não ASCII recebe HTTP 401 sem encerrar a conexão.",
+      "tests": [
+        "RG01"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Coletor agrega falhas em subtestes e encerramento em uma linha por método.",
+      "tests": [
+        "RG02"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Carga registra requisições malsucedidas, retorna erro e encerra o servidor.",
+      "tests": [
+        "RG03"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Controles ficam bloqueados durante envio; resposta perdida permite repetir o mesmo conteúdo e chave sem nova baixa.",
+      "tests": [
+        "UI07",
+        "UI08"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Testes de interface usam porta e banco temporários próprios; iniciador verifica Python e orienta erros de inicialização.",
+      "tests": [
+        "UI01",
+        "UI02",
+        "UI03",
+        "UI04",
+        "UI05",
+        "UI06",
+        "UI07",
+        "UI08"
+      ],
+      "status": "VERIFICADO"
+    },
+    {
+      "description": "No Windows, a porta do servidor é exclusiva; segunda instância é rejeitada e a primeira continua respondendo.",
+      "tests": [
+        "RG04"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "A confirmação do pedido permanece visível se a atualização seguinte do cardápio falhar; o estoque desatualizado recebe um aviso separado.",
+      "tests": [
+        "UI01"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Pagamento pendente pode ser aprovado ou recusado na simulação; a transição atualiza estoque e pontos uma única vez, inclusive sob concorrência.",
+      "tests": [
+        "PR01",
+        "PR02",
+        "PR03",
+        "PR04",
+        "PR05",
+        "PR06",
+        "PR12",
+        "API07",
+        "UI11"
+      ],
+      "status": "IMPLEMENTADO"
+    },
+    {
+      "description": "A aprovação revalida o estoque. Se não houver quantidade suficiente, o pedido permanece pendente e pode ser recusado sem baixa parcial.",
+      "tests": [
+        "PR06",
+        "PR07"
+      ],
+      "status": "VERIFICADO"
+    },
+    {
+      "description": "A conferência de pagamento exige a sessão local, respeita o proprietário e aceita apenas approved ou declined.",
+      "tests": [
+        "PR08",
+        "PR09",
+        "API07"
+      ],
+      "status": "VERIFICADO"
+    },
+    {
+      "description": "Bancos existentes são preservados. Pendências antigas sem itens registrados permitem recusa; novos pedidos mantêm os dados necessários à conferência após reiniciar.",
+      "tests": [
+        "PR10",
+        "PR11"
+      ],
+      "status": "IMPLEMENTADO"
+    },
+    {
+      "description": "Rascunho, confirmação e pedido pendente reaparecem após recarregar a página na mesma sessão e no mesmo endereço.",
+      "tests": [
+        "UI09",
+        "UI10",
+        "UI11"
+      ],
+      "status": "IMPLEMENTADO"
+    },
+    {
+      "description": "Resposta perdida e recarga durante o envio recuperam o mesmo conteúdo e a mesma chave de pedido, sem gerar nova compra.",
+      "tests": [
+        "UI08",
+        "UI12",
+        "UI17"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Quando a resposta da conferência se perde, a decisão oposta fica bloqueada; a recarga consulta o resultado já registrado.",
+      "tests": [
+        "UI18"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Falha ao consultar o cardápio impede finalizar com dados antigos e oferece nova tentativa. As quantidades respeitam o estoque e o limite de dez.",
+      "tests": [
+        "UI13",
+        "UI14"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Envio sem resposta encerra a espera após oito segundos e permite repetir com a mesma chave; sessão expirada pode ser atualizada preservando a tentativa.",
+      "tests": [
+        "UI15",
+        "UI16"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Indisponibilidade dos dados locais retorna HTTP 503 com mensagem simples, sem expor detalhes internos, e permite nova tentativa após a recuperação.",
+      "tests": [
+        "API08"
+      ],
+      "status": "CORRIGIDO"
+    }
+  ],
+  "historical_measurement": "O tempo de correção de D01 preserva o fechamento original em defeito.json e não mede as revisões posteriores.",
+  "startup_validation": {
+    "python": "3.14.7",
+    "os": "Windows",
+    "folder_with_spaces": true,
+    "launcher_help_exit_code": 0,
+    "health_http_status": 200,
+    "occupied_port_exit_code": 1,
+    "invalid_database_path_exit_code": 1,
+    "tracebacks": false,
+    "temporary_processes_closed": true,
+    "scope": "Verificação inicial preservada. As três execuções do iniciador atualizado estão registradas em inicializador.json."
+  },
+  "launcher_update": {
+    "standalone": true,
+    "automatic_free_port": true,
+    "executions_passed": 3,
+    "persistent_order_verified": true,
+    "evidence": "inicializador.json",
+    "launcher_sha256": "eca76dd12cc9c1374b582020fbabdacde270e0a63c3d5b85af043458176b6b99",
+    "explicit_port_verified": true,
+    "timestamp_utc": "2026-09-24T18:37:46.948839+00:00"
+  },
+  "sources_sha256": {
+    "api.py": "2a39c9712f7bba2ca3db9ceca522acc3f6adba10efed65481c8ad4f797d2347d",
+    "domain.py": "8073ee69012ae0daeeee92be6b6422aa82acbcbd32ac00886986c57612fdd79e",
+    "index.html": "82a0222c6eee12fb74a24fde1df3b39ad3437bd3af081f0e09fd4b43785cde2a",
+    "repository.py": "26c0b0ccaa0501b970307e5b6a134f9834148b1131a294bd1636fd461578075a",
+    "run_evidence.py": "8791da173595e2eedf5e84c827eb57b3431fdf4a97a7c3d000a123b94023c725",
+    "service.py": "0ee6f6d6b11e5114987dba5d661db5f3f5707bd481dca70e41fb5d44ce2c9a03",
+    "tests.py": "1685d318bd29faf794fd8016acf07628030916d8066fe2d5872830f617043869"
+  }
+}

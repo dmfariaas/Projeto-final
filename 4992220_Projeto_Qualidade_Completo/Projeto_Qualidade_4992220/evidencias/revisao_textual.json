@@ -1,0 +1,47 @@
+{
+  "version": "0.4",
+  "timestamp_utc": "2026-09-24T18:44:57.638603+00:00",
+  "natureza": "Revisão editorial e técnica para refletir os fluxos da demonstração acadêmica.",
+  "historico_editorial": [
+    {
+      "natureza": "Revisão editorial de clareza, coesão e justificativas técnicas.",
+      "verificacoes_preservadas": {
+        "titulos": 83,
+        "linhas_quadros": 133,
+        "legendas": 21,
+        "fontes": 21
+      },
+      "referencias_preservadas": true,
+      "dados_e_placeholders_preservados": true,
+      "imagens_preservadas": true,
+      "conteudo": "Os textos explicam as decisões com exemplos do projeto. Testes e medições conservam os registros anteriores; atividades planejadas não foram convertidas em executadas.",
+      "data": "2026-09-15"
+    },
+    {
+      "data": "2026-09-21",
+      "alteracoes": [
+        "Definição precisa do numerador e denominador da disponibilidade.",
+        "Nome do navegador executado e média de vazão corrigidos.",
+        "Instrução residual de redação removida e TS18 descrito como chamada direta à regra.",
+        "Medições e capturas atualizadas com os registros de 21 de setembro; tempo histórico de D01 preservado."
+      ]
+    }
+  ],
+  "referencias_preservadas": true,
+  "estrutura_atual": {
+    "titulos": 85,
+    "linhas_quadros": 137,
+    "legendas": 21,
+    "fontes": 21
+  },
+  "revisao_final": {
+    "data": "2026-09-24",
+    "alteracoes": [
+      "Conferência simulada de pagamentos pendentes e limites de migração descritos conforme os testes.",
+      "Recuperação de rascunho, pedido enviado e decisão de pagamento explicada para a mesma sessão e o mesmo endereço.",
+      "Contagens atualizadas para 52 testes Python e 18 cenários no navegador, com carga de 200 pedidos de 24 de setembro.",
+      "Medição histórica de D01 preservada. Disponibilidade mensal e avaliação com participantes continuam sem medição.",
+      "Referências existentes mantidas e redação ajustada ao funcionamento da revisão 0.4."
+    ]
+  }
+}

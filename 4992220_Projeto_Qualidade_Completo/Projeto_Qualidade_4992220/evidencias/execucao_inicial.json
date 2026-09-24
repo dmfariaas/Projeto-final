@@ -1,0 +1,250 @@
+{
+  "timestamp_utc": "2026-09-15T12:31:07.134566+00:00",
+  "python": "3.12.14",
+  "os": "Windows",
+  "machine": "AMD64",
+  "tests": [
+    {
+      "id": "CC01",
+      "description": "CC01 | 50 tentativas concorrentes com a mesma chave geram um pedido.",
+      "status": "ERRO",
+      "duration_ms": 1073.336,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpou6lcaay\\\\test.sqlite3'"
+    },
+    {
+      "id": "CC02",
+      "description": "CC02 | 50 tentativas disputam dez unidades: dez aprovações e quarenta recusas de estoque.",
+      "status": "ERRO",
+      "duration_ms": 1347.432,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpwnyiemuk\\\\test.sqlite3'"
+    },
+    {
+      "id": "API01",
+      "description": "API01 | POST retorna 201; GET recupera os mesmos valores; repetição retorna 200.",
+      "status": "ERRO",
+      "duration_ms": 684.831,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpo6wjq0y1\\\\test.sqlite3'"
+    },
+    {
+      "id": "API02",
+      "description": "API02 | POST sem sessão retorna 401 e não cria pedido.",
+      "status": "ERRO",
+      "duration_ms": 536.92,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpft3v9u9i\\\\test.sqlite3'"
+    },
+    {
+      "id": "API03",
+      "description": "API03 | JSON malformado retorna 400.",
+      "status": "ERRO",
+      "duration_ms": 542.749,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp1quc7bay\\\\test.sqlite3'"
+    },
+    {
+      "id": "API04",
+      "description": "API04 | CPF e outros campos não previstos são rejeitados com 422.",
+      "status": "APROVADO",
+      "duration_ms": 555.869,
+      "error": ""
+    },
+    {
+      "id": "API05",
+      "description": "API05 | Corpo acima de 16 KB retorna 413.",
+      "status": "ERRO",
+      "duration_ms": 550.153,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp941qdmko\\\\test.sqlite3'"
+    },
+    {
+      "id": "API06",
+      "description": "API06 | Catálogo correto e cabeçalhos no-store, nosniff e DENY.",
+      "status": "ERRO",
+      "duration_ms": 545.589,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmphap6nley\\\\test.sqlite3'"
+    },
+    {
+      "id": "SE01",
+      "description": "SE01 | Outro cliente não acessa pedido alheio.",
+      "status": "ERRO",
+      "duration_ms": 46.975,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpi19zv06t\\\\test.sqlite3'"
+    },
+    {
+      "id": "SE02",
+      "description": "SE02 | Operador da unidade incorreta recebe 403; unidade correta consulta.",
+      "status": "ERRO",
+      "duration_ms": 48.152,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpkg1o4kt6\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS01",
+      "description": "TS01 | Aprovar pedido em APP, WEB, TOTEM, BALCAO e PICKUP.",
+      "status": "ERRO",
+      "duration_ms": 87.161,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpysx0lpm2\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS02",
+      "description": "TS02 | Recusa não altera estoque nem concede pontos.",
+      "status": "ERRO",
+      "duration_ms": 50.925,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp9l6b7uqg\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS03",
+      "description": "TS03 | Timeout fica pendente; repetição preserva o mesmo pedido.",
+      "status": "ERRO",
+      "duration_ms": 58.673,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp6b8lmo8u\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS04",
+      "description": "TS04 | Repetir pedido confirmado gera um pedido, 52 pontos e um evento.",
+      "status": "APROVADO",
+      "duration_ms": 76.807,
+      "error": ""
+    },
+    {
+      "id": "TS05",
+      "description": "TS05 | Mesma chave com conteúdo alterado retorna conflito.",
+      "status": "ERRO",
+      "duration_ms": 51.196,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpdirv99xq\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS06",
+      "description": "TS06 | Pedido maior que estoque restante falha sem alteração parcial.",
+      "status": "ERRO",
+      "duration_ms": 49.337,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp5cndoi2_\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS07",
+      "description": "TS07 | Compra em Recife preserva estoque da unidade João Pessoa.",
+      "status": "ERRO",
+      "duration_ms": 50.523,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp_v9nf6rb\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS08",
+      "description": "TS08 | Compra sem fidelidade confirma com zero pontos.",
+      "status": "ERRO",
+      "duration_ms": 32.206,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmplg8u3_z6\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS09",
+      "description": "TS09 | Cupom inexistente não cria pedido nem reduz estoque.",
+      "status": "ERRO",
+      "duration_ms": 45.186,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpiu_72c_v\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS10",
+      "description": "TS10 | Quantidade zero retorna QUANTIDADE_INVALIDA.",
+      "status": "ERRO",
+      "duration_ms": 17.376,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpm9dho4k3\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS11",
+      "description": "TS11 | Carrinho vazio retorna CARRINHO_INVALIDO.",
+      "status": "ERRO",
+      "duration_ms": 13.97,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpx2ohh6px\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS12",
+      "description": "TS12 | Unidade ou canal desconhecido é rejeitado.",
+      "status": "ERRO",
+      "duration_ms": 16.512,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp8sau7h2w\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS13",
+      "description": "TS13 | Produto inexistente e tentativa de injeção não alteram o banco.",
+      "status": "ERRO",
+      "duration_ms": 37.692,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpqmzs7vgp\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS14",
+      "description": "TS14 | Nova instância recupera pedido e reconhece sua chave.",
+      "status": "ERRO",
+      "duration_ms": 55.819,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpvkq60vsa\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS15",
+      "description": "TS15 | Fidelidade acumula 104 pontos em duas unidades sem duplicação.",
+      "status": "ERRO",
+      "duration_ms": 86.231,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmpd4s3b9k1\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS16",
+      "description": "TS16 | Resposta inválida do gateway desfaz a transação integralmente.",
+      "status": "ERRO",
+      "duration_ms": 34.595,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp631txqt5\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS17",
+      "description": "TS17 | Cada resultado cria um evento sem identificador de cliente ou payload.",
+      "status": "ERRO",
+      "duration_ms": 68.078,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmp17mg4qe1\\\\test.sqlite3'"
+    },
+    {
+      "id": "TS18",
+      "description": "TS18 | Consultar pedido inexistente retorna 404.",
+      "status": "ERRO",
+      "duration_ms": 35.68,
+      "error": "[WinError 32] O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: 'C:\\\\Users\\\\Diego\\\\AppData\\\\Local\\\\Temp\\\\tmppjph6u2x\\\\test.sqlite3'"
+    },
+    {
+      "id": "TU01",
+      "description": "TU01 | Valores exatos: 5800 - 580 = 5220 centavos; 52 pontos.",
+      "status": "APROVADO",
+      "duration_ms": 0.15,
+      "error": ""
+    },
+    {
+      "id": "TU02",
+      "description": "TU02 | Sem cupom e sem fidelidade: total 5800 e zero pontos.",
+      "status": "APROVADO",
+      "duration_ms": 0.043,
+      "error": ""
+    },
+    {
+      "id": "TU03",
+      "description": "TU03 | Aceitar 1 e 10; rejeitar 0, -1, 11, 1.5, string e booleano.",
+      "status": "APROVADO",
+      "duration_ms": 0.142,
+      "error": ""
+    },
+    {
+      "id": "TU04",
+      "description": "TU04 | Produto repetido deve ser rejeitado antes do cálculo.",
+      "status": "APROVADO",
+      "duration_ms": 0.039,
+      "error": ""
+    },
+    {
+      "id": "TU05",
+      "description": "TU05 | Rejeitar chave vazia, curta, excessiva ou com aspas.",
+      "status": "APROVADO",
+      "duration_ms": 0.087,
+      "error": ""
+    },
+    {
+      "id": "TU06",
+      "description": "TU06 | Campos extras e corpo não estruturado são rejeitados.",
+      "status": "APROVADO",
+      "duration_ms": 0.151,
+      "error": ""
+    }
+  ],
+  "total": 34,
+  "passed": 8,
+  "failures": 0,
+  "errors": 26
+}

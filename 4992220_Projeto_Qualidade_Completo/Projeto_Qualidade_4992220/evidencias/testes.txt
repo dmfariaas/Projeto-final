@@ -1,0 +1,109 @@
+test_CC01_same_key (tests.ConcurrencyTests.test_CC01_same_key)
+CC01 | 50 tentativas concorrentes com a mesma chave geram um pedido. ... ok
+test_CC02_last_units (tests.ConcurrencyTests.test_CC02_last_units)
+CC02 | 50 tentativas disputam dez unidades: dez aprovações e quarenta recusas de estoque. ... ok
+test_RG02_subtest_and_cleanup_reporting (tests.EvidenceTests.test_RG02_subtest_and_cleanup_reporting)
+RG02 | Falhas em subtestes e na limpeza geram um único resultado por método. ... ok
+test_RG03_load_failure_preserves_evidence (tests.EvidenceTests.test_RG03_load_failure_preserves_evidence)
+RG03 | Falha de rede no ensaio de carga salva detalhes e encerra com erro. ... ok
+test_API01_create_and_get (tests.HttpTests.test_API01_create_and_get)
+API01 | POST retorna 201; GET recupera os mesmos valores; repetição retorna 200. ... ok
+test_API02_no_session (tests.HttpTests.test_API02_no_session)
+API02 | POST sem sessão retorna 401 e não cria pedido. ... ok
+test_API03_malformed (tests.HttpTests.test_API03_malformed)
+API03 | JSON malformado retorna 400. ... ok
+test_API04_private_fields (tests.HttpTests.test_API04_private_fields)
+API04 | CPF e outros campos não previstos são rejeitados com 422. ... ok
+test_API05_size_limit (tests.HttpTests.test_API05_size_limit)
+API05 | Corpo acima de 16 KB retorna 413. ... ok
+test_API06_headers_catalog (tests.HttpTests.test_API06_headers_catalog)
+API06 | Catálogo correto e cabeçalhos no-store, nosniff e DENY. ... ok
+test_API07_payment_resolution_contract (tests.HttpTests.test_API07_payment_resolution_contract)
+API07 | Conferência exige sessão e proprietário, valida corpo e retorna 200 com replay explícito. ... ok
+test_API08_local_failure_returns_503_and_recovers (tests.HttpTests.test_API08_local_failure_returns_503_and_recovers)
+API08 | Banco ou arquivo local indisponível retorna 503 sem detalhes internos e permite recuperação. ... ok
+test_RG01_non_ascii_authorization (tests.HttpTests.test_RG01_non_ascii_authorization)
+RG01 | Credencial não ASCII retorna 401 e preserva a execução do servidor. ... ok
+test_RG04_second_server_rejected (tests.HttpTests.test_RG04_second_server_rejected)
+RG04 | Segunda instância na mesma porta é recusada e a primeira continua saudável. ... ok
+test_PR01_approved_once_and_restored_context (tests.PaymentResolutionTests.test_PR01_approved_once_and_restored_context)
+PR01 | Aprovar pendência reduz estoque e soma pontos uma vez; consulta recupera os itens. ... ok
+test_PR02_declined_once (tests.PaymentResolutionTests.test_PR02_declined_once)
+PR02 | Recusar pendência e repetir a recusa preserva estoque e pontos. ... ok
+test_PR03_terminal_decision_cannot_change (tests.PaymentResolutionTests.test_PR03_terminal_decision_cannot_change)
+PR03 | Uma decisão terminal não pode ser invertida, inclusive em pedidos sem pendência. ... ok
+test_PR04_concurrent_approval (tests.PaymentResolutionTests.test_PR04_concurrent_approval)
+PR04 | Vinte aprovações simultâneas da mesma pendência têm um único efeito. ... ok
+test_PR05_concurrent_opposite_decisions (tests.PaymentResolutionTests.test_PR05_concurrent_opposite_decisions)
+PR05 | Aprovação e recusa concorrentes encerram a pendência com uma única decisão. ... ok
+test_PR06_pending_orders_compete_for_stock (tests.PaymentResolutionTests.test_PR06_pending_orders_compete_for_stock)
+PR06 | Duas pendências disputam as últimas dez unidades sem venda acima do estoque. ... ok
+test_PR07_stock_changes_allow_decline_without_partial_effects (tests.PaymentResolutionTests.test_PR07_stock_changes_allow_decline_without_partial_effects)
+PR07 | Falta de estoque mantém pendência sem baixa parcial e permite recusa posterior. ... ok
+test_PR08_owner_isolation_and_missing_order (tests.PaymentResolutionTests.test_PR08_owner_isolation_and_missing_order)
+PR08 | Somente o proprietário confere a pendência; pedido inexistente retorna 404. ... ok
+test_PR09_payment_allowlist (tests.PaymentResolutionTests.test_PR09_payment_allowlist)
+PR09 | A conferência aceita apenas o campo payment com approved ou declined. ... ok
+test_PR10_legacy_database_migration (tests.PaymentResolutionTests.test_PR10_legacy_database_migration)
+PR10 | Migração preserva dados; pendência antiga permite recusa e impede aprovação sem itens salvos. ... ok
+test_PR11_resolution_after_restart_without_loyalty (tests.PaymentResolutionTests.test_PR11_resolution_after_restart_without_loyalty)
+PR11 | Reinício recupera pendência de João Pessoa e aprova sem pontos quando a fidelidade está desmarcada. ... ok
+test_PR12_failed_commit_rolls_back_all_effects (tests.PaymentResolutionTests.test_PR12_failed_commit_rolls_back_all_effects)
+PR12 | Falha ao registrar a transição desfaz estoque, pontos e estado; nova tentativa pode concluir. ... ok
+test_SE01_customer_isolation (tests.SecurityTests.test_SE01_customer_isolation)
+SE01 | Outro cliente não acessa pedido alheio. ... ok
+test_SE02_operator_isolation (tests.SecurityTests.test_SE02_operator_isolation)
+SE02 | Operador da unidade incorreta recebe 403; unidade correta consulta. ... ok
+test_TS01_channels (tests.SystemTests.test_TS01_channels)
+TS01 | Aprovar pedido em APP, WEB, TOTEM, BALCAO e PICKUP. ... ok
+test_TS02_declined (tests.SystemTests.test_TS02_declined)
+TS02 | Recusa não altera estoque nem concede pontos. ... ok
+test_TS03_timeout (tests.SystemTests.test_TS03_timeout)
+TS03 | Timeout fica pendente; repetição preserva o mesmo pedido. ... ok
+test_TS04_replay (tests.SystemTests.test_TS04_replay)
+TS04 | Repetir pedido confirmado gera um pedido, 52 pontos e um evento. ... ok
+test_TS05_changed_replay (tests.SystemTests.test_TS05_changed_replay)
+TS05 | Mesma chave com conteúdo alterado retorna conflito. ... ok
+test_TS06_out_of_stock (tests.SystemTests.test_TS06_out_of_stock)
+TS06 | Pedido maior que estoque restante falha sem alteração parcial. ... ok
+test_TS07_units (tests.SystemTests.test_TS07_units)
+TS07 | Compra em Recife preserva estoque da unidade João Pessoa. ... ok
+test_TS08_without_loyalty (tests.SystemTests.test_TS08_without_loyalty)
+TS08 | Compra sem fidelidade confirma com zero pontos. ... ok
+test_TS09_invalid_coupon (tests.SystemTests.test_TS09_invalid_coupon)
+TS09 | Cupom inexistente não cria pedido nem reduz estoque. ... ok
+test_TS10_zero_quantity (tests.SystemTests.test_TS10_zero_quantity)
+TS10 | Quantidade zero retorna QUANTIDADE_INVALIDA. ... ok
+test_TS11_empty_cart (tests.SystemTests.test_TS11_empty_cart)
+TS11 | Carrinho vazio retorna CARRINHO_INVALIDO. ... ok
+test_TS12_invalid_unit_channel (tests.SystemTests.test_TS12_invalid_unit_channel)
+TS12 | Unidade ou canal desconhecido é rejeitado. ... ok
+test_TS13_invalid_product (tests.SystemTests.test_TS13_invalid_product)
+TS13 | Produto inexistente e tentativa de injeção não alteram o banco. ... ok
+test_TS14_persistence (tests.SystemTests.test_TS14_persistence)
+TS14 | Nova instância recupera pedido e reconhece sua chave. ... ok
+test_TS15_cross_unit_loyalty (tests.SystemTests.test_TS15_cross_unit_loyalty)
+TS15 | Fidelidade acumula 104 pontos em duas unidades sem duplicação. ... ok
+test_TS16_gateway_rollback (tests.SystemTests.test_TS16_gateway_rollback)
+TS16 | Resposta inválida do gateway desfaz a transação integralmente. ... ok
+test_TS17_events (tests.SystemTests.test_TS17_events)
+TS17 | Cada resultado cria um evento sem identificador de cliente ou payload. ... ok
+test_TS18_get_missing (tests.SystemTests.test_TS18_get_missing)
+TS18 | Consultar pedido inexistente retorna 404. ... ok
+test_TU01_discount_and_points (tests.UnitTests.test_TU01_discount_and_points)
+TU01 | Valores exatos: 5800 - 580 = 5220 centavos; 52 pontos. ... ok
+test_TU02_no_coupon (tests.UnitTests.test_TU02_no_coupon)
+TU02 | Sem cupom e sem fidelidade: total 5800 e zero pontos. ... ok
+test_TU03_quantity_boundaries (tests.UnitTests.test_TU03_quantity_boundaries)
+TU03 | Aceitar 1 e 10; rejeitar 0, -1, 11, 1.5, string e booleano. ... ok
+test_TU04_duplicate_product (tests.UnitTests.test_TU04_duplicate_product)
+TU04 | Produto repetido deve ser rejeitado antes do cálculo. ... ok
+test_TU05_key_validation (tests.UnitTests.test_TU05_key_validation)
+TU05 | Rejeitar chave vazia, curta, excessiva ou com aspas. ... ok
+test_TU06_input_allowlist (tests.UnitTests.test_TU06_input_allowlist)
+TU06 | Campos extras e corpo não estruturado são rejeitados. ... ok
+
+----------------------------------------------------------------------
+Ran 52 tests in 17.266s
+
+OK
