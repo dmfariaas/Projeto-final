@@ -1,0 +1,17 @@
+{
+  "name": "raizes-do-nordeste-online",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Demonstração acadêmica do restaurante Raízes do Nordeste.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.4",
+    "jsdom": "26.1.0"
+  }
+}
