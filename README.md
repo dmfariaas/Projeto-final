@@ -55,7 +55,7 @@ python api.py --open-browser
 
 Acesse **http://127.0.0.1:8765** no computador em que o servidor foi iniciado. Esse é o endereço da execução local. Para compartilhar o restaurante, use o link público no início deste guia. No Windows, `py -3` pode substituir `python`. No Linux e no macOS, use `python3` se esse for o nome disponível. Para encerrar o servidor, pressione **Ctrl+C** no terminal.
 
-No Windows, também é possível abrir o arquivo [`ABRIR_RESTAURANTE_NORDESTINO.cmd`](ABRIR_RESTAURANTE_NORDESTINO.cmd) com dois cliques. Ele verifica o Python, escolhe uma porta livre e abre o navegador.
+No Windows, também é possível abrir o arquivo [`ABRIR_RESTAURANTE_NORDESTINO.cmd`](ABRIR_RESTAURANTE_NORDESTINO.cmd) com dois cliques. Ele verifica o Python, inicia o restaurante em **http://127.0.0.1:8765/** e abre o navegador. Se a demonstração já estiver aberta nessa porta, o iniciador usa o servidor existente. Depois de reiniciar o computador, abra o iniciador novamente para voltar a usar o endereço local.
 
 ### Banco de dados e porta
 

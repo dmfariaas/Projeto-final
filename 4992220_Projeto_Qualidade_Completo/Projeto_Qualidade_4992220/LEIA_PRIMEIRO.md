@@ -37,8 +37,8 @@ A interface usa tons de areia, barro e verde-mandacaru, com ilustrações inspir
 ## Como experimentar
 
 1. Extraia o ZIP para acessar todos os documentos. Se quiser apenas usar a demonstração, baixe e execute `INICIAR_DEMONSTRACAO.cmd`, que inclui os arquivos necessários.
-2. No Windows, abra `INICIAR_DEMONSTRACAO.cmd`. O iniciador verifica Python 3.11 ou superior, escolhe uma porta livre, inicia o servidor local e abre o navegador.
-3. Se o navegador não abrir, copie o endereço mostrado na janela, começando por `http://127.0.0.1:`, e cole-o na barra de endereços.
+2. No Windows, abra `INICIAR_DEMONSTRACAO.cmd`. O iniciador verifica Python 3.11 ou superior, inicia o servidor local na porta 8765 e abre o navegador. Se a demonstração já estiver em execução nessa porta, ele abre o servidor existente.
+3. Se o navegador não abrir, acesse `http://127.0.0.1:8765/`. Mantenha o servidor aberto enquanto usa a demonstração. Depois de reiniciar o computador, abra o iniciador novamente.
 4. Adicione dois baiões de dois e um suco de cajá. Aplique o cupom `RAIZES10` e, se desejar, marque a fidelidade. O total esperado é R$ 52,20. Com o pagamento aprovado e a fidelidade selecionada, são concedidos 52 pontos.
 5. No seletor de pagamento, experimente aprovação, recusa ou ausência de resposta.
 6. A ausência de resposta deixa o pedido pendente. Para concluí-lo, use os controles de aprovação ou recusa simulada. Antes de aprovar, o serviço confere o estoque novamente. Os pontos só são concedidos quando a fidelidade foi selecionada.
@@ -64,7 +64,7 @@ Se o iniciador informar que não encontrou Python, instale Python 3.11 ou superi
 python api.py
 ```
 
-O iniciador escolhe uma porta livre automaticamente. Para usar uma porta específica, execute `INICIAR_DEMONSTRACAO.cmd --port 8766`. Ao iniciar diretamente com `python api.py`, a porta padrão continua sendo 8765.
+O iniciador e o comando `python api.py` usam a porta 8765 por padrão. Se outro programa estiver usando essa porta, o iniciador informa o conflito. Para escolher outra, execute `INICIAR_DEMONSTRACAO.cmd --port 8766` e use o endereço mostrado na janela. A opção `--port 0` permite escolher uma porta livre automaticamente.
 
 Quando executado sozinho, o iniciador prepara os arquivos em `%LOCALAPPDATA%\ProjetoQualidade4992220` e guarda o banco em `dados/demo.sqlite3`. No pacote completo, ele usa a pasta `prototipo` que o acompanha. A atualização dos arquivos de execução preserva o banco da demonstração.
 
@@ -104,7 +104,7 @@ A automação usa um navegador temporário, sem acesso ao perfil pessoal do usu�
 - Cabeçalhos de sessão inválidos recebem uma resposta de erro sem interromper a conexão.
 - O pedido fica protegido contra alterações durante o envio. Após perda da resposta, a nova tentativa reutiliza o mesmo conteúdo e a mesma chave.
 - O coletor registra falhas em subtestes e na limpeza e informa erro quando a carga falha.
-- O iniciador inclui os arquivos da demonstração, funciona quando baixado sozinho e escolhe uma porta livre. Suas mensagens orientam a correção de problemas com a versão do Python ou com o acesso ao banco.
+- O iniciador inclui os arquivos da demonstração, funciona quando baixado sozinho e usa a porta 8765 por padrão. Suas mensagens orientam a correção de problemas com a versão do Python, a porta ou o acesso ao banco.
 
 Os resultados registrados estão em `evidencias/testes.json` e `evidencias/interface.json`. O arquivo `evidencias/correcoes_execucao.json` relaciona cada correção aos testes correspondentes. A medição do tempo de correção de D01 mantém o fechamento original.
 

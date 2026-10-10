@@ -6,6 +6,7 @@ import secrets
 import socket
 import sqlite3
 import webbrowser
+from http.client import HTTPConnection, HTTPException
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
@@ -95,6 +96,25 @@ def make_server(path, port=0):
     server.order_service=service
     return server
 
+def demo_is_running(port):
+    connection = HTTPConnection('127.0.0.1', port, timeout=1)
+    try:
+        connection.request('GET', '/api/health')
+        response = connection.getresponse()
+        return response.status == 200 and json.loads(response.read(1024)) == {
+            'status': 'ok', 'environment': 'local-demo'
+        }
+    except (OSError, ValueError, HTTPException):
+        return False
+    finally:
+        connection.close()
+
+def open_demo_browser(url):
+    try:
+        webbrowser.open(url)
+    except webbrowser.Error:
+        print('Abra o endereço acima no navegador.', flush=True)
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--port',type=int,default=8765)
@@ -106,16 +126,18 @@ def main():
     try:
         server=make_server(args.db,args.port)
     except OSError:
-        parser.exit(1,f'Não foi possível abrir a porta {args.port}. Encerre a demonstração anterior ou use --port 8766.\n')
+        if args.open_browser and args.port > 0 and demo_is_running(args.port):
+            url=f'http://127.0.0.1:{args.port}'
+            print(f'Demonstração já está em execução: {url}',flush=True)
+            open_demo_browser(url)
+            return
+        parser.exit(1,f'Não foi possível abrir a porta {args.port}. Outro programa pode estar usando esse endereço. Use --port 8766 para escolher outra porta.\n')
     except sqlite3.Error:
         parser.exit(1,'Não foi possível abrir o banco local. Verifique a pasta indicada em --db e a permissão de escrita.\n')
     url=f'http://127.0.0.1:{server.server_port}'
     print(f'Demonstração local: {url}',flush=True)
     if args.open_browser:
-        try:
-            webbrowser.open(url)
-        except webbrowser.Error:
-            print('Abra o endereço acima no navegador.',flush=True)
+        open_demo_browser(url)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
