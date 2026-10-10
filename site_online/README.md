@@ -1,6 +1,6 @@
 # Raízes do Nordeste — demonstração online
 
-[Abrir o restaurante](https://raizes-do-nordeste-demo.dmfariaas.chatgpt.site)
+[Abrir o restaurante](https://dmfariaas.github.io/raizes-do-nordeste/)
 
 Esta versão permite apresentar o restaurante em computadores, celulares e tablets com um navegador atual. Os arquivos estáticos ficam hospedados na web; o visitante não precisa instalar Python nem manter o computador do autor ligado.
 
@@ -51,7 +51,9 @@ As evidências Python/SQLite da pasta acadêmica pertencem à implementação lo
 
 ## Publicação
 
-O endereço acima está hospedado no serviço Sites. Um envio de código ao GitHub, por si só, não atualiza essa hospedagem: depois de alterar os arquivos, execute os testes e publique uma nova versão do site.
+O endereço acima está hospedado no GitHub Pages. O repositório público [raizes-do-nordeste](https://github.com/dmfariaas/raizes-do-nordeste) contém os arquivos da demonstração. A documentação acadêmica continua neste repositório privado.
+
+Para atualizar o site, execute os testes, copie `index.html`, `app.js` e `demo-store.js` de `dist/` para a raiz do repositório público e envie a alteração para a branch `main`. Preserve o arquivo `.nojekyll`. O GitHub Pages publica essa branch automaticamente; uma alteração apenas neste repositório acadêmico não atualiza o endereço público.
 
 Publique o conteúdo de `dist/` em uma hospedagem estática com HTTPS, preservando os nomes dos arquivos. O endereço público deve servir `index.html`, `app.js` e `demo-store.js` no mesmo diretório. O uso de HTTPS permite os recursos de armazenamento e identificação utilizados pela demonstração.
 

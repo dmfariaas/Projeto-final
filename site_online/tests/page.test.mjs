@@ -27,7 +27,7 @@ async function idle() {
 
 async function openPage(savedSession) {
   dom?.window.close();
-  dom = new JSDOM(html, { url: 'https://restaurant.example/' });
+  dom = new JSDOM(html, { url: 'https://dmfariaas.github.io/raizes-do-nordeste/' });
   globalThis.window = dom.window;
   globalThis.document = dom.window.document;
   globalThis.location = dom.window.location;

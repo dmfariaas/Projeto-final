@@ -1,6 +1,6 @@
 # Raízes do Nordeste
 
-## [Abrir demonstração online](https://raizes-do-nordeste-demo.dmfariaas.chatgpt.site)
+## [Abrir demonstração online](https://dmfariaas.github.io/raizes-do-nordeste/)
 
 Acesse o restaurante pelo navegador do computador, celular ou tablet. A versão online não precisa de Python instalado nem depende de o computador do autor estar ligado.
 
@@ -34,7 +34,7 @@ Os pagamentos e as identidades são fictícios. A demonstração não realiza co
 
 ## Usar a demonstração online
 
-Abra o [site do restaurante](https://raizes-do-nordeste-demo.dmfariaas.chatgpt.site), escolha a unidade e monte seu pedido. Os pagamentos são fictícios: nenhuma cobrança é realizada e não são pedidos dados de cartão.
+Abra o [site do restaurante](https://dmfariaas.github.io/raizes-do-nordeste/), escolha a unidade e monte seu pedido. Os pagamentos são fictícios: nenhuma cobrança é realizada e não são pedidos dados de cartão.
 
 Os pedidos, o estoque e os pontos da demonstração ficam no IndexedDB, o banco de dados do próprio navegador. Cada navegador e dispositivo tem seus próprios dados, sem sincronização. Limpar os dados do site também remove essas informações; no modo de navegação privada, elas podem ser descartadas ao fechar a sessão.
 
