@@ -10,8 +10,8 @@ Aqui estão o relatório, a planilha de métricas, as evidências dos testes e a
 
 **Diego Monteiro de Farias · RU 4992220**
 
-Análise e Desenvolvimento de Sistemas — Centro Universitário Internacional UNINTER.
-Projeto Multidisciplinar — Trilha de Qualidade de Software · 2026.
+Análise e Desenvolvimento de Sistemas, Centro Universitário Internacional UNINTER.
+Projeto Multidisciplinar: Trilha de Qualidade de Software · 2026.
 
 [Relatório em PDF][entrega] · [Texto do relatório][relatorio] · [Planilha de métricas][planilha]
 

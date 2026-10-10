@@ -1,4 +1,4 @@
-# Raízes do Nordeste — demonstração online
+# Raízes do Nordeste: demonstração online
 
 [Abrir o restaurante](https://dmfariaas.github.io/raizes-do-nordeste/)
 
