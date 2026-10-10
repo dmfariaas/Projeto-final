@@ -10,7 +10,7 @@ Hospedagem: GitHub Pages, pela branch `main` do repositório público [raizes-do
 
 - 20 testes de regras e armazenamento aprovados com Node.js e fake-indexeddb.
 - 11 testes de integração da interface aprovados com jsdom.
-- Total: 31 testes aprovados, sem falhas; duração da rodada final: 7,33 segundos, em Node.js 24.19.0.
+- Total: 31 testes aprovados, sem falhas. A rodada final durou 7,33 segundos, em Node.js 24.19.0.
 - Os testes de interface foram repetidos com a URL `https://dmfariaas.github.io/raizes-do-nordeste/` configurada no DOM simulado, incluindo o caminho da subpasta.
 - Publicação concluída com acesso público, sem exigir cadastro ou login.
 - `index.html`, `app.js` e `demo-store.js` responderam HTTP 200 a requisições sem sessão autenticada.

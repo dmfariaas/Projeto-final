@@ -32,7 +32,7 @@ As regras são executadas no navegador. Esta versão permite apresentar o fluxo 
 | `tests/` | Testes automatizados das regras e da interface. |
 | `package.json` e `package-lock.json` | Comando de testes e dependências de desenvolvimento. |
 
-Os arquivos publicados estão em `dist/` e não precisam de compilação. Uma alteração nessa pasta já modifica o material que será enviado à hospedagem. Node.js é necessário para executar os testes; o visitante usa apenas o navegador.
+Os arquivos publicados estão em `dist/` e não precisam de compilação. Uma alteração nessa pasta já modifica o material que será enviado à hospedagem. Node.js é necessário para executar os testes. O visitante usa apenas o navegador.
 
 ## Testes
 

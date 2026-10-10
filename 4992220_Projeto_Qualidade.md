@@ -36,13 +36,13 @@ Professor: Me. Rodrigo Nascimento.
 
 # RESUMO
 
-A confirmação de uma compra precisa corresponder ao valor pago, ao estoque disponível e aos pontos de fidelidade concedidos. Este trabalho examina essa relação no fluxo de finalização de pedidos da rede fictícia Raízes do Nordeste, considerando os canais aplicativo, web, totem, balcão e retirada. A proposta reúne oito requisitos funcionais e oito requisitos de qualidade, com critérios de aceitação, arquitetura em camadas, análise de riscos e testes ligados às respectivas evidências. Para verificar as regras, foi utilizado um protótipo web local com banco SQLite e respostas de pagamento simuladas. Foram aprovados 70 testes automatizados: 52 em Python e 18 no navegador. Na carga de 200 pedidos, com dez tarefas de envio concorrentes, o tempo médio foi de 58,867 ms e o percentil 95 foi de 208,004 ms. As verificações confirmaram os cálculos, o isolamento de estoque entre unidades, as restrições de acesso nos casos definidos e a prevenção de efeitos duplicados quando a mesma chave é reenviada. A execução inicial revelou uma falha no fechamento de conexões SQLite, registrada como D01 e corrigida antes do reteste. Os tempos obtidos descrevem o ambiente local, sem comunicação com um provedor de pagamento. Disponibilidade mensal, satisfação, aceitação de negócio, aparelhos físicos e estresse prolongado ainda precisam de avaliação. O protótipo permite demonstrar as regras e repetir os testes; sua aplicação comercial depende dessas validações e das integrações previstas.
+A confirmação de uma compra precisa corresponder ao valor pago, ao estoque disponível e aos pontos de fidelidade concedidos. Este trabalho examina essa relação no fluxo de finalização de pedidos da rede fictícia Raízes do Nordeste, considerando os canais aplicativo, web, totem, balcão e retirada. A proposta reúne oito requisitos funcionais e oito requisitos de qualidade, com critérios de aceitação, arquitetura em camadas, análise de riscos e testes ligados às respectivas evidências. Para verificar as regras, foi utilizado um protótipo web local com banco SQLite e respostas de pagamento simuladas. Foram aprovados 70 testes automatizados: 52 em Python e 18 no navegador. Na carga de 200 pedidos, com dez tarefas de envio concorrentes, o tempo médio foi de 58,867 ms e o percentil 95 foi de 208,004 ms. As verificações confirmaram os cálculos, o isolamento de estoque entre unidades, as restrições de acesso nos casos definidos e a prevenção de efeitos duplicados quando a mesma chave é reenviada. A execução inicial revelou uma falha no fechamento de conexões SQLite, registrada como D01 e corrigida antes do reteste. Os tempos obtidos descrevem o ambiente local, sem comunicação com um provedor de pagamento. Disponibilidade mensal, satisfação, aceitação de negócio, aparelhos físicos e estresse prolongado ainda precisam de avaliação. O protótipo permite demonstrar as regras e repetir os testes. Sua aplicação comercial depende dessas validações e das integrações previstas.
 
 **Palavras-chave:** qualidade de software; pedidos; rastreabilidade; testes; franquias.
 
 # ABSTRACT
 
-An order confirmation should match the amount paid, the available stock, and the loyalty points awarded. This study examines that relationship during checkout in the fictional Raízes do Nordeste restaurant network, covering app, web, kiosk, counter, and pickup channels. The proposal defines eight functional and eight quality requirements, with acceptance criteria, a layered architecture, risk analysis, and tests linked to their evidence. A local web prototype with a SQLite database and simulated payment responses was used to check the rules. All 70 automated tests passed: 52 in Python and 18 in the browser. A workload of 200 orders, sent by ten concurrent workers, produced an average response time of 58.867 ms and a 95th percentile of 208.004 ms. The checks confirmed calculations, stock separation between locations, access restrictions in the defined cases, and prevention of duplicate effects when the same request key is reused. The initial execution revealed a SQLite connection-closing defect, recorded as D01 and corrected before retesting. The response times describe the local environment without communication with a payment provider. Monthly availability, satisfaction, business acceptance, physical devices, and sustained stress still require evaluation. The prototype supports demonstrations and repeatable testing; commercial use depends on those assessments and the planned integrations.
+An order confirmation should match the amount paid, the available stock, and the loyalty points awarded. This study examines that relationship during checkout in the fictional Raízes do Nordeste restaurant network, covering app, web, kiosk, counter, and pickup channels. The proposal defines eight functional and eight quality requirements, with acceptance criteria, a layered architecture, risk analysis, and tests linked to their evidence. A local web prototype with a SQLite database and simulated payment responses was used to check the rules. All 70 automated tests passed: 52 in Python and 18 in the browser. A workload of 200 orders, sent by ten concurrent workers, produced an average response time of 58.867 ms and a 95th percentile of 208.004 ms. The checks confirmed calculations, stock separation between locations, access restrictions in the defined cases, and prevention of duplicate effects when the same request key is reused. The initial execution revealed a SQLite connection-closing defect, recorded as D01 and corrected before retesting. The response times describe the local environment without communication with a payment provider. Monthly availability, satisfaction, business acceptance, physical devices, and sustained stress still require evaluation. The prototype supports demonstrations and repeatable testing. Commercial use depends on those assessments and the planned integrations.
 
 **Keywords:** software quality; orders; traceability; testing; franchises.
 
@@ -157,7 +157,7 @@ Para organizar os testes e relacioná-los aos requisitos, resultados e defeitos,
 
 ## 1.4 Natureza das evidências
 
-Os testes usam respostas de pagamento controladas para verificar as regras do pedido. Seus resultados descrevem o comportamento do protótipo nessas condições; o contato com uma operadora real ainda precisa ser avaliado. O Quadro 1 distingue os testes executados, os elementos simulados e as atividades planejadas.
+Os testes usam respostas de pagamento controladas para verificar as regras do pedido. Seus resultados descrevem o comportamento do protótipo nessas condições. O contato com uma operadora real ainda precisa ser avaliado. O Quadro 1 distingue os testes executados, os elementos simulados e as atividades planejadas.
 
 Quadro 1 – Classificação das evidências
 
@@ -171,7 +171,7 @@ Fonte: especificação e registros de verificação do projeto (2026).
 
 # 2 DOCUMENTO DE REQUISITOS
 
-Este documento define as regras de finalização do pedido e os critérios usados para verificá-las. O escopo delimita o que o protótipo oferece; os requisitos especificam o comportamento esperado; e a arquitetura e o caso de uso mostram como pagamento, estoque e fidelidade se relacionam.
+Este documento define as regras de finalização do pedido e os critérios usados para verificá-las. O escopo delimita o que o protótipo oferece, e os requisitos especificam o comportamento esperado. A arquitetura e o caso de uso mostram como pagamento, estoque e fidelidade se relacionam.
 
 ## 2.1 Escopo e premissas
 
@@ -188,10 +188,10 @@ Quadro 2 – Delimitação do escopo
 | Incluído | Limite adotado |
 |---|---|
 | Unidades e cardápio | Recife (REC) e João Pessoa (JPA), com três produtos fictícios. |
-| Pedidos | Entre um e três produtos diferentes; quantidade inteira de 1 a 10 por produto. |
+| Pedidos | Entre um e três produtos diferentes, com quantidade inteira de 1 a 10 por produto. |
 | Promoção | Cupom RAIZES10 aplica 10% ao subtotal. Sem acúmulo de cupons. |
 | Pagamento | Respostas controladas: aprovado, recusado e sem resposta. A pendência pode receber aprovação ou recusa simulada. Nenhuma cobrança. |
-| Estoque e pontos | Estoque separado por unidade; pontos ligados a uma identidade fictícia comum às unidades. |
+| Estoque e pontos | Estoque separado por unidade e pontos ligados a uma identidade fictícia comum às unidades. |
 | Demonstração | Interface web responsiva, API local e banco SQLite. |
 
 Fonte: especificação e registros de verificação do projeto (2026).
@@ -200,11 +200,11 @@ Fonte: especificação e registros de verificação do projeto (2026).
 
 O cardápio de teste tem baião a R$ 25,00, tapioca a R$ 12,00 e suco a R$ 8,00. Esses preços e a promoção foram propostos para o estudo e não representam uma empresa real. A adesão à fidelidade é opcional: cada real inteiro do total confirmado corresponde a um ponto. Cancelamentos, estornos, expiração de pontos e administração de promoções ficam para outra versão.
 
-Os testes isolados começam com dez unidades de cada produto; a demonstração, com cem; e a carga, com dez mil. Cada ambiente utiliza um banco próprio. Assim, uma compra feita durante a demonstração não altera o saldo usado para conferir um teste.
+Os testes isolados começam com dez unidades de cada produto. A demonstração começa com cem unidades e o teste de carga, com dez mil. Cada ambiente utiliza um banco próprio. Assim, uma compra feita durante a demonstração não altera o saldo usado para conferir um teste.
 
 ### 2.1.3 Fora do escopo
 
-O projeto não implementa o sistema completo da rede. Pagamento real, produção comercial, logística, marketing, infraestrutura física e suporte pós-implantação ficam fora do escopo. O servidor atende apenas no endereço local do computador. Este PDF reúne as telas e os resultados essenciais da avaliação; os arquivos de execução permitem reproduzir a demonstração localmente.
+O projeto não implementa o sistema completo da rede. Pagamento real, produção comercial, logística, marketing, infraestrutura física e suporte pós-implantação ficam fora do escopo. O servidor atende apenas no endereço local do computador. Este PDF reúne as telas e os resultados essenciais da avaliação. Os arquivos de execução permitem reproduzir a demonstração localmente.
 
 ## 2.2 Operação multicanal
 
@@ -218,7 +218,7 @@ Quadro 3 – Características dos canais de atendimento
 | WEB | Cliente utiliza navegador em computador ou celular. | Redimensionamento, teclado e atualização da página. |
 | TOTEM | Cliente faz o pedido em equipamento compartilhado. | Limpeza da sessão ao final e ausência de dados do cliente anterior. |
 | BALCÃO | Operador registra o pedido presencial. | Restrição à unidade de trabalho e confirmação verbal dos itens. |
-| PICKUP | Cliente ou operador acompanha a retirada. | Local e código de retirada claros; conferência pela unidade correta. |
+| PICKUP | Cliente ou operador acompanha a retirada. | Local e código de retirada claros, com conferência pela unidade correta. |
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
@@ -244,12 +244,12 @@ Quadro 4 – Requisitos funcionais e critérios de aceitação
 |---|---|
 | RF01 | Selecionar unidade e canal. Aceitar apenas REC/JPA e os cinco canais previstos. Valores desconhecidos são rejeitados antes da gravação. |
 | RF02 | Validar o carrinho. Exigir de 1 a 3 produtos distintos, conhecidos, com quantidade inteira de 1 a 10. Carrinho vazio, produto repetido ou quantidade inválida não cria pedido. |
-| RF03 | Calcular valores no serviço. Com dois baiões e um suco: subtotal R$ 58,00; RAIZES10: desconto R$ 5,80; total R$ 52,20. Cupom desconhecido é rejeitado. |
-| RF04 | Registrar resultado simulado. Aprovado produz CONFIRMADO; recusado produz RECUSADO; sem resposta produz PENDENTE. A pendência pode ser aprovada ou recusada pelo simulador, com nova conferência do estoque antes de confirmar. O usuário recebe mensagem correspondente. |
+| RF03 | Calcular valores no serviço. Com dois baiões e um suco, o subtotal é de R$ 58,00. O cupom RAIZES10 concede desconto de R$ 5,80, resultando no total de R$ 52,20. Cupom desconhecido é rejeitado. |
+| RF04 | Registrar resultado simulado. A aprovação produz CONFIRMADO, a recusa produz RECUSADO e a ausência de resposta produz PENDENTE. A pendência pode ser aprovada ou recusada pelo simulador, com nova conferência do estoque antes de confirmar. O usuário recebe mensagem correspondente. |
 | RF05 | Atualizar estoque somente na confirmação. Recusa, pendência ou erro não reduzem o estoque. A compra em uma unidade preserva o saldo da outra. |
 | RF06 | Creditar fidelidade opcional uma única vez. Total de R$ 52,20 concede 52 pontos quando confirmado e com fidelidade selecionada. Nos demais casos, zero pontos. |
 | RF07 | Impedir pedido duplicado. Mesma identidade, unidade, chave e conteúdo recuperam o pedido original. Chave reutilizada com conteúdo diferente retorna conflito. A interface conserva a solicitação durante a recarga da mesma aba para permitir sua repetição sem nova compra. |
-| RF08 | Consultar pedido com autorização. Cliente consulta o próprio pedido; operador consulta apenas a sua unidade. Outros acessos são negados. A API de demonstração expõe somente o cliente fictício. |
+| RF08 | Consultar pedido com autorização. O cliente consulta o próprio pedido, e o operador consulta apenas a sua unidade. Outros acessos são negados. A API de demonstração expõe somente o cliente fictício. |
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
@@ -263,39 +263,39 @@ O serviço de pedidos precisa responder em tempo aceitável, preservar os dados 
 
 ### 2.4.1 RQ01 Desempenho no ambiente local
 
-A resposta do serviço é avaliada com 200 pedidos via HTTP local, dez threads (linhas de execução) e cinco aquecimentos anteriores à coleta. **Meta:** média e p95 inferiores a 2.000 ms. **Medição:** tempo entre o envio e a leitura completa da resposta. **Aceitação:** todas as respostas esperadas confirmadas e os dois limites de tempo atendidos. **Evidência:** EV02. Essas condições definem a medição local; a meta não representa um acordo de serviço de produção.
+A resposta do serviço é avaliada com 200 pedidos via HTTP local, dez threads (linhas de execução) e cinco aquecimentos anteriores à coleta. **Meta:** média e p95 inferiores a 2.000 ms. **Medição:** tempo entre o envio e a leitura completa da resposta. **Aceitação:** todas as respostas esperadas confirmadas e os dois limites de tempo atendidos. **Evidência:** EV02. Essas condições definem a medição local. A meta não representa um acordo de serviço de produção.
 
 ### 2.4.2 RQ02 Disponibilidade operacional
 
-**Meta proposta:** disponibilidade mensal de pelo menos 99,5%, com manutenção planejada incluída no denominador. A medição exige um monitor externo que verifique a saúde do serviço uma vez por minuto. **Aceitação:** dividir as verificações que confirmam o serviço disponível pelo total de verificações previstas no mês; o resultado deve atingir a meta. As lacunas de monitoramento permanecem no denominador e devem ser relatadas. **Situação:** não medido, pois ainda não há uma implantação observada durante um mês. **Evidência prevista:** EV06.
+**Meta proposta:** disponibilidade mensal de pelo menos 99,5%, com manutenção planejada incluída no denominador. A medição exige um monitor externo que verifique a saúde do serviço uma vez por minuto. **Aceitação:** dividir as verificações que confirmam o serviço disponível pelo total de verificações previstas no mês. O resultado deve atingir a meta. As lacunas de monitoramento permanecem no denominador e devem ser relatadas. **Situação:** não medido, pois ainda não há uma implantação observada durante um mês. **Evidência prevista:** EV06.
 
 ### 2.4.3 RQ03 Controle de acesso e minimização
 
-**Meta:** negar 100% das consultas indevidas da suíte definida e rejeitar 100% dos pedidos com campos pessoais não previstos. Os casos SE01, SE02, API02 e API04 verificam esse comportamento, com respostas 403, 401 ou 422, conforme a situação. **Aceitação:** nenhuma divulgação do pedido indevido e nenhuma criação de pedido com campos proibidos. **Evidência:** EV01. A verificação utiliza uma sessão local de demonstração; a autenticação comercial ainda precisa ser desenvolvida.
+**Meta:** negar 100% das consultas indevidas da suíte definida e rejeitar 100% dos pedidos com campos pessoais não previstos. Os casos SE01, SE02, API02 e API04 verificam esse comportamento, com respostas 403, 401 ou 422, conforme a situação. **Aceitação:** nenhuma divulgação do pedido indevido e nenhuma criação de pedido com campos proibidos. **Evidência:** EV01. A verificação utiliza uma sessão local de demonstração. A autenticação comercial ainda precisa ser desenvolvida.
 
 ### 2.4.4 RQ04 Uso em dispositivos móveis
 
-A avaliação considera o espaço disponível na tela e a realização da tarefa por pessoas. **Meta de interface:** ausência de rolagem horizontal em larguras de 360, 390 e 768 pixels, com controles de quantidade de ao menos 44 por 44 pixels. **Meta de uso:** pelo menos 9 de 10 participantes concluírem um pedido em até 120 segundos, sem intervenção do moderador. **Medição:** UI05 para o layout e UAT01 para o uso humano. O layout foi verificado em navegador redimensionado; a meta com participantes ainda não foi medida. **Evidências:** EV03 e EV05, respectivamente.
+A avaliação considera o espaço disponível na tela e a realização da tarefa por pessoas. **Meta de interface:** ausência de rolagem horizontal em larguras de 360, 390 e 768 pixels, com controles de quantidade de ao menos 44 por 44 pixels. **Meta de uso:** pelo menos 9 de 10 participantes concluírem um pedido em até 120 segundos, sem intervenção do moderador. **Medição:** UI05 para o layout e UAT01 para o uso humano. O layout foi verificado em navegador redimensionado. A meta com participantes ainda não foi medida. **Evidências:** EV03 e EV05, respectivamente.
 
 ### 2.4.5 RQ05 Consistência e confiabilidade
 
-**Meta:** zero pedidos, baixas de estoque ou créditos duplicados nas repetições testadas; zero baixa ou crédito enquanto o pedido estiver recusado ou pendente e quando ocorrer erro de integração. TS02 a TS07, TS15, TS16, CC01 e os cenários PR conferem os efeitos no banco. **Aceitação:** correspondência exata entre o estado esperado e os registros encontrados, inclusive após resolver uma pendência. **Evidência:** EV01. Os resultados se limitam ao banco local e ao gateway simulado.
+**Meta:** nenhum pedido, baixa de estoque ou crédito duplicado nas repetições testadas. Também não deve haver baixa ou crédito enquanto o pedido estiver recusado ou pendente, nem quando ocorrer erro de integração. TS02 a TS07, TS15, TS16, CC01 e os cenários PR conferem os efeitos no banco. **Aceitação:** correspondência exata entre o estado esperado e os registros encontrados, inclusive após resolver uma pendência. **Evidência:** EV01. Os resultados se limitam ao banco local e ao gateway simulado.
 
 ### 2.4.6 RQ06 Observação do resultado
 
-Os eventos registram a criação do pedido e as mudanças de estado. **Meta:** registrar um evento na criação e outro somente quando uma pendência muda efetivamente para CONFIRMADO ou RECUSADO. Repetições da criação ou da decisão não acrescentam eventos. O registro deve conter apenas sequência, código do pedido, unidade, estado e instante. **Medição:** TS04, TS17 e cenários PR de resolução. **Aceitação:** contagem e conjunto de campos iguais aos especificados. **Evidência:** EV01. Em produção, identificadores vinculáveis a pessoas podem ser dados pessoais; retirar o nome, por si só, não comprova anonimização.
+Os eventos registram a criação do pedido e as mudanças de estado. **Meta:** registrar um evento na criação e outro somente quando uma pendência muda efetivamente para CONFIRMADO ou RECUSADO. Repetições da criação ou da decisão não acrescentam eventos. O registro deve conter apenas sequência, código do pedido, unidade, estado e instante. **Medição:** TS04, TS17 e cenários PR de resolução. **Aceitação:** contagem e conjunto de campos iguais aos especificados. **Evidência:** EV01. Em produção, identificadores vinculáveis a pessoas podem ser dados pessoais. Retirar o nome, por si só, não comprova anonimização.
 
 ### 2.4.7 RQ07 Concorrência e preservação de estoque
 
-A disputa pelo mesmo estoque precisa produzir um resultado previsível. **Meta:** entre cinquenta pedidos executados por vinte threads para dez unidades disponíveis, confirmar exatamente dez e rejeitar quarenta por falta de estoque, sem saldo negativo. Em cinquenta repetições de uma mesma chave, deve ser criado exatamente um pedido. **Medição:** CC01 e CC02. **Aceitação:** contagens exatas e zero erro técnico inesperado. **Evidência:** EV01. O ensaio verifica esse volume de concorrência; a escalabilidade horizontal permanece proposta.
+A disputa pelo mesmo estoque precisa produzir um resultado previsível. **Meta:** entre cinquenta pedidos executados por vinte threads para dez unidades disponíveis, confirmar exatamente dez e rejeitar quarenta por falta de estoque, sem saldo negativo. Em cinquenta repetições de uma mesma chave, deve ser criado exatamente um pedido. **Medição:** CC01 e CC02. **Aceitação:** contagens exatas e zero erro técnico inesperado. **Evidência:** EV01. O ensaio verifica esse volume de concorrência. A escalabilidade horizontal permanece proposta.
 
 ### 2.4.8 RQ08 Testabilidade e manutenção
 
-**Meta:** associar ao menos um cenário automatizado a cada um dos oito RF e permitir que a suíte seja repetida com banco novo, sem depender de serviço externo. A medição divide os oito RF cobertos pelos oito RF especificados e apresenta o mapeamento dos casos. **Aceitação:** cobertura funcional de 100% e execução bem-sucedida na versão identificada. **Evidências:** EV01, EV03 e EV04. O indicador verifica a presença de testes por requisito; ele não mede linhas, ramos ou todas as combinações de regras.
+**Meta:** associar ao menos um cenário automatizado a cada um dos oito RF e permitir que a suíte seja repetida com banco novo, sem depender de serviço externo. A medição divide os oito RF cobertos pelos oito RF especificados e apresenta o mapeamento dos casos. **Aceitação:** cobertura funcional de 100% e execução bem-sucedida na versão identificada. **Evidências:** EV01, EV03 e EV04. O indicador verifica a presença de testes por requisito, sem medir linhas, ramos ou todas as combinações de regras.
 
 ### 2.4.9 Justificativa das metas
 
-Um único pedido duplicado ou um saldo negativo já descumpre as regras de consistência; por isso, essas metas adotam tolerância zero. Os limites de tempo e disponibilidade são referências iniciais baseadas nos exemplos do roteiro. Antes de aplicá-los a uma operação real, será necessário revê-los conforme a carga e a infraestrutura disponíveis. Os resultados medidos e as metas ainda não avaliadas são identificados separadamente no relatório.
+Um único pedido duplicado ou um saldo negativo já descumpre as regras de consistência. Por isso, essas metas adotam tolerância zero. Os limites de tempo e disponibilidade são referências iniciais baseadas nos exemplos do roteiro. Antes de aplicá-los a uma operação real, será necessário revê-los conforme a carga e a infraestrutura disponíveis. Os resultados medidos e as metas ainda não avaliadas são identificados separadamente no relatório.
 
 ## 2.5 Arquitetura e pontos de teste
 
@@ -303,7 +303,7 @@ A arquitetura distribui a apresentação do pedido, a comunicação com a API, a
 
 Figura 1 – Arquitetura do protótipo local
 
-Interface → API → Aplicação → Domínio; Aplicação → SQLite e PaymentMock.
+Interface → API → Aplicação → Domínio. Aplicação → SQLite e PaymentMock.
 
 Fonte: código do protótipo e documentação do projeto (2026).
 
@@ -317,7 +317,7 @@ Quadro 5 – Responsabilidades das camadas do protótipo
 | API | api.py recebe JSON, verifica sessão, limita o tamanho e traduz erros. API01 a API08 verificam criação, consulta, resolução simulada e tratamento de falhas locais. |
 | Aplicação | service.py coordena pedido, estoque, pontos, repetição, resolução simulada e consulta autorizada. TS, SE e PR verificam os fluxos. |
 | Domínio | domain.py valida entradas e calcula valores. TU01 a TU06 verificam limites e regras. |
-| Infraestrutura | repository.py cria e acessa o SQLite; PaymentMock fornece resultados controlados. CC e TS16 verificam concorrência e falhas. |
+| Infraestrutura | repository.py cria e acessa o SQLite. PaymentMock fornece resultados controlados. CC e TS16 verificam concorrência e falhas. |
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
@@ -327,9 +327,9 @@ Fonte: especificação e registros de verificação do projeto (2026).
 
 **Gateway substituível:** o componente simulado permite provocar aprovação, recusa e pendência de forma controlada, sem conta comercial ou cobrança. Com isso, os testes podem verificar a reação do serviço a cada resposta. Latência, disponibilidade e segurança de um provedor real continuam fora dessa verificação.
 
-**Repetição por chave:** o serviço recupera o pedido original quando recebe a mesma chave e o mesmo conteúdo. A interface guarda o carrinho, o resultado e a solicitação ainda sem resposta no armazenamento da sessão da aba. Assim, recarregar a página no mesmo endereço permite retomar a compra. Essa proteção depende da disponibilidade do armazenamento do navegador; fechar a aba, limpar seus dados ou mudar a porta pode encerrar a recuperação. Uma compra iniciada com outra chave continua sendo uma nova solicitação.
+**Repetição por chave:** o serviço recupera o pedido original quando recebe a mesma chave e o mesmo conteúdo. A interface guarda o carrinho, o resultado e a solicitação ainda sem resposta no armazenamento da sessão da aba. Assim, recarregar a página no mesmo endereço permite retomar a compra. Essa proteção depende da disponibilidade do armazenamento do navegador. Fechar a aba, limpar seus dados ou mudar a porta pode encerrar a recuperação. Uma compra iniciada com outra chave continua sendo uma nova solicitação.
 
-**Pendência simulada:** a aprovação ou recusa é escolhida explicitamente na interface. Antes de confirmar, o serviço volta a conferir o estoque e aplica a baixa e os pontos na mesma transação. A falta de estoque preserva o pedido pendente, permitindo uma recusa posterior. Repetir a decisão concluída recupera o resultado; uma decisão oposta é rejeitada. O comportamento demonstra a transição local e não substitui a conciliação com uma operadora.
+**Pendência simulada:** a aprovação ou recusa é escolhida explicitamente na interface. Antes de confirmar, o serviço volta a conferir o estoque e aplica a baixa e os pontos na mesma transação. A falta de estoque preserva o pedido pendente, permitindo uma recusa posterior. Repetir a decisão concluída recupera o resultado, enquanto uma decisão oposta é rejeitada. O comportamento demonstra a transição local e não substitui a conciliação com uma operadora.
 
 **Arquitetura futura:** a proposta é utilizar uma API sem estado compartilhada entre canais, banco transacional e integração com confirmação idempotente. A reserva de estoque e a conciliação precisam considerar que o pagamento externo pode falhar em um momento diferente da gravação local. A transação SQLite, sozinha, não garante atomicidade entre o banco e um gateway real.
 
@@ -349,7 +349,7 @@ O caso de uso UC01 acompanha a compra desde a seleção dos itens até a mensage
 6. O gateway simulado produz um resultado.
 7. A aplicação grava pedido e evento. Estoque e pontos mudam somente quando o estado é CONFIRMADO.
 8. A interface apresenta confirmação, recusa ou pendência.
-9. Se houver pendência, o cliente pode escolher uma aprovação ou recusa simulada. A confirmação exige estoque disponível; a recusa preserva estoque e pontos.
+9. Se houver pendência, o cliente pode escolher uma aprovação ou recusa simulada. A confirmação exige estoque disponível. A recusa preserva estoque e pontos.
 
 O Quadro 6 especifica as respostas esperadas para as condições do pedido.
 
@@ -361,13 +361,13 @@ Quadro 6 – Condições e resultados do pedido
 | Estoque insuficiente | SEM_ESTOQUE, HTTP 409, sem alteração parcial. |
 | Mesma chave e mesmo conteúdo | Retorno do pedido original, HTTP 200, sem nova operação. |
 | Mesma chave e conteúdo diferente | CHAVE_REUTILIZADA, HTTP 409. |
-| Pagamento aprovado | CONFIRMADO; HTTP 201 para pedido novo. |
-| Pagamento recusado | RECUSADO; sem baixa ou pontos; não há cobrança. |
-| Pagamento sem resposta | PENDENTE; sem baixa ou pontos; aprovação ou recusa simulada disponível. |
-| Aprovação de pendência | CONFIRMADO após nova conferência de estoque; baixa e pontos uma única vez. |
-| Aprovação de pendência sem estoque | SEM_ESTOQUE, HTTP 409; permanece PENDENTE, sem alterações parciais. |
-| Recusa de pendência | RECUSADO; sem baixa ou pontos. |
-| Decisão já concluída | Mesma decisão recupera o resultado; decisão oposta retorna HTTP 409. |
+| Pagamento aprovado | CONFIRMADO, com HTTP 201 para pedido novo. |
+| Pagamento recusado | RECUSADO, sem baixa ou pontos. Não há cobrança. |
+| Pagamento sem resposta | PENDENTE, sem baixa ou pontos. Aprovação ou recusa simulada disponível. |
+| Aprovação de pendência | CONFIRMADO após nova conferência de estoque, com baixa e pontos uma única vez. |
+| Aprovação de pendência sem estoque | SEM_ESTOQUE, HTTP 409. O pedido permanece PENDENTE, sem alterações parciais. |
+| Recusa de pendência | RECUSADO, sem baixa ou pontos. |
+| Decisão já concluída | A mesma decisão recupera o resultado. Uma decisão oposta retorna HTTP 409. |
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
@@ -385,7 +385,7 @@ Alterações que afetem o comportamento do pedido exigem nova avaliação. Os cr
 
 A revisão começa pela definição do comportamento esperado. Em seguida, os riscos orientam a escolha dos cenários, mantendo a ligação entre requisito, teste e evidência a cada alteração. Uma falha deve ser registrada, investigada, corrigida e testada novamente. A decisão de liberar a versão também precisa considerar os riscos que os controles atuais ainda não tratam.
 
-**Entrada nos testes:** os requisitos devem estar identificados, os dados fictícios disponíveis, a versão do código registrada e o banco isolado, sem pagamento real. **Saída do recorte demonstrativo:** todos os testes automatizados aprovados, evidências legíveis, requisitos pendentes identificados e nenhum defeito crítico conhecido em aberto no fluxo local. O atendimento dessas condições permite encerrar a avaliação da demonstração, sem autorizar a operação em produção. A organização dos critérios, dos retestes e dos registros de defeitos toma como referência o CTFL; as condições concretas foram definidas para este protótipo (ISTQB, 2024, seções 2.2.3, 5.1.3 e 5.5).
+**Entrada nos testes:** os requisitos devem estar identificados, os dados fictícios disponíveis, a versão do código registrada e o banco isolado, sem pagamento real. **Saída do recorte demonstrativo:** todos os testes automatizados aprovados, evidências legíveis, requisitos pendentes identificados e nenhum defeito crítico conhecido em aberto no fluxo local. O atendimento dessas condições permite encerrar a avaliação da demonstração, sem autorizar a operação em produção. A organização dos critérios, dos retestes e dos registros de defeitos toma como referência o CTFL. As condições concretas foram definidas para este protótipo (ISTQB, 2024, seções 2.2.3, 5.1.3 e 5.5).
 
 O Quadro 7 distribui as responsabilidades previstas. QA, sigla de Quality Assurance, identifica o papel de garantia da qualidade. Os representantes de negócio ainda precisam participar da validação.
 
@@ -420,7 +420,7 @@ As quatro semanas indicam uma sequência proposta para organizar as próximas va
 
 ## 3.2 Análise de riscos
 
-A análise combina probabilidade e impacto para ordenar os riscos, conforme a abordagem apresentada no CTFL (ISTQB, 2024, seção 5.2). Neste projeto, foram propostas notas de 1 (baixo) a 3 (alto) para cada fator. A multiplicação dessas notas define a prioridade inicial; a escala e as avaliações não resultam de uma medição estatística de frequência. O responsável pelo negócio ainda deverá revisar os riscos que permanecem após os controles.
+A análise combina probabilidade e impacto para ordenar os riscos, conforme a abordagem apresentada no CTFL (ISTQB, 2024, seção 5.2). Neste projeto, foram propostas notas de 1 (baixo) a 3 (alto) para cada fator. A multiplicação dessas notas define a prioridade inicial. A escala e as avaliações não resultam de uma medição estatística de frequência. O responsável pelo negócio ainda deverá revisar os riscos que permanecem após os controles.
 
 O Quadro 9 relaciona os riscos prioritários, os controles e as ações residuais.
 
@@ -428,9 +428,9 @@ Quadro 9 – Riscos, controles e ações residuais
 
 | Risco e prioridade | Prevenção e evidência | Limitação ou ação residual |
 |---|---|---|
-| RS01 Pedido duplicado. P3 × I3 = 9. | Comparação de chave e conteúdo; solicitação preservada na sessão da aba. TS04, TS05, CC01 e recuperação na interface. | Fechar a aba, limpar o armazenamento ou mudar a porta pode encerrar a retomada. Uma chave nova identifica outra compra. |
+| RS01 Pedido duplicado. P3 × I3 = 9. | Comparação de chave e conteúdo, com a solicitação preservada na sessão da aba. TS04, TS05, CC01 e recuperação na interface. | Fechar a aba, limpar o armazenamento ou mudar a porta pode encerrar a retomada. Uma chave nova identifica outra compra. |
 | RS02 Estoque negativo. P3 × I3 = 9. | Transação e verificação antes da baixa. TS06 e CC02. | Concorrência distribuída e reserva com pagamento externo ainda não validadas. |
-| RS03 Pagamento incerto. P2 × I3 = 6. | Estado PENDENTE sem baixa ou pontos; resolução simulada com nova validação de estoque. TS03, UI04 e PR. | Implementar consulta ao provedor, reserva e conciliação automática antes de produção. |
+| RS03 Pagamento incerto. P2 × I3 = 6. | Estado PENDENTE sem baixa ou pontos. Resolução simulada com nova validação de estoque. TS03, UI04 e PR. | Implementar consulta ao provedor, reserva e conciliação automática antes de produção. |
 | RS04 Acesso cruzado. P2 × I3 = 6. | Regra por identidade/unidade. SE01, SE02 e API02. | Autenticação comercial, papéis e ciclo de sessão pendentes. |
 | RS05 Lentidão em pico. P3 × I2 = 6. | Medição local e teste de concorrência. EV02. | SQLite serializa escrita. Executar estresse e dimensionar banco/serviço. |
 | RS06 Exposição de dados. P2 × I3 = 6. | Dados fictícios, campos permitidos e eventos mínimos. TU06, API04, TS17. | Definir retenção, direitos, criptografia e responsáveis na implantação. |
@@ -482,14 +482,14 @@ Quadro 11 – Tipos de teste e situação da validação
 | Tipo exigido | Aplicação e situação |
 |---|---|
 | Unitário | TU01 a TU06: validações, valores e limites. Executado. |
-| Integração | Aplicação, SQLite e PaymentMock; falha do gateway em TS16. Executado. |
-| Sistema | TS01 a TS18 sobre o recorte local. Os pedidos passam por HTTP; TS14 também recria o serviço e TS18 consulta diretamente a regra. UI01 a UI04 completam o fluxo com navegador. |
+| Integração | Aplicação, SQLite e PaymentMock, incluindo falha do gateway em TS16. Executado. |
+| Sistema | TS01 a TS18 sobre o recorte local. Os pedidos passam por HTTP. TS14 também recria o serviço e TS18 consulta diretamente a regra. UI01 a UI04 completam o fluxo com navegador. |
 | Regressão | Reexecução da suíte, RG01 a RG04 e UI07 a UI18 após as correções de execução e recuperação. Executado. |
 | Aceitação UAT | Representantes de cliente e operação conferem pedido, valor, pontos e retirada. Planejado. |
 | Usabilidade | Tarefa observada com dez participantes, tempo, sucesso e dificuldades. Planejado. |
 | Desempenho | Carga local com 200 pedidos e dez threads. Executado. Estresse progressivo até degradação e recuperação: planejado. |
-| Segurança | Isolamento de consulta, sessão local, campos extras e entradas indevidas. Executado no recorte; não constitui auditoria completa. |
-| Responsividade mobile | Google Chrome em 360, 390 e 768 px, com verificação de rolagem horizontal e controles de toque. Executado; aparelhos físicos pendentes. |
+| Segurança | Isolamento de consulta, sessão local, campos extras e entradas indevidas. Executado no recorte, sem constituir auditoria completa. |
+| Responsividade mobile | Google Chrome em 360, 390 e 768 px, com verificação de rolagem horizontal e controles de toque. Executado. Aparelhos físicos pendentes. |
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
@@ -513,7 +513,7 @@ Os cenários TS01 a TS18 acompanham a finalização do pedido e as falhas previs
 
 ### 4.2.3 TS03 Pagamento sem resposta
 
-**Entrada:** pedido padrão com pagamento timeout, enviado duas vezes com a mesma chave. **Esperado:** PENDENTE nas duas respostas, mesmo ID, estoque integralmente preservado e nenhum crédito de pontos. **Obtido:** aprovado, EV01. UI04 verifica se a interface informa a pendência e bloqueia a repetição da compra; os controles de resolução simulada permitem concluir esse pedido. A ausência de resposta é produzida pelo simulador; o teste não envolve espera por um serviço externo real.
+**Entrada:** pedido padrão com pagamento timeout, enviado duas vezes com a mesma chave. **Esperado:** PENDENTE nas duas respostas, mesmo ID, estoque integralmente preservado e nenhum crédito de pontos. **Obtido:** aprovado, EV01. UI04 verifica se a interface informa a pendência e bloqueia a repetição da compra. Os controles de resolução simulada permitem concluir esse pedido. A ausência de resposta é produzida pelo simulador. O teste não envolve espera por um serviço externo real.
 
 ### 4.2.4 TS04 Repetição do pedido confirmado
 
@@ -525,7 +525,7 @@ Os cenários TS01 a TS18 acompanham a finalização do pedido e as falhas previs
 
 ### 4.2.6 TS06 Estoque insuficiente
 
-**Pré-condição:** dez baiões disponíveis. **Entrada:** um pedido de dez baiões e, depois, outro pedido padrão com nova chave. **Esperado:** o primeiro confirma; o segundo retorna SEM_ESTOQUE, HTTP 409. O suco do segundo pedido não sofre baixa parcial. **Obtido:** aprovado, EV01. A conferência do suco verifica se a falta de um item impede a baixa parcial dos demais produtos do pedido.
+**Pré-condição:** dez baiões disponíveis. **Entrada:** um pedido de dez baiões e, depois, outro pedido padrão com nova chave. **Esperado:** o primeiro confirma e o segundo retorna SEM_ESTOQUE, HTTP 409. O suco do segundo pedido não sofre baixa parcial. **Obtido:** aprovado, EV01. A conferência do suco verifica se a falta de um item impede a baixa parcial dos demais produtos do pedido.
 
 ### 4.2.7 TS07 Isolamento entre unidades
 
@@ -557,7 +557,7 @@ Os cenários TS01 a TS18 acompanham a finalização do pedido e as falhas previs
 
 ### 4.2.14 TS14 Persistência e repetição
 
-**Passos:** confirmar o pedido via HTTP; criar uma nova instância do serviço com o mesmo banco; reenviar o pedido. **Esperado:** mesmo ID e indicação de repetição. **Obtido:** aprovado, EV01. Esse cenário verifica se o registro persistido continua sendo reconhecido após a recriação do serviço. Queda de energia durante a gravação e restauração de backup permanecem fora dessa verificação.
+**Passos:** confirmar o pedido via HTTP, criar uma nova instância do serviço com o mesmo banco e reenviar o pedido. **Esperado:** mesmo ID e indicação de repetição. **Obtido:** aprovado, EV01. Esse cenário verifica se o registro persistido continua sendo reconhecido após a recriação do serviço. Queda de energia durante a gravação e restauração de backup permanecem fora dessa verificação.
 
 ### 4.2.15 TS15 Fidelidade entre unidades
 
@@ -575,11 +575,11 @@ TS17 cria um pedido em cada estado e espera três eventos, cada um com os cinco 
 
 PR01 aprova o pedido padrão pendente, repete a decisão e consulta o resultado. Espera-se o mesmo pedido, R$ 52,20, 52 pontos, baixa única e dois eventos: criação e confirmação. PR02 repete a recusa e exige estoque e pontos preservados. PR03 tenta inverter uma decisão já concluída e espera PAGAMENTO_JA_CONFERIDO, com código 409.
 
-PR04 envia vinte aprovações concorrentes para a mesma pendência; somente uma pode aplicar os efeitos. PR05 disputa aprovação e recusa simultâneas e exige um único estado final. PR06 disputa as últimas dez unidades entre dois pedidos pendentes: um confirma e o outro recebe SEM_ESTOQUE. PR07 esgota um item depois da criação da pendência e confere a ausência de baixa parcial, a manutenção do estado PENDENTE e a possibilidade de recusar depois.
+PR04 envia vinte aprovações concorrentes para a mesma pendência. Somente uma pode aplicar os efeitos. PR05 disputa aprovação e recusa simultâneas e exige um único estado final. PR06 disputa as últimas dez unidades entre dois pedidos pendentes: um confirma e o outro recebe SEM_ESTOQUE. PR07 esgota um item depois da criação da pendência e confere a ausência de baixa parcial, a manutenção do estado PENDENTE e a possibilidade de recusar depois.
 
-PR08 impede a resolução por outro proprietário e verifica pedido inexistente. PR09 aceita apenas uma decisão prevista e rejeita campos indevidos. PR10 atualiza um banco de versão anterior preservando os registros; uma pendência antiga sem os itens salvos pode ser recusada, mas sua aprovação é bloqueada. PR11 reinicia o serviço e confirma uma pendência de João Pessoa sem fidelidade, preservando o estoque de Recife e mantendo zero pontos.
+PR08 impede a resolução por outro proprietário e verifica pedido inexistente. PR09 aceita apenas uma decisão prevista e rejeita campos indevidos. PR10 atualiza um banco de versão anterior preservando os registros. Uma pendência antiga sem os itens salvos pode ser recusada, mas sua aprovação é bloqueada. PR11 reinicia o serviço e confirma uma pendência de João Pessoa sem fidelidade, preservando o estoque de Recife e mantendo zero pontos.
 
-PR12 provoca uma falha ao registrar o evento de confirmação. O pedido deve continuar pendente, com estoque e pontos inalterados; depois de retirar a falha, uma nova tentativa deve concluir. Os resultados individuais de PR01 a PR12 são registrados em EV01. Essa sequência verifica a transição no banco local, sem representar falha ou recuperação de uma cobrança real.
+PR12 provoca uma falha ao registrar o evento de confirmação. O pedido deve continuar pendente, com estoque e pontos inalterados. Depois de retirar a falha, uma nova tentativa deve concluir. Os resultados individuais de PR01 a PR12 são registrados em EV01. Essa sequência verifica a transição no banco local, sem representar falha ou recuperação de uma cobrança real.
 
 ## 4.3 Validações complementares e humanas
 
@@ -589,7 +589,7 @@ Concorrência e segurança foram verificadas no ambiente local. A aceitação po
 
 CC01 envia cinquenta repetições da mesma chave com vinte threads, enquanto CC02 disputa dez unidades de estoque com cinquenta chaves distintas. O primeiro caso resultou em um único pedido. No segundo, houve dez confirmações e quarenta rejeições por falta de estoque. Essas rejeições são o comportamento esperado quando o produto se esgota e não entram na contagem de falhas técnicas.
 
-SE01 verifica a tentativa de consulta por outro cliente; SE02, por operador de outra unidade. Os testes da API incluem ausência de sessão, JSON inválido, campos pessoais indevidos, corpo maior que 16 KB e cabeçalhos de resposta. A autorização do operador foi avaliada na camada de aplicação, pois o protótipo não possui tela de login de funcionário.
+SE01 verifica a tentativa de consulta por outro cliente, e SE02, por operador de outra unidade. Os testes da API incluem ausência de sessão, JSON inválido, campos pessoais indevidos, corpo maior que 16 KB e cabeçalhos de resposta. A autorização do operador foi avaliada na camada de aplicação, pois o protótipo não possui tela de login de funcionário.
 
 API07 verifica o contrato de resolução simulada: sessão obrigatória, acesso pelo proprietário, corpo válido e retorno HTTP 200 com indicação de repetição. API08 torna o banco ou o arquivo local indisponível durante a requisição e espera uma resposta 503 compreensível, sem detalhes internos. Ao retirar a falha, o serviço deve voltar a responder e permitir a conclusão da pendência. Os registros estão em EV01.
 
@@ -597,7 +597,7 @@ API07 verifica o contrato de resolução simulada: sessão obrigatória, acesso 
 
 **Situação:** planejado. O protocolo prevê dez participantes adultos, com perfis de cliente e operação. Antes da tarefa, o moderador deverá explicar a finalidade da sessão e o uso de dados fictícios. Cada participante deverá selecionar a unidade, montar o pedido indicado, aplicar o cupom, conferir o total e interpretar uma confirmação ou pendência. Ainda não houve participação de funcionários reais ou de outros usuários.
 
-O registro de cada sessão deverá conter código anônimo, canal, dispositivo, duração, sucesso sem ajuda, dificuldades e nota de satisfação de 1 a 5. A meta de uso é que pelo menos nove participantes concluam a tarefa em até 120 segundos. Para satisfação, serão divididas as respostas 4 ou 5 pelo total de respostas válidas, com meta de 85%. A amostra de dez pessoas permite uma avaliação exploratória; seus resultados não representam toda a rede.
+O registro de cada sessão deverá conter código anônimo, canal, dispositivo, duração, sucesso sem ajuda, dificuldades e nota de satisfação de 1 a 5. A meta de uso é que pelo menos nove participantes concluam a tarefa em até 120 segundos. Para satisfação, serão divididas as respostas 4 ou 5 pelo total de respostas válidas, com meta de 85%. A amostra de dez pessoas permite uma avaliação exploratória. Seus resultados não representam toda a rede.
 
 **Aceite de negócio:** um representante da operação deverá conferir os valores, a regra de fidelidade, o estoque por unidade e o encaminhamento da pendência. Nome, data e aprovação serão registrados somente após a participação efetiva. A retirada e a limpeza de sessão do totem precisam de um protótipo complementar para serem avaliadas.
 
@@ -609,7 +609,7 @@ O ensaio deverá ocorrer em ambiente dedicado, com etapas de 10, 20 e 50 cliente
 
 Os cenários adicionais da revisão 0.4 verificam a continuidade da compra quando a página é recarregada ou a comunicação falha. UI09 confere a recuperação do rascunho, incluindo unidade, canal, itens, cupom, fidelidade e opção de pagamento. UI10 confere a confirmação após recarga e a limpeza do carrinho ao iniciar um novo pedido. UI11 acompanha a pendência até a aprovação ou recusa simulada, com conferência de estoque e pontos. Os resultados individuais ficam em EV03.
 
-UI12 perde a resposta de uma compra, recarrega a página e repete o mesmo conteúdo com a mesma chave. O resultado esperado é recuperar o pedido original sem duplicar seus efeitos. UI15 verifica o limite de oito segundos para uma requisição sem resposta e a repetição segura. Esse limite evita que a tela fique indefinidamente aguardando; ele não comprova que o serviço deixou de processar o pedido. Por isso, uma nova tentativa conserva a solicitação original.
+UI12 perde a resposta de uma compra, recarrega a página e repete o mesmo conteúdo com a mesma chave. O resultado esperado é recuperar o pedido original sem duplicar seus efeitos. UI15 verifica o limite de oito segundos para uma requisição sem resposta e a repetição segura. Esse limite evita que a tela fique indefinidamente aguardando, mas não comprova que o serviço deixou de processar o pedido. Por isso, uma nova tentativa conserva a solicitação original.
 
 UI13 provoca uma falha na carga inicial do cardápio e outra após a troca de unidade. A compra deve permanecer bloqueada até a atualização bem-sucedida, sem usar o estoque da unidade anterior. UI14 verifica os controles de quantidade nos limites zero, estoque disponível e dez unidades. Esses casos complementam a validação do serviço, pois uma restrição exibida na tela não substitui a conferência no recebimento da API.
 
@@ -626,8 +626,8 @@ Quadro 12 – Indicadores, metas e resultados
 | Indicador | Definição e resultado | Meta e decisão |
 |---|---|---|
 | Taxa de defeitos | Defeitos conhecidos em aberto / versões avaliadas: 0/1 na revisão 0.4. D01 e correções de execução concluídos. | Zero defeito crítico aberto para demonstração. Contagem não prova ausência de defeitos desconhecidos. |
-| Cobertura de testes | RF com ao menos um cenário automatizado / RF do recorte: 8/8 = 100%. | 100% dos oito RF; ampliar critérios quando o escopo crescer. Não é cobertura de código. |
-| Tempo de resposta | Média: 58,867 ms; p95: 208,004 ms. 200 pedidos locais. | Média e p95 abaixo de 2.000 ms. Atende nesta execução local. |
+| Cobertura de testes | RF com ao menos um cenário automatizado / RF do recorte: 8/8 = 100%. | 100% dos oito RF. Ampliar critérios quando o escopo crescer. Não é cobertura de código. |
+| Tempo de resposta | Média: 58,867 ms. p95: 208,004 ms. 200 pedidos locais. | Média e p95 abaixo de 2.000 ms. Atende nesta execução local. |
 | Disponibilidade | Verificações com serviço disponível / verificações previstas no mês. Não medido. | Pelo menos 99,5%. Implantar monitoramento externo antes da avaliação. |
 | Satisfação | Respostas 4 ou 5 / respostas válidas, escala de 1 a 5. Não medido. | Pelo menos 85%. Aplicar pesquisa após a tarefa de UAT. |
 | Tempo médio de correção | 0,335 hora entre falha e fechamento original de D01, n=1. Proxy local. | Até 24 h como meta proposta. Não representa histórico operacional. |
@@ -638,11 +638,11 @@ Fonte: especificação e registros de verificação do projeto (2026).
 
 A cada versão, a equipe de qualidade deverá reunir os resultados dos testes e os registros de defeitos. A equipe de desenvolvimento analisará a latência após mudanças relevantes, e a operação acompanhará a disponibilidade continuamente, com revisão semanal. O responsável pela UAT coletará a satisfação após cada sessão. Para toda meta não atendida, deverá ser definida uma ação com responsável e prazo.
 
-Pelo método do posto mais próximo, o p95 corresponde ao 190º valor dos 200 tempos ordenados. A média usa todas as amostras válidas; as cinco requisições de aquecimento ficam fora da coleta. Na disponibilidade, intervalos sem coleta não contam como serviço disponível.
+Pelo método do posto mais próximo, o p95 corresponde ao 190º valor dos 200 tempos ordenados. A média usa todas as amostras válidas. As cinco requisições de aquecimento ficam fora da coleta. Na disponibilidade, intervalos sem coleta não contam como serviço disponível.
 
 # 6 RELATÓRIO FINAL DE CONFORMIDADE
 
-A avaliação final compara os requisitos com os resultados dos testes. A matriz permite localizar as evidências; as seções seguintes apresentam os resultados, a correção do defeito D01 e as telas registradas durante a verificação da aplicação.
+A avaliação final compara os requisitos com os resultados dos testes. A matriz permite localizar as evidências. As seções seguintes apresentam os resultados, a correção do defeito D01 e as telas registradas durante a verificação da aplicação.
 
 ## 6.1 Matriz de rastreabilidade
 
@@ -652,14 +652,14 @@ Quadro 13 – Rastreabilidade dos requisitos de qualidade
 
 | Requisito | Testes e evidências | Conclusão delimitada |
 |---|---|---|
-| RQ01 Desempenho | Carga de 200 pedidos; EV02. | Atendido na condição local definida. |
-| RQ02 Disponibilidade | Monitoramento mensal; EV06 prevista. | Não medido. |
-| RQ03 Segurança | SE01, SE02, API02, API04; EV01. | Casos definidos aprovados; autenticação real pendente. |
-| RQ04 Usabilidade | UI05, UI06; EV03. UAT01; EV05 prevista. | Layout verificado; uso humano não medido. |
-| RQ05 Confiabilidade | TS02 a TS07, TS15, TS16, CC01, PR01 a PR12; EV01. UI09 a UI12, UI15 a UI18; EV03. | Consistência local, resolução simulada e retomada na mesma aba. |
-| RQ06 Observação | TS04, TS17, PR01 a PR07, PR12; EV01. | Um evento de criação e um por transição efetiva, sem duplicação nos reenvios. |
-| RQ07 Concorrência | CC01 e CC02; EV01. | Atendido com 50 tentativas e 20 threads. |
-| RQ08 Testabilidade | TU, TS, API e UI; EV01, EV03, EV04. | Oito RF com casos automatizados; sem medição de linhas. |
+| RQ01 Desempenho | Carga de 200 pedidos (EV02). | Atendido na condição local definida. |
+| RQ02 Disponibilidade | Monitoramento mensal (EV06 prevista). | Não medido. |
+| RQ03 Segurança | SE01, SE02, API02, API04 (EV01). | Casos definidos aprovados. Autenticação real pendente. |
+| RQ04 Usabilidade | UI05, UI06 (EV03). UAT01 (EV05 prevista). | Layout verificado. Uso humano não medido. |
+| RQ05 Confiabilidade | TS02 a TS07, TS15, TS16, CC01, PR01 a PR12 (EV01). UI09 a UI12, UI15 a UI18 (EV03). | Consistência local, resolução simulada e retomada na mesma aba. |
+| RQ06 Observação | TS04, TS17, PR01 a PR07, PR12 (EV01). | Um evento de criação e um por transição efetiva, sem duplicação nos reenvios. |
+| RQ07 Concorrência | CC01 e CC02 (EV01). | Atendido com 50 tentativas e 20 threads. |
+| RQ08 Testabilidade | TU, TS, API e UI (EV01, EV03, EV04). | Oito RF com casos automatizados, sem medição de linhas. |
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
@@ -692,7 +692,7 @@ O parecer considera os resultados dos testes, o comportamento sob carga e o trat
 
 A verificação da revisão 0.4, de 24 de setembro de 2026, terminou com **52/52 testes em Python e 18/18 cenários no navegador aprovados**. A suíte Python reúne testes unitários, de sistema, segurança, concorrência, API, regressão e resolução de pendências. EV01 registra os identificadores e os resultados individuais. Na contagem, cada método corresponde a um teste, mesmo quando avalia várias entradas. As combinações de dados de um mesmo método, portanto, não são contabilizadas como aprovações separadas.
 
-Durante a carga, foram confirmados 200 de 200 pedidos. O maior tempo de resposta foi de 1204,152 ms; a vazão média foi de 148,45 pedidos por segundo em uma janela de 1,347 segundos. A base estava nova e o pagamento era simulado, sem latência externa. Por isso, os valores servem para comparar execuções locais nas mesmas condições. Estimar a capacidade de atendimento da rede exigiria uma carga mais longa, infraestrutura de produção e comunicação com serviços externos.
+Durante a carga, foram confirmados 200 de 200 pedidos. O maior tempo de resposta foi de 1204,152 ms. A vazão média foi de 148,45 pedidos por segundo em uma janela de 1,347 segundos. A base estava nova e o pagamento era simulado, sem latência externa. Por isso, os valores servem para comparar execuções locais nas mesmas condições. Estimar a capacidade de atendimento da rede exigiria uma carga mais longa, infraestrutura de produção e comunicação com serviços externos.
 
 ### 6.2.2 Defeito D01 e regressão
 
@@ -700,7 +700,7 @@ A primeira execução revelou um problema no encerramento dos testes. Ao sair do
 
 A falha gerou 26 erros de encerramento na suíte inicial de 34 testes. A investigação reuniu essas ocorrências em uma única causa, registrada como D01. A correção passou a fechar a conexão ao sair do contexto, inclusive quando ocorre uma exceção, e a execução posterior terminou sem o problema.
 
-EV07 conserva o registro inicial e o fechamento de D01; EV01 apresenta a execução atual. O intervalo de 0,335 hora corresponde à correção original. Revisões posteriores não foram somadas a esse tempo, pois alterariam a medição histórica do defeito.
+EV07 conserva o registro inicial e o fechamento de D01. EV01 apresenta a execução atual. O intervalo de 0,335 hora corresponde à correção original. Revisões posteriores não foram somadas a esse tempo, pois alterariam a medição histórica do defeito.
 
 ### 6.2.3 Correções de execução
 
@@ -748,7 +748,7 @@ Figura 4 – Resumo do pedido na interface móvel
 
 Fonte: captura do protótipo no navegador (2026).
 
-A verificação UI05 incluiu também as larguras de 360 e 768 pixels. Nos tamanhos avaliados, não houve rolagem horizontal, e os controles de quantidade atenderam à dimensão mínima definida. A avaliação utilizou o navegador redimensionado; o teste em aparelhos físicos continua previsto.
+A verificação UI05 incluiu também as larguras de 360 e 768 pixels. Nos tamanhos avaliados, não houve rolagem horizontal, e os controles de quantidade atenderam à dimensão mínima definida. A avaliação utilizou o navegador redimensionado. O teste em aparelhos físicos continua previsto.
 
 O aviso de privacidade pode ser consultado na própria tela de pedido. A Figura 5 registra sua abertura durante UI06.
 
@@ -760,7 +760,7 @@ Fonte: registro do teste UI06 no navegador (2026).
 
 O aviso explica a finalidade do armazenamento local e da recuperação na mesma aba. Também informa que os dados são fictícios e que nenhum dado de cartão é solicitado. A fidelidade começa desmarcada, deixando a participação a cargo de quem utiliza a demonstração.
 
-O material de apoio inclui as capturas de pagamento recusado e pendente. As imagens permitem conferir as mensagens exibidas; os registros dos testes e as consultas ao banco mostram se o pedido, o estoque e os pontos ficaram no estado esperado.
+O material de apoio inclui as capturas de pagamento recusado e pendente. As imagens permitem conferir as mensagens exibidas. Os registros dos testes e as consultas ao banco mostram se o pedido, o estoque e os pontos ficaram no estado esperado.
 
 ## 6.5 Catálogo e reprodução das evidências
 
@@ -781,11 +781,11 @@ Quadro 15 – Catálogo das evidências
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
-Os hashes de EV04 identificam os arquivos usados naquela execução. Como houve ajustes posteriores de formatação do código, eles não devem ser comparados com a versão atual como se fossem uma nova medição. A revisão editorial deste relatório preserva os resultados registrados; não substitui a execução dos testes.
+Os hashes de EV04 identificam os arquivos usados naquela execução. Como houve ajustes posteriores de formatação do código, eles não devem ser comparados com a versão atual como se fossem uma nova medição. A revisão editorial deste relatório preserva os resultados registrados e não substitui a execução dos testes.
 
 ### 6.5.1 Reprodução local
 
-Para usar a demonstração local, é necessário Python 3.11 ou superior. O pacote inclui o protótipo e o guia de execução; não exige conta externa nem dados bancários.
+Para usar a demonstração local, é necessário Python 3.11 ou superior. O pacote inclui o protótipo e o guia de execução, sem exigir conta externa nem dados bancários.
 
 1. Na pasta `prototipo`, abra um terminal.
 2. Execute `python api.py` e acesse `http://127.0.0.1:8765`.
@@ -802,7 +802,7 @@ A avaliação da finalização do pedido mostrou como as regras de valor, pagame
 
 Os testes confirmaram essas regras nas condições locais avaliadas e revelaram uma falha fora do resultado imediato da compra. Em D01, a transação terminava, mas a conexão aberta impedia a limpeza dos bancos temporários. O registro da causa, a correção e o reteste permitiram acompanhar a solução e reforçaram a necessidade de verificar também o encerramento da execução.
 
-A continuidade do trabalho depende da avaliação das condições ainda ausentes no protótipo. A observação de usuários deverá identificar dificuldades de uso; o monitoramento mensal e o estresse prolongado deverão produzir dados sobre a operação ao longo do tempo. Os resultados atuais permitem demonstrar as regras e repetir as verificações locais. O Quadro 16 organiza as ações necessárias para avançar além dessa etapa.
+A continuidade do trabalho depende da avaliação das condições ainda ausentes no protótipo. A observação de usuários deverá identificar dificuldades de uso. O monitoramento mensal e o estresse prolongado deverão produzir dados sobre a operação ao longo do tempo. Os resultados atuais permitem demonstrar as regras e repetir as verificações locais. O Quadro 16 organiza as ações necessárias para avançar além dessa etapa.
 
 Quadro 16 – Próximas ações e evidências de conclusão
 

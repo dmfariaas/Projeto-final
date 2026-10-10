@@ -24,9 +24,9 @@ O relatório distingue os testes executados das avaliações que ainda dependem 
 
 A organização do relatório segue as normas ABNT aplicáveis à atividade: NBR 14724:2024 (apresentação), NBR 6023:2025 (referências), NBR 10520:2023 (citações), NBR 6024:2012 (seções), NBR 6027:2012 (sumário) e NBR 6028:2021 (resumos).
 
-O PDF reúne capa, folha de rosto, resumo, abstract, sumário e as cinco entregas do roteiro, além de introdução, conclusão e referências. O texto usa papel A4, fonte Arial 12 e espaçamento 1,5. As margens superior e esquerda têm 3 cm; a inferior e a direita, 2 cm. As indicações de fonte das figuras e o conteúdo dos quadros usam tamanho menor e espaçamento simples. A contagem das páginas começa na folha de rosto, mas a numeração só aparece na introdução, no canto superior direito.
+O PDF reúne capa, folha de rosto, resumo, abstract, sumário e as cinco entregas do roteiro, além de introdução, conclusão e referências. O texto usa papel A4, fonte Arial 12 e espaçamento 1,5. As margens superior e esquerda têm 3 cm, enquanto a inferior e a direita têm 2 cm. As indicações de fonte das figuras e o conteúdo dos quadros usam tamanho menor e espaçamento simples. A contagem das páginas começa na folha de rosto, mas a numeração só aparece na introdução, no canto superior direito.
 
-A capa e a folha de rosto trazem o nome Diego Monteiro de Farias, o RU 4992220, o curso de Análise e Desenvolvimento de Sistemas e o local Porto, Portugal. O arquivo Markdown serve para editar o texto; a diagramação da entrega está no PDF.
+A capa e a folha de rosto trazem o nome Diego Monteiro de Farias, o RU 4992220, o curso de Análise e Desenvolvimento de Sistemas e o local Porto, Portugal. O arquivo Markdown serve para editar o texto. A diagramação da entrega está no PDF.
 
 Referências para a formatação: [guia da Biblioteca Universitária da UFSC, atualizado para a NBR 14724:2024](https://repositorio.ufsc.br/bitstream/handle/123456789/180829/Trabalhos%20Academicos_A4_24-03-2025.pdf?isAllowed=y&sequence=8), [NBR 6023:2025 disponibilizada pela FHO](https://www.fho.edu.br/assets/documentos/FHO_Biblioteca_Referencia_ABNT_6023_2025.pdf) e [guia de citações da UFC conforme a NBR 10520:2023](https://biblioteca.ufc.br/wp-content/uploads/2025/06/guianormalizacaocitacoes2025.pdf).
 
@@ -41,7 +41,7 @@ A interface usa tons de areia, barro e verde-mandacaru, com ilustrações inspir
 3. Se o navegador não abrir, copie o endereço mostrado na janela, começando por `http://127.0.0.1:`, e cole-o na barra de endereços.
 4. Adicione dois baiões de dois e um suco de cajá. Aplique o cupom `RAIZES10` e, se desejar, marque a fidelidade. O total esperado é R$ 52,20. Com o pagamento aprovado e a fidelidade selecionada, são concedidos 52 pontos.
 5. No seletor de pagamento, experimente aprovação, recusa ou ausência de resposta.
-6. A ausência de resposta deixa o pedido pendente. Para concluí-lo, use os controles de aprovação ou recusa simulada. Antes de aprovar, o serviço confere o estoque novamente; os pontos só são concedidos quando a fidelidade foi selecionada.
+6. A ausência de resposta deixa o pedido pendente. Para concluí-lo, use os controles de aprovação ou recusa simulada. Antes de aprovar, o serviço confere o estoque novamente. Os pontos só são concedidos quando a fidelidade foi selecionada.
 7. Recarregue a mesma aba para conferir se o rascunho ou o resultado foi recuperado. Após concluir a compra, use a opção de novo pedido para começar outra.
 8. Para encerrar o servidor, pressione **Ctrl+C** na janela em que ele está em execução.
 
@@ -54,7 +54,7 @@ Os preços, as identidades e os controles de sessão são demonstrativos. Não u
 - **Página recarregada:** o carrinho, o resultado e a solicitação que ainda não recebeu resposta ficam na sessão da aba. Mantenha a mesma aba e o mesmo endereço, incluindo a porta. Fechar a aba, limpar os dados do navegador ou abrir outro endereço pode impedir essa recuperação.
 - **Sessão expirada:** use a opção de atualizar a sessão. A tentativa permanece guardada para ser concluída após a recarga, com o mesmo conteúdo e a mesma chave.
 - **Pendência sem estoque:** a tentativa de aprovação é recusada, sem baixar parte do estoque nem conceder pontos. O pedido permanece pendente e ainda pode receber uma recusa simulada.
-- **Pedido pendente de uma versão antiga:** se faltarem os itens necessários à conferência, a aprovação fica bloqueada. A recusa continua disponível; crie outro pedido para experimentar a versão atual.
+- **Pedido pendente de uma versão antiga:** se faltarem os itens necessários à conferência, a aprovação fica bloqueada. A recusa continua disponível. Para experimentar a versão atual, crie outro pedido.
 
 O banco mantém os pedidos entre as aberturas do servidor. A recuperação da tela, por sua vez, depende da sessão do navegador. Os cinco canais são opções do mesmo protótipo, sem aplicativos separados ou um fluxo operacional completo de retirada.
 
@@ -80,7 +80,7 @@ O comando executa os testes de regras, sistema, API, segurança, concorrência, 
 
 Os novos relatórios, com os totais da execução, são gravados em `evidencias`. Antes de rodar o comando, copie os registros anteriores se quiser conservá-los. A execução inicial que demonstrou D01 já foi preservada com nome próprio.
 
-Falhas em subtestes ou no ensaio de carga ficam registradas e fazem o comando terminar com erro. Os testes RG01–RG04 provocam falhas controladas para verificar esse tratamento; a aprovação desses testes indica que as falhas foram detectadas como esperado.
+Falhas em subtestes ou no ensaio de carga ficam registradas e fazem o comando terminar com erro. Os testes RG01–RG04 provocam falhas controladas para verificar esse tratamento. Quando são aprovados, confirmam que as falhas foram detectadas como esperado.
 
 Para repetir os testes de interface, é necessário ter Node.js 20 ou superior, npm e Google Chrome. Na raiz do pacote, instale o Playwright e execute:
 
@@ -125,6 +125,6 @@ Envie ao AVA o arquivo único `4992220_Projeto_Qualidade.PDF`. Ele reúne o Docu
 
 A demonstração não inclui autenticação de clientes reais, integração com provedor de pagamento, aplicação nativa, conciliação automática com operadora ou reserva distribuída de estoque. Também não foram realizados monitoramento mensal, pesquisa com usuários ou auditoria completa de segurança.
 
-A resolução de pendências depende da escolha feita no simulador. A recuperação após recarga funciona na mesma aba e no mesmo endereço; não existe uma conta de cliente que sincronize compras entre dispositivos. Os testes de concorrência deste pacote se limitam ao SQLite local.
+A resolução de pendências depende da escolha feita no simulador. A recuperação após recarga funciona na mesma aba e no mesmo endereço. Não existe uma conta de cliente que sincronize compras entre dispositivos. Os testes de concorrência deste pacote se limitam ao SQLite local.
 
 Para reiniciar o estoque da demonstração, pare o servidor e remova somente `prototipo/demo.sqlite3` e seus eventuais arquivos auxiliares de mesmo prefixo. Se estiver usando o iniciador sozinho, o banco está em `%LOCALAPPDATA%\ProjetoQualidade4992220\dados\demo.sqlite3`. Não é necessário remover o banco para rodar os testes.
