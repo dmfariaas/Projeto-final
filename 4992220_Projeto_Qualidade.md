@@ -72,10 +72,10 @@ An order confirmation should match the amount paid, the available stock, and the
     - 2.4.6 RQ06 Observação do resultado – p. 15
     - 2.4.7 RQ07 Concorrência e preservação de estoque – p. 15
     - 2.4.8 RQ08 Testabilidade e manutenção – p. 15
-    - 2.4.9 Justificativa das metas – p. 15
+    - 2.4.9 Justificativa das metas – p. 16
   - 2.5 Arquitetura e pontos de teste – p. 16
     - 2.5.1 Decisões e consequências – p. 17
-  - 2.6 Caso de uso e estados do pedido – p. 17
+  - 2.6 Caso de uso e estados do pedido – p. 18
     - 2.6.1 UC01 Finalizar pedido – p. 18
 - 3 PLANO DE QUALIDADE – p. 20
   - 3.1 Processo e responsabilidades – p. 20
@@ -116,11 +116,11 @@ An order confirmation should match the amount paid, the available stock, and the
   - 5.1 Coleta e responsabilidade – p. 34
 - 6 RELATÓRIO FINAL DE CONFORMIDADE – p. 35
   - 6.1 Matriz de rastreabilidade – p. 35
-    - 6.1.1 Cobertura funcional utilizada no indicador – p. 36
+    - 6.1.1 Cobertura funcional utilizada no indicador – p. 35
   - 6.2 Resultados e parecer – p. 36
-    - 6.2.1 Execução final – p. 37
+    - 6.2.1 Execução final – p. 36
     - 6.2.2 Defeito D01 e regressão – p. 37
-    - 6.2.3 Correções de execução – p. 38
+    - 6.2.3 Correções de execução – p. 37
     - 6.2.4 Parecer – p. 38
   - 6.3 Evidências da interface em computador – p. 39
   - 6.4 Evidências da interface móvel e privacidade – p. 40
@@ -131,15 +131,15 @@ An order confirmation should match the amount paid, the available stock, and the
 
 # 1 INTRODUÇÃO
 
-Um cliente que compra dois baiões e um suco espera conferir o valor, receber a confirmação e retirar o pedido na unidade escolhida. Para o sistema, essa compra reúne decisões que precisam permanecer coerentes: aplicar o desconto, verificar o estoque, interpretar o pagamento e, quando solicitado, conceder pontos. Uma falha de comunicação ou um segundo clique pode comprometer o resultado se essas regras forem tratadas separadamente.
+Ao comprar dois baiões e um suco, o cliente espera conferir o valor, receber a confirmação e retirar os produtos na unidade escolhida. Para concluir essa compra, o sistema precisa aplicar o desconto, verificar o estoque, interpretar o pagamento e, quando solicitado, conceder pontos. Essas etapas dependem umas das outras: uma falha de comunicação ou um segundo clique não pode gerar outra compra nem alterar os saldos novamente.
 
-O projeto analisa esse fluxo na rede fictícia Raízes do Nordeste. O interesse está nas situações que exigem mais cuidado do que uma compra sem intercorrências: o estoque acabar durante o pedido, o pagamento ficar sem resposta ou a solicitação chegar novamente ao serviço. A proposta transforma essas situações em requisitos e testes com resultados que podem ser conferidos.
+O projeto analisa esse fluxo na rede fictícia Raízes do Nordeste, com atenção às situações em que a compra não segue o caminho esperado. Entre elas estão o esgotamento do estoque durante o pedido, a falta de resposta do pagamento e o reenvio de uma solicitação. Cada situação foi traduzida em requisitos e testes, acompanhados dos registros necessários para conferir o resultado.
 
-O trabalho foi organizado em cinco componentes: Documento de Requisitos, Plano de Qualidade, Plano de Testes, Planilha de Métricas e Relatório Final de Conformidade. Essa organização atende ao roteiro da disciplina Projeto Multidisciplinar, Trilha de Qualidade de Software (Nascimento, 2026), e permite acompanhar cada regra desde sua definição até a evidência de verificação.
+O trabalho reúne os cinco componentes solicitados no roteiro da disciplina Projeto Multidisciplinar, Trilha de Qualidade de Software: Documento de Requisitos, Plano de Qualidade, Plano de Testes, Planilha de Métricas e Relatório Final de Conformidade (Nascimento, 2026). As relações entre esses componentes permitem acompanhar cada regra desde sua definição até o resultado do teste correspondente.
 
 ## 1.1 Objetivo geral
 
-Definir e avaliar uma estratégia de qualidade para a finalização de pedidos nos cinco canais da rede, verificando a consistência entre valores, pagamento, estoque e fidelidade e identificando as condições necessárias para uma implantação real.
+Definir e avaliar uma estratégia de qualidade para a finalização de pedidos nos cinco canais da rede, com foco na consistência entre valores, pagamento, estoque e fidelidade, e identificar as condições necessárias para uma implantação real.
 
 ## 1.2 Objetivos específicos
 
@@ -153,11 +153,11 @@ Definir e avaliar uma estratégia de qualidade para a finalização de pedidos n
 
 A seleção dos atributos de qualidade tomou como referência a apresentação pública do modelo ISO/IEC 25010:2023, da International Organization for Standardization (ISO). A consulta ajudou a organizar os requisitos, mas não incluiu uma auditoria da norma completa nem um processo de certificação (ISO, 2023).
 
-Para organizar os testes e relacioná-los aos requisitos, resultados e defeitos, foi utilizado o programa Certified Tester Foundation Level (CTFL), versão 4.0.1, do International Software Testing Qualifications Board (ISTQB, 2024). Os critérios numéricos adotados, como tempo de resposta e disponibilidade, foram definidos para este projeto e precisam ser revistos diante das condições de uma operação real.
+Para organizar os testes e relacioná-los aos requisitos, resultados e defeitos, foi utilizado o programa Certified Tester Foundation Level (CTFL), versão 4.0.1, do International Software Testing Qualifications Board. A relação entre esses registros segue a orientação de rastreabilidade apresentada na seção 1.4.4 do programa (ISTQB, 2024). Os critérios numéricos adotados, como tempo de resposta e disponibilidade, foram definidos para este projeto e precisam ser revistos diante das condições de uma operação real.
 
 ## 1.4 Natureza das evidências
 
-Um teste executado sobre um pagamento simulado produz uma evidência válida daquele cenário, mas não mede o comportamento de uma operadora de pagamento. A distinção entre execução, simulação e planejamento orienta a leitura dos resultados deste trabalho (Quadro 1).
+Os testes usam respostas de pagamento controladas para verificar as regras do pedido. Seus resultados descrevem o comportamento do protótipo nessas condições; o contato com uma operadora real ainda precisa ser avaliado. O Quadro 1 distingue os testes executados, os elementos simulados e as atividades planejadas.
 
 Quadro 1 – Classificação das evidências
 
@@ -171,15 +171,15 @@ Fonte: especificação e registros de verificação do projeto (2026).
 
 # 2 DOCUMENTO DE REQUISITOS
 
-A finalização de um pedido reúne decisões que precisam funcionar em conjunto: o valor a pagar, a resposta do pagamento, a baixa no estoque e o crédito de pontos. Este documento define como essas decisões devem ocorrer no protótipo e quais resultados permitem considerá-las corretas. A arquitetura e o caso de uso mostram onde cada regra é aplicada e verificada.
+Este documento define as regras de finalização do pedido e os critérios usados para verificá-las. O escopo delimita o que o protótipo oferece; os requisitos especificam o comportamento esperado; e a arquitetura e o caso de uso mostram como pagamento, estoque e fidelidade se relacionam.
 
 ## 2.1 Escopo e premissas
 
-O estudo concentra-se no fechamento da compra. Para tornar os testes reproduzíveis, foram definidos um cardápio pequeno, duas unidades e respostas de pagamento controladas. As premissas a seguir separam esse comportamento das funções previstas para versões futuras.
+O estudo concentra-se no fechamento da compra. Os testes utilizam um cardápio pequeno, duas unidades e respostas de pagamento controladas, de modo que seja possível repetir as entradas e conferir os saldos. As premissas a seguir definem essas condições e os limites da versão avaliada.
 
 ### 2.1.1 Funcionalidade escolhida
 
-**Finalizar pedido com pagamento simulado e atualização consistente de estoque e fidelidade.** Essa funcionalidade foi escolhida porque permite acompanhar as consequências de uma compra nas regras financeiras, na integração, no estoque e na experiência de uso. Por exemplo, uma confirmação correta na tela ainda seria insuficiente se o reenvio do pedido gerasse uma segunda baixa de estoque. A qualidade precisa ser verificada nesse conjunto de efeitos.
+**Finalizar pedido com pagamento simulado e atualização consistente de estoque e fidelidade.** A escolha permite avaliar, em uma mesma compra, o cálculo dos valores, a resposta da integração, os saldos e a mensagem recebida pelo cliente. Uma tela pode mostrar o total correto e, ainda assim, ocultar um erro no banco: se o reenvio causar uma segunda baixa de estoque, a regra foi descumprida. Por isso, a verificação acompanha tanto a resposta exibida quanto os registros alterados.
 
 O Quadro 2 apresenta os limites definidos para cada parte do recorte.
 
@@ -226,7 +226,7 @@ No protótipo, o canal é registrado no pedido e todos os canais seguem as mesma
 
 ### 2.2.1 Partes interessadas
 
-Para o cliente, o pedido deve apresentar o preço correto, uma confirmação compreensível e proteção das informações. Na operação, é necessário conferir se a compra pertence à unidade atendida e se há estoque para cumpri-la. A gestão depende de regras uniformes e indicadores para localizar problemas entre unidades. Já a equipe técnica precisa de registros que permitam reproduzir defeitos e verificar as alterações nos componentes.
+O cliente precisa conferir o preço, entender o resultado do pagamento e ter suas informações protegidas. A equipe da unidade deve conseguir identificar os pedidos que lhe pertencem e verificar se há estoque para atendê-los. Para a gestão, regras uniformes e indicadores ajudam a localizar problemas entre unidades. A equipe técnica, por sua vez, depende de registros que permitam reproduzir defeitos e avaliar as correções.
 
 ### 2.2.2 Prioridades
 
@@ -236,9 +236,7 @@ A falta de resposta do pagamento merece atenção: em uma operação real, ela d
 
 ## 2.3 Requisitos funcionais
 
-Os oito requisitos funcionais têm prioridade alta, pois participam diretamente da finalização do pedido. Como o roteiro não apresenta um catálogo operacional completo, as regras de negócio foram definidas para este estudo. Cada uma recebeu um critério de aceitação que pode ser confrontado com o comportamento do protótipo.
-
-O Quadro 4 reúne os oito requisitos funcionais e seus critérios de aceitação.
+Os oito requisitos funcionais têm prioridade alta porque participam diretamente da finalização do pedido. As regras de negócio foram definidas para este estudo, já que o roteiro não apresenta um catálogo operacional completo. O Quadro 4 relaciona cada requisito a um critério de aceitação que pode ser conferido no protótipo.
 
 Quadro 4 – Requisitos funcionais e critérios de aceitação
 
@@ -257,11 +255,11 @@ Fonte: especificação e registros de verificação do projeto (2026).
 
 ### 2.3.1 Regras complementares
 
-O armazenamento dos valores em centavos inteiros permite trabalhar com o total monetário na mesma unidade usada para conferir o pedido. O desconto é arredondado ao centavo mais próximo. Para controlar reenvios, a chave de repetição aceita de 8 a 80 caracteres alfanuméricos, hífen ou sublinhado. Sua identificação inclui o cliente e a unidade; assim, a mesma chave usada em contextos distintos não confunde os pedidos.
+Os valores são armazenados em centavos inteiros, e o desconto é arredondado ao centavo mais próximo. A chave que controla os reenvios aceita de 8 a 80 caracteres alfanuméricos, hífen ou sublinhado. O serviço associa essa chave ao cliente e à unidade, de modo que o mesmo valor de chave, usado em contextos distintos, não confunda os pedidos.
 
 ## 2.4 Requisitos de qualidade
 
-Além de executar as funções previstas, o pedido precisa responder em tempo aceitável, preservar os dados e permitir a verificação das regras. Os requisitos seguintes traduzem essas necessidades em metas, métodos de medição e critérios de aceitação. Cada requisito também informa o alcance da evidência disponível ou a coleta que ainda falta realizar.
+O serviço de pedidos precisa responder em tempo aceitável, preservar os dados e permitir que suas regras sejam verificadas. Os requisitos de qualidade estabelecem metas, métodos de medição e critérios de aceitação para essas necessidades. Também indicam o alcance dos resultados disponíveis e as avaliações que ainda dependem de coleta.
 
 ### 2.4.1 RQ01 Desempenho no ambiente local
 
@@ -285,7 +283,7 @@ A avaliação considera o espaço disponível na tela e a realização da tarefa
 
 ### 2.4.6 RQ06 Observação do resultado
 
-O evento permite acompanhar o resultado de cada pedido aceito pelo serviço. **Meta:** registrar um evento na criação e outro somente quando uma pendência muda efetivamente para CONFIRMADO ou RECUSADO. Repetições da criação ou da decisão não acrescentam eventos. O registro deve conter apenas sequência, código do pedido, unidade, estado e instante. **Medição:** TS04, TS17 e cenários PR de resolução. **Aceitação:** contagem e conjunto de campos iguais aos especificados. **Evidência:** EV01. Em produção, identificadores vinculáveis a pessoas podem ser dados pessoais; retirar o nome, por si só, não comprova anonimização.
+Os eventos registram a criação do pedido e as mudanças de estado. **Meta:** registrar um evento na criação e outro somente quando uma pendência muda efetivamente para CONFIRMADO ou RECUSADO. Repetições da criação ou da decisão não acrescentam eventos. O registro deve conter apenas sequência, código do pedido, unidade, estado e instante. **Medição:** TS04, TS17 e cenários PR de resolução. **Aceitação:** contagem e conjunto de campos iguais aos especificados. **Evidência:** EV01. Em produção, identificadores vinculáveis a pessoas podem ser dados pessoais; retirar o nome, por si só, não comprova anonimização.
 
 ### 2.4.7 RQ07 Concorrência e preservação de estoque
 
@@ -297,11 +295,11 @@ A disputa pelo mesmo estoque precisa produzir um resultado previsível. **Meta:*
 
 ### 2.4.9 Justificativa das metas
 
-Para a consistência, um único pedido duplicado ou um saldo negativo já caracteriza descumprimento da regra. Por isso, essas metas adotam tolerância zero. Os limites de tempo e disponibilidade, por sua vez, são hipóteses iniciais baseadas nos exemplos do roteiro e deverão ser revistos conforme a carga e a infraestrutura reais. Sua inclusão como meta não significa que já tenham sido medidos.
+Um único pedido duplicado ou um saldo negativo já descumpre as regras de consistência; por isso, essas metas adotam tolerância zero. Os limites de tempo e disponibilidade são referências iniciais baseadas nos exemplos do roteiro. Antes de aplicá-los a uma operação real, será necessário revê-los conforme a carga e a infraestrutura disponíveis. Os resultados medidos e as metas ainda não avaliadas são identificados separadamente no relatório.
 
 ## 2.5 Arquitetura e pontos de teste
 
-A arquitetura separa a apresentação do pedido, a comunicação com a API, as regras de negócio e o acesso ao banco. Essa divisão permite localizar a responsabilidade de cada verificação. A Figura 1 apresenta as dependências entre os componentes implementados.
+A arquitetura distribui a apresentação do pedido, a comunicação com a API, as regras de negócio e o acesso ao banco entre componentes com responsabilidades definidas. Essa divisão ajuda a localizar uma falha e a escolher o nível de teste adequado. A Figura 1 apresenta as dependências entre os componentes implementados.
 
 Figura 1 – Arquitetura do protótipo local
 
@@ -373,21 +371,21 @@ Quadro 6 – Condições e resultados do pedido
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
-A pendência deixa de ser o fim do fluxo demonstrativo: sua resolução mantém o código do pedido e acrescenta um evento da mudança de estado. Repetições não geram outra baixa, outros pontos ou eventos adicionais. Em um sistema real, a decisão dependeria da resposta verificável do provedor de pagamento. O reenvio da solicitação, por si só, não deve iniciar uma nova cobrança.
+A resolução da pendência mantém o código do pedido e acrescenta um evento de mudança de estado. Repetir a decisão recupera esse resultado, sem nova baixa, crédito de pontos ou evento. Em um sistema real, a decisão dependeria de uma resposta verificável do provedor de pagamento. O reenvio da solicitação, por si só, não deve iniciar outra cobrança.
 
 # 3 PLANO DE QUALIDADE
 
-O plano de qualidade organiza as verificações necessárias para avaliar o pedido e decidir se o resultado pode ser aceito dentro do escopo definido. Para isso, reúne revisão de requisitos, responsabilidades, tratamento de riscos e controles de privacidade. As atividades que dependem de participantes, como a aceitação de negócio, continuam planejadas.
+O plano de qualidade define como revisar os requisitos, distribuir as responsabilidades, tratar os riscos e avaliar os controles de privacidade. Essas atividades orientam a decisão de aceitar a versão demonstrativa. A aceitação de negócio e as demais avaliações que dependem de participantes continuam planejadas.
 
 ## 3.1 Processo e responsabilidades
 
-A avaliação precisa ser repetida quando uma alteração afeta o comportamento do pedido. Os critérios de entrada e saída indicam quando iniciar os testes e quais condições devem ser atendidas para encerrar a avaliação local. Os papéis previstos organizam quem deverá acompanhar cada parte desse processo.
+Alterações que afetem o comportamento do pedido exigem nova avaliação. Os critérios de entrada e saída definem as condições para iniciar os testes e encerrar a verificação local. Os papéis previstos indicam quem deverá acompanhar cada atividade.
 
 ### 3.1.1 Processo
 
-A revisão começa pelos requisitos: o comportamento esperado precisa estar claro antes da execução dos testes. Os riscos orientam a escolha dos cenários, e cada alteração deve manter a ligação entre requisito, teste e evidência. Quando surge uma falha, o processo prevê seu registro, investigação, correção e reteste. Ao decidir pela liberação, é preciso analisar também os riscos que permanecem após os controles adotados.
+A revisão começa pela definição do comportamento esperado. Em seguida, os riscos orientam a escolha dos cenários, mantendo a ligação entre requisito, teste e evidência a cada alteração. Uma falha deve ser registrada, investigada, corrigida e testada novamente. A decisão de liberar a versão também precisa considerar os riscos que os controles atuais ainda não tratam.
 
-**Entrada nos testes:** os requisitos devem estar identificados, os dados fictícios disponíveis, a versão do código registrada e o banco isolado, sem pagamento real. **Saída do recorte demonstrativo:** todos os testes automatizados aprovados, evidências legíveis, requisitos pendentes identificados e nenhum defeito crítico conhecido em aberto no fluxo local. O atendimento dessas condições permite encerrar a avaliação da demonstração, sem autorizar a operação em produção.
+**Entrada nos testes:** os requisitos devem estar identificados, os dados fictícios disponíveis, a versão do código registrada e o banco isolado, sem pagamento real. **Saída do recorte demonstrativo:** todos os testes automatizados aprovados, evidências legíveis, requisitos pendentes identificados e nenhum defeito crítico conhecido em aberto no fluxo local. O atendimento dessas condições permite encerrar a avaliação da demonstração, sem autorizar a operação em produção. A organização dos critérios, dos retestes e dos registros de defeitos toma como referência o CTFL; as condições concretas foram definidas para este protótipo (ISTQB, 2024, seções 2.2.3, 5.1.3 e 5.5).
 
 O Quadro 7 distribui as responsabilidades previstas. QA, sigla de Quality Assurance, identifica o papel de garantia da qualidade. Os representantes de negócio ainda precisam participar da validação.
 
@@ -422,7 +420,7 @@ As quatro semanas indicam uma sequência proposta para organizar as próximas va
 
 ## 3.2 Análise de riscos
 
-A análise atribui notas de 1 (baixo) a 3 (alto) à probabilidade e ao impacto de cada risco. A multiplicação das notas ajuda a ordenar as prioridades iniciais; trata-se de uma escala proposta, sem medição estatística de frequência. O responsável pelo negócio ainda deverá revisar os riscos que permanecem após os controles.
+A análise combina probabilidade e impacto para ordenar os riscos, conforme a abordagem apresentada no CTFL (ISTQB, 2024, seção 5.2). Neste projeto, foram propostas notas de 1 (baixo) a 3 (alto) para cada fator. A multiplicação dessas notas define a prioridade inicial; a escala e as avaliações não resultam de uma medição estatística de frequência. O responsável pelo negócio ainda deverá revisar os riscos que permanecem após os controles.
 
 O Quadro 9 relaciona os riscos prioritários, os controles e as ações residuais.
 
@@ -442,7 +440,7 @@ Fonte: planejamento do projeto (2026).
 
 ### 3.2.1 Tratamento de defeitos
 
-O registro de defeito deve permitir que outra pessoa reproduza o problema. Para isso, precisa conter identificador, versão, passos, resultado esperado, resultado observado, evidência, gravidade e situação. Cobrança indevida, perda de pedido ou exposição de dados caracterizam defeitos críticos e impedem a liberação. Após a correção, devem ser executados o cenário afetado e os testes de regressão pertinentes. A investigação também deve verificar se vários erros de execução têm a mesma causa antes de contabilizá-los como defeitos independentes.
+O registro de defeito deve permitir que outra pessoa reproduza o problema. Ele precisa conter identificador, versão, passos, resultado esperado, resultado observado, evidência, gravidade e situação. Cobrança indevida, perda de pedido ou exposição de dados caracterizam defeitos críticos e impedem a liberação. Depois da correção, o cenário afetado e os testes de regressão pertinentes devem ser executados novamente. A investigação deve conferir se diferentes erros de execução têm a mesma causa antes de contá-los como defeitos independentes.
 
 ## 3.3 Privacidade e proteção de dados
 
@@ -473,7 +471,7 @@ Permanecem pendentes HTTPS comercial, identidade real, gestão de consentimento,
 
 # 4 PLANO DE TESTES
 
-O plano parte das situações que podem comprometer uma compra: valor incorreto, falta de estoque, pagamento sem resposta, repetição do envio e consulta por pessoa não autorizada. Para cada cenário, define as entradas e o resultado esperado. Os identificadores permitem localizar a execução nas evidências e conferir quais requisitos foram verificados.
+O plano de testes cobre situações que podem comprometer a compra: valor incorreto, falta de estoque, pagamento sem resposta, repetição do envio e consulta por pessoa não autorizada. Cada cenário descreve as entradas e o resultado esperado. Seus identificadores permitem localizar os registros da execução e conferir os requisitos verificados.
 
 ## 4.1 Estratégia e ambiente
 
@@ -621,7 +619,7 @@ UI17 recarrega a página enquanto o envio ainda está em andamento e exige a rec
 
 # 5 PLANILHA DE MÉTRICAS
 
-Os seis indicadores estão reunidos neste PDF, com definição, meta e resultado (Quadro 12). Disponibilidade e satisfação continuam não medidas: registrá-las como zero equivaleria a informar um resultado que não foi coletado.
+O Quadro 12 reúne os seis indicadores, suas definições, metas e resultados. Disponibilidade e satisfação ainda não foram medidas e, por isso, aparecem sem valor numérico. A ausência de coleta não deve ser registrada como resultado zero.
 
 Quadro 12 – Indicadores, metas e resultados
 
@@ -638,13 +636,13 @@ Fonte: especificação e registros de verificação do projeto (2026).
 
 ## 5.1 Coleta e responsabilidade
 
-A equipe de qualidade deverá coletar os resultados de testes e defeitos a cada versão. Desenvolvimento analisará a latência após mudanças relevantes; Operação acompanhará a disponibilidade continuamente, com revisão semanal. O responsável pela UAT coletará a satisfação após cada sessão. Toda meta não atendida deverá gerar uma ação com responsável e prazo.
+A cada versão, a equipe de qualidade deverá reunir os resultados dos testes e os registros de defeitos. A equipe de desenvolvimento analisará a latência após mudanças relevantes, e a operação acompanhará a disponibilidade continuamente, com revisão semanal. O responsável pela UAT coletará a satisfação após cada sessão. Para toda meta não atendida, deverá ser definida uma ação com responsável e prazo.
 
 Pelo método do posto mais próximo, o p95 corresponde ao 190º valor dos 200 tempos ordenados. A média usa todas as amostras válidas; as cinco requisições de aquecimento ficam fora da coleta. Na disponibilidade, intervalos sem coleta não contam como serviço disponível.
 
 # 6 RELATÓRIO FINAL DE CONFORMIDADE
 
-A avaliação final considera o que foi exigido de cada regra e o que os testes conseguiram demonstrar. A matriz reúne essas relações; em seguida, são apresentados os resultados, a correção do defeito D01 e as telas que ajudam a compreender o funcionamento da aplicação.
+A avaliação final compara os requisitos com os resultados dos testes. A matriz permite localizar as evidências; as seções seguintes apresentam os resultados, a correção do defeito D01 e as telas registradas durante a verificação da aplicação.
 
 ## 6.1 Matriz de rastreabilidade
 
@@ -684,21 +682,21 @@ Quadro 14 – Cobertura dos requisitos funcionais
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
-Os oito requisitos funcionais possuem casos associados. Já os requisitos de qualidade incluem avaliações ainda abertas: EV05 identifica o protocolo com usuários, e EV06, o monitoramento de disponibilidade. Essas duas referências apontam para procedimentos planejados, sem resultados coletados.
+Há casos automatizados associados aos oito requisitos funcionais. Entre os requisitos de qualidade, duas avaliações ainda dependem de coleta: o protocolo com usuários, identificado por EV05, e o monitoramento de disponibilidade, identificado por EV06. Seus identificadores permitem localizar o planejamento, mas ainda não correspondem a resultados de execução.
 
 ## 6.2 Resultados e parecer
 
-A execução foi examinada em três frentes: resultado dos testes, comportamento sob carga e tratamento das falhas encontradas. Esse conjunto fundamenta o parecer sobre o uso do protótipo.
+O parecer considera os resultados dos testes, o comportamento sob carga e o tratamento das falhas encontradas. A análise se limita à versão e às condições registradas nas evidências.
 
 ### 6.2.1 Execução final
 
-A verificação da revisão 0.4, de 24 de setembro de 2026, terminou com **52/52 testes em Python e 18/18 cenários no navegador aprovados**. A suíte Python reúne testes unitários, de sistema, segurança, concorrência, API, regressão e resolução de pendências. Os resultados individuais e os identificadores estão em EV01. Cada método conta como um teste, mesmo quando verifica mais de uma entrada. Essa regra evita aumentar a quantidade de aprovações apenas porque um caso usa várias combinações de dados.
+A verificação da revisão 0.4, de 24 de setembro de 2026, terminou com **52/52 testes em Python e 18/18 cenários no navegador aprovados**. A suíte Python reúne testes unitários, de sistema, segurança, concorrência, API, regressão e resolução de pendências. EV01 registra os identificadores e os resultados individuais. Na contagem, cada método corresponde a um teste, mesmo quando avalia várias entradas. As combinações de dados de um mesmo método, portanto, não são contabilizadas como aprovações separadas.
 
 Durante a carga, foram confirmados 200 de 200 pedidos. O maior tempo de resposta foi de 1204,152 ms; a vazão média foi de 148,45 pedidos por segundo em uma janela de 1,347 segundos. A base estava nova e o pagamento era simulado, sem latência externa. Por isso, os valores servem para comparar execuções locais nas mesmas condições. Estimar a capacidade de atendimento da rede exigiria uma carga mais longa, infraestrutura de produção e comunicação com serviços externos.
 
 ### 6.2.2 Defeito D01 e regressão
 
-A primeira execução mostrou um problema no encerramento dos testes. A conexão SQLite concluía a transação ao sair do gerenciador de contexto, mas continuava aberta. No Windows, isso impedia a remoção dos arquivos dos bancos temporários. Assim, uma operação podia produzir o resultado esperado e ainda deixar um recurso aberto após o teste.
+A primeira execução revelou um problema no encerramento dos testes. Ao sair do gerenciador de contexto, a transação SQLite era concluída, mas a conexão continuava aberta. No Windows, isso impedia a remoção dos arquivos dos bancos temporários. O pedido podia apresentar o resultado esperado enquanto a execução deixava uma conexão sem fechamento.
 
 A falha gerou 26 erros de encerramento na suíte inicial de 34 testes. A investigação reuniu essas ocorrências em uma única causa, registrada como D01. A correção passou a fechar a conexão ao sair do contexto, inclusive quando ocorre uma exceção, e a execução posterior terminou sem o problema.
 
@@ -714,7 +712,7 @@ A revisão 0.4 amplia a recuperação: o rascunho, o resultado e a solicitação
 
 ### 6.2.4 Parecer
 
-O parecer é favorável ao uso do protótipo em demonstração local. Os testes sustentam os cálculos e as alterações de estado previstas, incluindo falhas de pagamento, restrições de acesso e reenvio da mesma solicitação.
+O parecer é favorável ao uso do protótipo em demonstração local. Os cenários executados confirmaram os cálculos e as alterações de estado previstas, incluindo falhas de pagamento, restrições de acesso e reenvio da mesma solicitação.
 
 A liberação comercial ainda depende de disponibilidade mensal, avaliação com pessoas e aparelhos físicos, estresse prolongado, autenticação real e conciliação automática com o provedor de pagamento. A resolução manual da pendência nesta versão é uma simulação. A proteção de dados também exige controles de produção além da minimização aplicada à demonstração. O resultado obtido permite avançar nessas validações, sem tratar a aprovação da suíte como garantia para situações que ela ainda não cobre.
 
@@ -724,7 +722,7 @@ A identidade da Raízes do Nordeste aparece na página inicial e acompanha o cli
 
 Figura 2 – Identidade visual da página do restaurante
 
-![Identidade visual](../evidencias/identidade_visual.png)
+![Identidade visual](4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220/evidencias/identidade_visual.png)
 
 Fonte: captura do protótipo durante a verificação da interface (2026).
 
@@ -734,7 +732,7 @@ Após a compra, a confirmação apresenta o valor e os pontos concedidos para qu
 
 Figura 3 – Confirmação do pedido e crédito de fidelidade
 
-![Confirmação do pedido](../evidencias/detalhe_confirmacao.png)
+![Confirmação do pedido](4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220/evidencias/detalhe_confirmacao.png)
 
 Fonte: registro do teste UI01 na API local (2026).
 
@@ -746,7 +744,7 @@ Na largura de 390 pixels, o resumo reúne itens, desconto e total antes da confi
 
 Figura 4 – Resumo do pedido na interface móvel
 
-![Resumo móvel](../evidencias/resumo_mobile.png)
+![Resumo móvel](4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220/evidencias/resumo_mobile.png)
 
 Fonte: captura do protótipo no navegador (2026).
 
@@ -756,7 +754,7 @@ O aviso de privacidade pode ser consultado na própria tela de pedido. A Figura 
 
 Figura 5 – Aviso de privacidade
 
-![Aviso de privacidade](../evidencias/aviso_privacidade.png)
+![Aviso de privacidade](4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220/evidencias/aviso_privacidade.png)
 
 Fonte: registro do teste UI06 no navegador (2026).
 
@@ -775,7 +773,7 @@ Quadro 15 – Catálogo das evidências
 | EV01 | evidencias/testes.json e testes.txt: resultados individuais, ambiente e instante UTC. |
 | EV02 | evidencias/desempenho.json: 200 amostras, média, p95, máximo e condições da carga. |
 | EV03 | evidencias/interface.json e capturas PNG: 18 cenários no navegador, com banco temporário. |
-| EV04 | evidencias/fontes_sha256.json: impressão digital dos arquivos Python e HTML da versão testada. |
+| EV04 | evidencias/fontes_sha256.json: impressão digital dos arquivos Python e HTML da execução de 24/09/2026, preservada como registro histórico. |
 | EV05 | Protocolo UAT01 deste relatório. Resultado ainda não coletado. |
 | EV06 | Protocolo de disponibilidade RQ02. Resultado ainda não coletado. |
 | EV07 | evidencias/execucao_inicial.json, execucao_inicial.txt e defeito.json: falha D01 e seu fechamento original. Caminhos locais abreviados no registro textual. |
@@ -783,26 +781,28 @@ Quadro 15 – Catálogo das evidências
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
+Os hashes de EV04 identificam os arquivos usados naquela execução. Como houve ajustes posteriores de formatação do código, eles não devem ser comparados com a versão atual como se fossem uma nova medição. A revisão editorial deste relatório preserva os resultados registrados; não substitui a execução dos testes.
+
 ### 6.5.1 Reprodução local
 
-Os cinco componentes da entrega estão reunidos neste PDF. Para reproduzir a demonstração, o material de apoio traz o protótipo e o guia de execução. É necessário Python 3.11 ou superior; a aplicação funciona no próprio computador e dispensa conta externa ou dado bancário.
+Para usar a demonstração local, é necessário Python 3.11 ou superior. O pacote inclui o protótipo e o guia de execução; não exige conta externa nem dados bancários.
 
-1. Abrir uma janela de terminal na pasta prototipo.
-2. Executar `python api.py` e abrir `http://127.0.0.1:8765` no navegador.
-3. Para repetir as verificações de regras e API, executar `python run_evidence.py`.
-4. Conferir os arquivos gerados em evidencias e comparar a versão testada antes de atualizar o relatório.
+1. Na pasta `prototipo`, abra um terminal.
+2. Execute `python api.py` e acesse `http://127.0.0.1:8765`.
+3. Para verificar as regras e a API, execute `python run_evidence.py`.
+4. Confira em `evidencias` a versão e os resultados antes de atualizar o relatório.
 
-A automação do navegador usa Node.js, Playwright e Chrome. O arquivo qa_interface.mjs inicia um servidor e um banco temporários para esses testes; seu uso está descrito no guia. Quem quiser apenas experimentar a página pode executar o protótipo manualmente, sem instalar essas ferramentas de automação.
+Os testes de interface usam Node.js, Playwright e Chrome. O guia explica como executar `qa_interface.mjs`, que cria um servidor e um banco temporários.
 
-Para reiniciar os dados da execução manual direta, é possível remover demo.sqlite3 depois de parar o servidor. Os testes utilizam bancos separados, e o banco da demonstração não é distribuído com os arquivos do projeto.
+Para zerar a demonstração manual, pare o servidor e remova `demo.sqlite3`. Os testes usam bancos separados.
 
 # 7 CONCLUSÃO
 
-A finalização do pedido foi uma escolha útil para este projeto porque concentra regras que dependem umas das outras. No exemplo de compra utilizado, chegar ao total de R$ 52,20 é apenas uma parte da verificação: o desconto deve estar correto, os 52 pontos só podem ser concedidos uma vez quando a fidelidade está selecionada, e o estoque só deve diminuir após a confirmação.
+A avaliação da finalização do pedido mostrou como as regras de valor, pagamento, estoque e fidelidade dependem umas das outras. Na compra utilizada nos testes, o total de R$ 52,20 precisa corresponder ao desconto aplicado. Os 52 pontos devem ser concedidos uma única vez, com a fidelidade selecionada, e o estoque só pode diminuir após a confirmação. Conferir esses efeitos em conjunto foi o principal critério de qualidade do projeto.
 
-Os testes deram suporte a essas regras no ambiente local. Também mostraram por que o encerramento da execução precisa fazer parte da avaliação: em D01, a transação terminava, mas a conexão aberta impedia a limpeza dos bancos temporários. A correção e o reteste tornaram esse comportamento verificável nas execuções seguintes.
+Os testes confirmaram essas regras nas condições locais avaliadas e revelaram uma falha fora do resultado imediato da compra. Em D01, a transação terminava, mas a conexão aberta impedia a limpeza dos bancos temporários. O registro da causa, a correção e o reteste permitiram acompanhar a solução e reforçaram a necessidade de verificar também o encerramento da execução.
 
-O próximo passo é avaliar as condições que o protótipo ainda não representa. Usuários reais podem encontrar dificuldades que a automação da interface não revela, e uma medição curta de carga não informa a disponibilidade ao longo de um mês. Por isso, o projeto oferece uma base para demonstração e continuidade do desenvolvimento, com as ações pendentes organizadas no Quadro 16.
+A continuidade do trabalho depende da avaliação das condições ainda ausentes no protótipo. A observação de usuários deverá identificar dificuldades de uso; o monitoramento mensal e o estresse prolongado deverão produzir dados sobre a operação ao longo do tempo. Os resultados atuais permitem demonstrar as regras e repetir as verificações locais. O Quadro 16 organiza as ações necessárias para avançar além dessa etapa.
 
 Quadro 16 – Próximas ações e evidências de conclusão
 

@@ -2,11 +2,11 @@
 
 ## [Abrir demonstração online](https://dmfariaas.github.io/raizes-do-nordeste/)
 
-Acesse o restaurante pelo navegador do computador, celular ou tablet. A versão online não precisa de Python instalado nem depende de o computador do autor estar ligado.
+O restaurante pode ser acessado pelo navegador do computador, celular ou tablet. Para usar a versão online, basta abrir o link acima; não é preciso instalar Python ou manter o computador do autor ligado.
 
-Projeto acadêmico de qualidade de software para o fluxo de pedidos de uma rede fictícia de restaurantes. O foco é manter a confirmação do pedido coerente com o valor pago, a baixa de estoque e os pontos de fidelidade.
+Este projeto acadêmico trata da qualidade de software no atendimento de uma rede fictícia de restaurantes. A questão central é simples: quando um pedido é confirmado, o valor do pagamento, o estoque e os pontos de fidelidade precisam corresponder à mesma compra.
 
-O repositório reúne o relatório, a planilha de métricas, as evidências dos testes, a demonstração online e o protótipo local em Python e SQLite. O trabalho define oito requisitos funcionais e oito requisitos de qualidade, com critérios de aceitação e testes associados.
+Aqui estão o relatório, a planilha de métricas, as evidências dos testes e as duas versões da demonstração: uma online e outra local, em Python e SQLite. O trabalho estabelece oito requisitos funcionais e oito requisitos de qualidade, com critérios de aceitação e indicação das verificações previstas.
 
 **Diego Monteiro de Farias · RU 4992220**
 
@@ -19,7 +19,7 @@ Projeto Multidisciplinar — Trilha de Qualidade de Software · 2026.
 
 ## O protótipo
 
-A demonstração acompanha pedidos nas unidades de Recife (`REC`) e João Pessoa (`JPA`), cada uma com seu estoque. Aplicativo, web, totem, balcão e retirada aparecem como opções de canal na mesma interface.
+O protótipo recebe pedidos para as unidades de Recife (`REC`) e João Pessoa (`JPA`), com estoques separados. A mesma tela permite escolher cinco canais de atendimento: aplicativo, web, totem, balcão e retirada.
 
 O fluxo permite:
 
@@ -34,17 +34,17 @@ Os pagamentos e as identidades são fictícios. A demonstração não realiza co
 
 ## Usar a demonstração online
 
-Abra o [site do restaurante](https://dmfariaas.github.io/raizes-do-nordeste/), escolha a unidade e monte seu pedido. Os pagamentos são fictícios: nenhuma cobrança é realizada e não são pedidos dados de cartão.
+Abra o [site do restaurante](https://dmfariaas.github.io/raizes-do-nordeste/), escolha a unidade e monte seu pedido. Na etapa de pagamento, selecione o resultado que deseja experimentar.
 
-Os pedidos, o estoque e os pontos da demonstração ficam no IndexedDB, o banco de dados do próprio navegador. Cada navegador e dispositivo tem seus próprios dados, sem sincronização. Limpar os dados do site também remove essas informações; no modo de navegação privada, elas podem ser descartadas ao fechar a sessão.
+Pedidos, estoque e pontos ficam no IndexedDB, um banco de dados do próprio navegador. Por isso, a compra feita em um dispositivo não aparece em outro. Limpar os dados do site apaga esses registros; na navegação privada, eles também podem ser descartados ao encerrar a sessão.
 
 Para começar de novo, abra **Como os dados são usados** e selecione **Reiniciar demonstração**. Isso apaga os dados da demonstração nesse navegador e restaura o estoque inicial.
 
-O código e as instruções de desenvolvimento dessa versão estão em [`site_online/`](site_online/README.md).
+O guia de [`site_online/`](site_online/README.md) explica a organização do código, os testes e a publicação dessa versão.
 
 ## Executar a versão local (Python e SQLite)
 
-É necessário ter **Python 3.11 ou superior** e um navegador. O servidor usa apenas a biblioteca padrão do Python, sem dependências para instalar com `pip`.
+A execução local exige **Python 3.11 ou superior** e um navegador. Como o servidor usa a biblioteca padrão do Python, não há pacotes adicionais para instalar com `pip`.
 
 Na raiz do repositório, execute:
 
@@ -53,7 +53,7 @@ cd "4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220/prototipo"
 python api.py --open-browser
 ```
 
-O servidor abre em **http://127.0.0.1:8765**. Esse endereço funciona apenas no computador em que o servidor foi iniciado; ele não é o link público do restaurante. No Windows, `py -3` pode substituir `python`; no Linux e no macOS, use `python3` se esse for o nome disponível. Para encerrar, pressione **Ctrl+C** no terminal.
+Acesse **http://127.0.0.1:8765** no computador em que o servidor foi iniciado. Esse é o endereço da execução local; para compartilhar o restaurante, use o link público no início deste guia. No Windows, `py -3` pode substituir `python`; no Linux e no macOS, use `python3` se esse for o nome disponível. Para encerrar o servidor, pressione **Ctrl+C** no terminal.
 
 No Windows, também é possível abrir o arquivo [`ABRIR_RESTAURANTE_NORDESTINO.cmd`](ABRIR_RESTAURANTE_NORDESTINO.cmd) com dois cliques. Ele verifica o Python, escolhe uma porta livre e abre o navegador.
 
@@ -67,7 +67,7 @@ Para usar uma porta livre e começar com outro banco, execute na pasta `prototip
 python api.py --port 0 --db nova-demonstracao.sqlite3 --open-browser
 ```
 
-Use um nome de banco que ainda não exista para obter um estoque novo. A recuperação da tela depende da mesma aba e do mesmo endereço, incluindo a porta.
+Um nome de banco ainda não utilizado cria uma demonstração com estoque novo. Para recuperar a tela após uma recarga, mantenha a mesma aba e o mesmo endereço, incluindo a porta.
 
 ### Exemplo de pedido
 
@@ -77,7 +77,7 @@ Adicione **dois baiões de dois** e **um suco de cajá**, aplique `RAIZES10`, ma
 - Desconto: **R$ 5,80**.
 - Total: **R$ 52,20**, com **52 pontos**.
 
-Depois da confirmação, recarregue a aba para conferir a recuperação do resultado. Em um novo pedido, experimente a recusa e a ausência de resposta do pagamento.
+Após a confirmação, recarregue a aba e confira se o resultado foi recuperado. Em seguida, abra novos pedidos para experimentar a recusa e a ausência de resposta do pagamento.
 
 ### API local
 
@@ -95,7 +95,7 @@ As rotas de pedidos exigem `Authorization: Bearer <token>`. O token é gerado a 
 
 ## Organização do código
 
-As duas versões usam HTML, CSS e JavaScript na interface e calculam os valores monetários em centavos. A versão online executa as regras de demonstração no navegador, com persistência em IndexedDB. A versão local usa um servidor HTTP em Python e persistência em SQLite.
+As duas interfaces usam HTML, CSS e JavaScript. Os cálculos monetários são feitos em centavos. Na versão online, as regras são executadas no navegador e os registros ficam no IndexedDB; na versão local, um servidor HTTP em Python atende às solicitações e grava os dados em SQLite.
 
 ```text
 .
@@ -113,7 +113,6 @@ As duas versões usam HTML, CSS e JavaScript na interface e calculam os valores 
     └── Projeto_Qualidade_4992220/
         ├── INICIAR_DEMONSTRACAO.cmd
         ├── LEIA_PRIMEIRO.md
-        ├── package.json
         ├── qa_interface.mjs
         ├── prototipo/
         │   ├── index.html          # Interface e interação
@@ -127,15 +126,15 @@ As duas versões usam HTML, CSS e JavaScript na interface e calculam os valores 
         └── output/                 # Documentos do pacote acadêmico
 ```
 
-A árvore mostra os principais arquivos. O banco da demonstração, os caches e as dependências instaladas localmente não fazem parte do versionamento.
+A árvore resume os principais arquivos. Bancos da demonstração, caches e dependências instaladas na máquina ficam fora do versionamento.
 
-Na versão local, o serviço de pedidos coordena pagamento, estoque e fidelidade em transações SQLite. Uma chave de idempotência identifica cada solicitação: o reenvio recupera o resultado existente; a mesma chave com conteúdo diferente gera um conflito.
+Na versão local, o serviço de pedidos usa transações SQLite para coordenar pagamento, estoque e fidelidade. Cada solicitação recebe uma chave de idempotência, que permite reconhecer repetições. Se o mesmo pedido for reenviado, o serviço devolve o resultado já registrado; se a chave for reutilizada com outro conteúdo, devolve um conflito.
 
 ## Testes da versão online
 
 Em **10 de outubro de 2026**, a versão online passou em **31 testes automatizados**: 20 de regras e armazenamento e 11 de integração da interface em DOM simulado. O endereço HTTPS e os arquivos JavaScript também responderam sem login. Consulte o [registro de validação](site_online/VALIDACAO.md) para o alcance dessas verificações.
 
-As instruções para executar os testes das regras e da interface online estão no [guia de `site_online`](site_online/README.md#testes). Essa verificação é independente das evidências acadêmicas da versão Python descritas abaixo.
+Para repetir essa verificação, siga as instruções do [guia de `site_online`](site_online/README.md#testes). Os resultados da versão Python, apresentados a seguir, vêm de outra implementação e de outra execução de testes.
 
 ## Testes da versão local (Python e SQLite)
 
@@ -160,11 +159,11 @@ O segundo comando atualiza `testes.txt`, `testes.json`, `desempenho.json` e `fon
 Com **Node.js 20 ou superior**, npm e Google Chrome instalados, execute na pasta `4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220`:
 
 ```powershell
-npm ci
-npm test
+npm install --no-save playwright
+node qa_interface.mjs
 ```
 
-Se o PowerShell bloquear `npm.ps1`, use `npm.cmd ci` e `npm.cmd test`.
+Se o PowerShell bloquear `npm.ps1`, use `npm.cmd install --no-save playwright`.
 
 O script inicia um servidor com banco temporário e executa os testes no Chrome sem abrir uma janela. Os resultados e as capturas são atualizados em `evidencias`. As variáveis `DEMO_PYTHON` e `DEMO_EVIDENCE_DIR` permitem definir outro executável Python e outra pasta de saída.
 
@@ -179,9 +178,9 @@ As evidências acadêmicas de **24 de setembro de 2026**, referentes à versão 
 | Ensaio de carga | 200 de 200 pedidos bem-sucedidos | [desempenho.json][desempenho] |
 | Tempo de resposta na carga | Média de 58,867 ms; percentil 95 de 208,004 ms | [desempenho.json][desempenho] |
 
-Os tempos foram medidos localmente, com SQLite e pagamento simulado sem latência externa. Eles variam conforme o ambiente e não representam desempenho em produção. A cobertura de 100% citada no relatório se refere aos oito requisitos funcionais com testes associados, não à cobertura de código.
+Esses tempos foram obtidos na máquina de teste, com SQLite e pagamento simulado, sem a espera por um serviço externo. Eles variam com o ambiente e não permitem estimar o desempenho em produção. A cobertura de 100% citada no relatório significa que os oito requisitos funcionais têm testes associados; a cobertura de código não foi medida por esse indicador.
 
-As evidências dessa execução foram preservadas durante a preparação do repositório. Os hashes em `fontes_sha256.json` correspondem ao código anterior à formatação; essa revisão não substitui a medição acadêmica registrada.
+Os arquivos de evidências conservam os resultados daquela execução. Os hashes em `fontes_sha256.json` identificam o código anterior à formatação, portanto não devem ser usados como registro de uma nova medição.
 
 ## Documentação
 
@@ -193,9 +192,9 @@ As evidências dessa execução foram preservadas durante a preparação do repo
 
 ## Limitações
 
-As duas versões foram desenvolvidas para demonstração acadêmica. Não integram um provedor de pagamento, não possuem autenticação de usuários reais e representam os cinco canais em uma única interface. Na versão online, os dados ficam no navegador e não são sincronizados entre dispositivos. Na versão Python, os pedidos ficam no banco SQLite local e o estado da tela fica na sessão da aba.
+O projeto tem alcance acadêmico: os pagamentos são simulados, não há autenticação de clientes reais e os cinco canais são opções de uma única interface. Na versão online, os dados pertencem ao navegador, sem sincronização entre dispositivos. Na versão Python, os pedidos ficam no SQLite local e o estado da tela é mantido na sessão da aba.
 
-Os testes de concorrência registrados no pacote acadêmico cobrem o uso de SQLite local; seus resultados não medem a versão online. Disponibilidade mensal, satisfação dos usuários, aceite de negócio, testes em aparelhos físicos e estresse prolongado ainda dependem de avaliação. As métricas sem coleta permanecem identificadas como **Não medido** na planilha.
+Os testes de concorrência do pacote acadêmico avaliam o SQLite local. Ainda faltam medições de disponibilidade mensal, satisfação dos usuários e aceite de negócio, além de testes em aparelhos físicos e de estresse prolongado. A planilha identifica como **Não medido** tudo o que ainda não teve coleta.
 
 [entrega]: entrega/4992220_Projeto_Qualidade.PDF
 [relatorio]: 4992220_Projeto_Qualidade.md

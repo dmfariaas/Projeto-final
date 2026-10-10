@@ -2,7 +2,7 @@
 
 [Abrir o restaurante](https://dmfariaas.github.io/raizes-do-nordeste/)
 
-Esta versão permite apresentar o restaurante em computadores, celulares e tablets com um navegador atual. Os arquivos estáticos ficam hospedados na web; o visitante não precisa instalar Python nem manter o computador do autor ligado.
+Esta é a versão do restaurante que pode ser compartilhada por link. Ela abre em computadores, celulares e tablets com um navegador atual, sem instalação de Python. Os arquivos ficam hospedados na web, de modo que o acesso não depende do computador do autor.
 
 ## O que pode ser demonstrado
 
@@ -16,11 +16,11 @@ Os pagamentos são fictícios, sem cobrança e sem coleta de dados de cartão.
 
 ## Dados da demonstração
 
-Pedidos, estoque e pontos ficam em IndexedDB, no navegador de quem está usando o site. Esses dados não são sincronizados entre navegadores ou dispositivos. Limpar os dados do site remove a demonstração; a navegação privada também pode descartar os dados ao encerrar a sessão.
+O site guarda pedidos, estoque e pontos no IndexedDB do navegador. Cada navegador mantém sua própria demonstração: um pedido feito no computador não aparece no celular. Ao limpar os dados do site, esses registros são apagados. A navegação privada também pode descartá-los no encerramento da sessão.
 
 Para apagar os dados da demonstração e restaurar o estoque inicial, abra **Como os dados são usados** e selecione **Reiniciar demonstração**.
 
-A execução das regras no navegador é adequada a esta apresentação acadêmica. Não há servidor de pedidos, contas de usuários ou integração com uma operadora de pagamentos nesta versão. O protótipo Python e SQLite permanece no [pacote acadêmico](../4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220/).
+As regras são executadas no navegador. Esta versão permite apresentar o fluxo acadêmico, mas não oferece um servidor de pedidos, contas de clientes ou integração com uma operadora de pagamentos. A implementação local em Python e SQLite está no [pacote acadêmico](../4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220/).
 
 ## Arquivos
 
@@ -32,7 +32,7 @@ A execução das regras no navegador é adequada a esta apresentação acadêmic
 | `tests/` | Testes automatizados das regras e da interface. |
 | `package.json` e `package-lock.json` | Comando de testes e dependências de desenvolvimento. |
 
-`dist/` contém os arquivos servidos pelo site. Não há etapa de compilação: alterações nesses arquivos constituem a versão a publicar. Os testes usam Node.js; o site publicado usa apenas os recursos do navegador.
+Os arquivos publicados estão em `dist/` e não precisam de compilação. Uma alteração nessa pasta já modifica o material que será enviado à hospedagem. Node.js é necessário para executar os testes; o visitante usa apenas o navegador.
 
 ## Testes
 
@@ -45,16 +45,22 @@ npm test
 
 Se o PowerShell bloquear `npm.ps1`, use `npm.cmd ci` e `npm.cmd test`.
 
-Os testes utilizam `fake-indexeddb` para verificar as regras com um banco em memória e `jsdom` para exercitar a interface em um DOM de teste. Isso permite conferir cálculos, estoque, recuperação e tratamento dos estados de pagamento sem dados reais. A verificação no endereço publicado complementa esses testes.
+Os testes usam `fake-indexeddb` como banco em memória e `jsdom` para simular a estrutura da página. Assim, verificam cálculos, estoque, recuperação de pedidos e estados do pagamento sem depender de dados reais. Esse ambiente simulado não substitui a conferência no endereço publicado.
 
-As evidências Python/SQLite da pasta acadêmica pertencem à implementação local. Seus resultados de carga e concorrência não são métricas desta versão online.
+As evidências da pasta acadêmica foram coletadas na implementação Python/SQLite. Os resultados de carga e concorrência ali registrados valem para aquela versão.
 
 ## Publicação
 
-O endereço acima está hospedado no GitHub Pages. O repositório público [raizes-do-nordeste](https://github.com/dmfariaas/raizes-do-nordeste) contém os arquivos da demonstração. A documentação acadêmica continua neste repositório privado.
+O GitHub Pages hospeda o endereço acima a partir do repositório público [raizes-do-nordeste](https://github.com/dmfariaas/raizes-do-nordeste), que contém os arquivos da demonstração. A documentação acadêmica permanece neste repositório privado.
 
-Para atualizar o site, execute os testes, copie `index.html`, `app.js` e `demo-store.js` de `dist/` para a raiz do repositório público e envie a alteração para a branch `main`. Preserve o arquivo `.nojekyll`. O GitHub Pages publica essa branch automaticamente; uma alteração apenas neste repositório acadêmico não atualiza o endereço público.
+Para atualizar o site:
 
-Publique o conteúdo de `dist/` em uma hospedagem estática com HTTPS, preservando os nomes dos arquivos. O endereço público deve servir `index.html`, `app.js` e `demo-store.js` no mesmo diretório. O uso de HTTPS permite os recursos de armazenamento e identificação utilizados pela demonstração.
+1. Execute os testes desta pasta.
+2. Copie `index.html`, `app.js` e `demo-store.js` de `dist/` para a raiz do repositório público.
+3. Preserve o arquivo `.nojekyll` e envie a alteração para a branch `main`.
 
-Uma publicação nova não transfere dados de um visitante para outro: cada navegador mantém sua própria demonstração.
+O GitHub Pages publica essa branch automaticamente. Alterar somente o repositório acadêmico não atualiza o site público.
+
+Se for utilizada outra hospedagem estática, publique o conteúdo de `dist/` com HTTPS e mantenha `index.html`, `app.js` e `demo-store.js` no mesmo diretório, com esses nomes. A conexão segura é necessária para os recursos de identificação usados pela demonstração.
+
+Os dados dos visitantes não fazem parte da publicação: cada navegador conserva seus próprios registros.

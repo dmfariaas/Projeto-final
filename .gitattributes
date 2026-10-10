@@ -1,0 +1,6 @@
+# Preserva os bytes dos documentos e imagens ao enviar ou baixar o projeto.
+*.pdf binary
+*.PDF binary
+*.xlsx binary
+*.zip binary
+*.png binary
