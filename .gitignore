@@ -1,0 +1,11 @@
+# Dependências, arquivos de apoio e dados locais da demonstração.
+node_modules/
+tmp/
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.sqlite3-*
+*.inspect.ndjson
+.DS_Store
+Thumbs.db
