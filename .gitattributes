@@ -1,4 +1,8 @@
 # Preserva os bytes dos documentos e imagens ao enviar ou baixar o projeto.
+*.py text eol=lf
+*.html text eol=lf
+*.mjs text eol=lf
+*.cmd text eol=crlf
 *.pdf binary
 *.PDF binary
 *.xlsx binary

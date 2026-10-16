@@ -29,16 +29,38 @@ def make_server(path, port=0):
         def log_message(self, *args):
             pass
         def send(self, code, value, mime='application/json; charset=utf-8'):
-            raw = json.dumps(value,ensure_ascii=False).encode() if mime.startswith('application/json') else value.encode()
-            self.send_response(code)
-            self.send_header('Content-Type',mime)
-            self.send_header('Content-Length',str(len(raw)))
-            self.send_header('Cache-Control','no-store')
-            self.send_header('X-Content-Type-Options','nosniff')
-            self.send_header('X-Frame-Options','DENY')
-            self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
-            self.end_headers()
-            self.wfile.write(raw)
+            raw = (json.dumps(value, ensure_ascii=False).encode()
+                   if mime.startswith('application/json') else value.encode())
+            try:
+                self.send_response(code)
+                self.send_header('Content-Type', mime)
+                self.send_header('Content-Length', str(len(raw)))
+                self.send_header('Cache-Control', 'no-store')
+                self.send_header('X-Content-Type-Options', 'nosniff')
+                self.send_header('X-Frame-Options', 'DENY')
+                self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
+                self.end_headers()
+                self.wfile.write(raw)
+            except ConnectionError:
+                # O pedido pode estar salvo. A mesma chave recupera o resultado na nova tentativa.
+                self.close_connection = True
+
+        def read_json(self):
+            try:
+                size = int(self.headers.get('Content-Length', '0'))
+            except ValueError as error:
+                raise RuleError('JSON_INVALIDO', 'JSON inválido.', 400) from error
+            if not 0 < size <= 16384:
+                raise RuleError('TAMANHO_INVALIDO', 'Corpo vazio ou maior que 16 KB.', 413)
+
+            body = self.rfile.read(size)
+            if len(body) != size:
+                raise RuleError('JSON_INVALIDO', 'JSON inválido.', 400)
+            try:
+                return json.loads(body)
+            except (ValueError, UnicodeDecodeError) as error:
+                raise RuleError('JSON_INVALIDO', 'JSON inválido.', 400) from error
+
         def error(self, ex):
             self.send(ex.status,dict(code=ex.code,message=ex.message))
         def unavailable(self):
@@ -75,17 +97,16 @@ def make_server(path, port=0):
             if not self.authorized():
                 return self.send(401,{'code':'NAO_AUTORIZADO','message':'Sessão de demonstração inválida.'})
             try:
-                size=int(self.headers.get('Content-Length','0'))
-                if not 0 < size <= 16384:
-                    return self.send(413,{'code':'TAMANHO_INVALIDO','message':'Corpo vazio ou maior que 16 KB.'})
-                data=json.loads(self.rfile.read(size))
+                try:
+                    data = self.read_json()
+                except ConnectionError:
+                    self.close_connection = True
+                    return
                 if is_payment:
                     result,replayed=service.resolve_payment(parts[2],data,owner='cliente-demo')
                 else:
                     result,replayed=service.create(data)
                 self.send(200 if is_payment or replayed else 201,{**result,'replayed':replayed})
-            except (ValueError,UnicodeDecodeError):
-                self.send(400,{'code':'JSON_INVALIDO','message':'JSON inválido.'})
             except RuleError as ex:
                 self.error(ex)
             except (sqlite3.Error,OSError):

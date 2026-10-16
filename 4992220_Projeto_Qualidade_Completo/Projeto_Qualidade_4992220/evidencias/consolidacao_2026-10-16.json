@@ -1,0 +1,39 @@
+{
+  "data_revisao": "2026-10-16",
+  "escopo": "Consolidação das melhorias locais de setembro com as revisões editoriais e de inicialização de outubro.",
+  "testes_python": {
+    "aprovados": 54,
+    "total": 54
+  },
+  "testes_navegador_local": {
+    "aprovados": 18,
+    "total": 18,
+    "registro": "verificacao_2026-10-16/interface.json"
+  },
+  "testes_online": {
+    "aprovados": 31,
+    "total": 31,
+    "metodo": "20 testes de regras e 11 testes de interface com DOM simulado"
+  },
+  "desempenho": "As medições de carga deste relatório permanecem as de 28/09/2026. A consolidação não produziu uma nova medição de carga.",
+  "fontes_sha256": {
+    "api.py": "7d1771f7a01f3d60ffdbde0d06d3218c720e74187f59b60f0aeaa5e751f04beb",
+    "domain.py": "ee3d3e63207e6809ac1711135a6dc37cc5c3e986124c2da6b7cd6063530ad949",
+    "repository.py": "85a01e79c7909a9316e9d434aa889a60919383a82df0d126766ed2958ca5e49e",
+    "service.py": "3160ac6d7cde7abfa320dd51eeb16ee44e345b1c64e9466d08384e21bb2e3c70",
+    "index.html": "aaa0ed6bd3a01cf757d449c306022ca343dfbd8816905b4536db4bcec67f9342",
+    "tests.py": "3ce9d578af752a66fc2ed7032c2a3e0aa93db122c6ac09aee600d54855cffd76",
+    "run_evidence.py": "1370bc16d0d9989f56085ef9e1fe1f9372fd14e22f5a896de26b02676cb82c07",
+    "iniciar.py": "f79238f42c8b75bd714415d4ca2f2ef7bf4db640542a3b13d3b2cadf3b84b32c"
+  },
+  "sha256_pdf": "7c69ebad738b39d0151c9d68a31e8c108ce104d0928d5d28babdfa88425202e0",
+  "sha256_planilha": "de57425d2c48a5dda68cb02cf383110fb05943ea96c798a12ac253acf692e2c0",
+  "limites": [
+    "Pagamento simulado",
+    "Dados online separados por navegador",
+    "Disponibilidade mensal e avaliação com participantes não medidas"
+  ],
+  "inicializador": {
+    "registro": "verificacao_2026-10-16/iniciador.json"
+  }
+}

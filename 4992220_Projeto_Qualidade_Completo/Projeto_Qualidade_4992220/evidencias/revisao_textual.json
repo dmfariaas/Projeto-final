@@ -1,7 +1,7 @@
 {
-  "version": "0.4",
-  "timestamp_utc": "2026-09-24T18:44:57.638603+00:00",
-  "natureza": "Revisão editorial e técnica para refletir os fluxos da demonstração acadêmica.",
+  "version": "0.5",
+  "timestamp_utc": "2026-09-28T18:38:38.275521+00:00",
+  "natureza": "Revisão integral da redação, com paráfrase dos trechos discursivos e preservação das atribuições, termos técnicos e resultados.",
   "historico_editorial": [
     {
       "natureza": "Revisão editorial de clareza, coesão e justificativas técnicas.",
@@ -25,6 +25,16 @@
         "Instrução residual de redação removida e TS18 descrito como chamada direta à regra.",
         "Medições e capturas atualizadas com os registros de 21 de setembro; tempo histórico de D01 preservado."
       ]
+    },
+    {
+      "data": "2026-09-24",
+      "alteracoes": [
+        "Conferência simulada de pagamentos pendentes e limites de migração descritos conforme os testes.",
+        "Recuperação de rascunho, pedido enviado e decisão de pagamento explicada para a mesma sessão e o mesmo endereço.",
+        "Contagens atualizadas para 52 testes Python e 18 cenários no navegador, com carga de 200 pedidos de 24 de setembro.",
+        "Medição histórica de D01 preservada. Disponibilidade mensal e avaliação com participantes continuam sem medição.",
+        "Referências existentes mantidas e redação ajustada ao funcionamento da revisão 0.4."
+      ]
     }
   ],
   "referencias_preservadas": true,
@@ -35,13 +45,15 @@
     "fontes": 21
   },
   "revisao_final": {
-    "data": "2026-09-24",
+    "data": "2026-09-28",
     "alteracoes": [
-      "Conferência simulada de pagamentos pendentes e limites de migração descritos conforme os testes.",
-      "Recuperação de rascunho, pedido enviado e decisão de pagamento explicada para a mesma sessão e o mesmo endereço.",
-      "Contagens atualizadas para 52 testes Python e 18 cenários no navegador, com carga de 200 pedidos de 24 de setembro.",
-      "Medição histórica de D01 preservada. Disponibilidade mensal e avaliação com participantes continuam sem medição.",
-      "Referências existentes mantidas e redação ajustada ao funcionamento da revisão 0.4."
+      "Texto completo revisado quanto a gramática, pontuação, coesão e repetição; referências bibliográficas preservadas.",
+      "Formulações técnicas ajustadas para distinguir chamadas HTTP de testes diretos do serviço.",
+      "Novas regressões API09 e API10 documentadas e resultados atualizados pela execução real.",
+      "Medição histórica de D01 preservada; avaliações humanas e disponibilidade mensal permanecem sem medição.",
+      "Guia de execução reescrito com instruções de retomada, entrega e repetição dos testes."
     ]
-  }
+  },
+  "limite": "Não foi realizado exame em base externa de similaridade nem validação por detector de autoria.",
+  "nota_historica": "Registro da revisão de 28/09/2026. As verificações da consolidação posterior estão em consolidacao_2026-10-16.json."
 }

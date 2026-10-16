@@ -22,6 +22,10 @@ test_API07_payment_resolution_contract (tests.HttpTests.test_API07_payment_resol
 API07 | Conferência exige sessão e proprietário, valida corpo e retorna 200 com replay explícito. ... ok
 test_API08_local_failure_returns_503_and_recovers (tests.HttpTests.test_API08_local_failure_returns_503_and_recovers)
 API08 | Banco ou arquivo local indisponível retorna 503 sem detalhes internos e permite recuperação. ... ok
+test_API09_disconnect_after_commit_keeps_replay (tests.HttpTests.test_API09_disconnect_after_commit_keeps_replay)
+API09 | Cliente desconectado após commit não provoca segunda resposta nem duplica efeitos ao repetir. ... ok
+test_API10_truncated_body_is_not_processed (tests.HttpTests.test_API10_truncated_body_is_not_processed)
+API10 | Corpo menor que Content-Length retorna 400 sem criar pedido, mesmo com JSON válido. ... ok
 test_RG01_non_ascii_authorization (tests.HttpTests.test_RG01_non_ascii_authorization)
 RG01 | Credencial não ASCII retorna 401 e preserva a execução do servidor. ... ok
 test_RG04_second_server_rejected (tests.HttpTests.test_RG04_second_server_rejected)
@@ -104,6 +108,6 @@ test_TU06_input_allowlist (tests.UnitTests.test_TU06_input_allowlist)
 TU06 | Campos extras e corpo não estruturado são rejeitados. ... ok
 
 ----------------------------------------------------------------------
-Ran 52 tests in 17.266s
+Ran 54 tests in 19.439s
 
 OK

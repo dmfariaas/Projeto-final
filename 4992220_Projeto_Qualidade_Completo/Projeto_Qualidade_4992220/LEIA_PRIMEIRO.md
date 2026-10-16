@@ -2,7 +2,7 @@
 
 Diego Monteiro de Farias · RU 4992220
 
-Revisão editorial de 10 de outubro de 2026. As evidências de execução são de 24 de setembro de 2026.
+Consolidação de 16 de outubro de 2026. As medições acadêmicas deste relatório são de 28 de setembro de 2026. As verificações da versão consolidada estão registradas separadamente em `evidencias/consolidacao_2026-10-16.json`.
 
 Para entregar o trabalho no AVA, use o PDF único. Para experimentar a versão local do restaurante, abra `INICIAR_DEMONSTRACAO.cmd`. O arquivo avulso `ABRIR_RESTAURANTE_NORDESTINO.cmd` também inicia essa versão.
 
@@ -38,12 +38,12 @@ A interface usa tons de areia, barro e verde-mandacaru, com ilustrações inspir
 
 1. Extraia o ZIP para acessar todos os documentos. Se quiser apenas usar a demonstração, baixe e execute `INICIAR_DEMONSTRACAO.cmd`, que inclui os arquivos necessários.
 2. No Windows, abra `INICIAR_DEMONSTRACAO.cmd`. O iniciador verifica Python 3.11 ou superior, inicia o servidor local na porta 8765 e abre o navegador. Se a demonstração já estiver em execução nessa porta, ele abre o servidor existente.
-3. Se o navegador não abrir, acesse `http://127.0.0.1:8765/`. Mantenha o servidor aberto enquanto usa a demonstração. Depois de reiniciar o computador, abra o iniciador novamente.
+3. Se o navegador não abrir, acesse `http://127.0.0.1:8765/`. O servidor continua em segundo plano após fechar o iniciador. Depois de reiniciar o computador, abra o arquivo novamente.
 4. Adicione dois baiões de dois e um suco de cajá. Aplique o cupom `RAIZES10` e, se desejar, marque a fidelidade. O total esperado é R$ 52,20. Com o pagamento aprovado e a fidelidade selecionada, são concedidos 52 pontos.
 5. No seletor de pagamento, experimente aprovação, recusa ou ausência de resposta.
 6. A ausência de resposta deixa o pedido pendente. Para concluí-lo, use os controles de aprovação ou recusa simulada. Antes de aprovar, o serviço confere o estoque novamente. Os pontos só são concedidos quando a fidelidade foi selecionada.
 7. Recarregue a mesma aba para conferir se o rascunho ou o resultado foi recuperado. Após concluir a compra, use a opção de novo pedido para começar outra.
-8. Para encerrar o servidor, pressione **Ctrl+C** na janela em que ele está em execução.
+8. O iniciador informa o PID do servidor e o caminho do log. Para encerrar no Windows, use `Stop-Process -Id <PID>` no PowerShell, substituindo `<PID>` pelo número informado. Se iniciou com `python api.py`, encerre com **Ctrl+C** na mesma janela.
 
 Os preços, as identidades e os controles de sessão são demonstrativos. Não use dados pessoais, cartões ou informações de uma empresa real nos testes.
 
@@ -64,7 +64,7 @@ Se o iniciador informar que não encontrou Python, instale Python 3.11 ou superi
 python api.py
 ```
 
-O iniciador e o comando `python api.py` usam a porta 8765 por padrão. Se outro programa estiver usando essa porta, o iniciador informa o conflito. Para escolher outra, execute `INICIAR_DEMONSTRACAO.cmd --port 8766` e use o endereço mostrado na janela. A opção `--port 0` permite escolher uma porta livre automaticamente.
+O iniciador e o comando `python api.py` usam a porta 8765 por padrão. Se outro programa estiver usando essa porta, o iniciador informa o conflito. Para escolher outra, execute `INICIAR_DEMONSTRACAO.cmd --port 8766` e use o endereço mostrado na janela. A opção `--port 0` permite escolher uma porta livre automaticamente e mantém o servidor vinculado à janela do terminal.
 
 Quando executado sozinho, o iniciador prepara os arquivos em `%LOCALAPPDATA%\ProjetoQualidade4992220` e guarda o banco em `dados/demo.sqlite3`. No pacote completo, ele usa a pasta `prototipo` que o acompanha. A atualização dos arquivos de execução preserva o banco da demonstração.
 
@@ -85,8 +85,8 @@ Falhas em subtestes ou no ensaio de carga ficam registradas e fazem o comando te
 Para repetir os testes de interface, é necessário ter Node.js 20 ou superior, npm e Google Chrome. Na raiz do pacote, instale o Playwright e execute:
 
 ```text
-npm install --no-save playwright
-node qa_interface.mjs
+npm ci
+npm test
 ```
 
 A automação usa um navegador temporário, sem acesso ao perfil pessoal do usuário. O script abre seu próprio servidor em uma porta livre e cria um banco temporário. Ao terminar, encerra o servidor e remove esse banco. Você não precisa abrir a demonstração antes: o estoque usado manualmente permanece intacto.

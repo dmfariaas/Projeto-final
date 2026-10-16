@@ -1,0 +1,120 @@
+{
+  "timestamp_utc": "2026-10-16T10:43:09.905Z",
+  "engine": "155.0.8059.80",
+  "total": 18,
+  "passed": 18,
+  "tests": [
+    {
+      "id": "UI01",
+      "description": "Compra com desconto, fidelidade e confirmação preservada após falha do catálogo",
+      "status": "APROVADO",
+      "duration_ms": 1504
+    },
+    {
+      "id": "UI02",
+      "description": "Carrinho vazio e cupom inválido exibem mensagens",
+      "status": "APROVADO",
+      "duration_ms": 192
+    },
+    {
+      "id": "UI03",
+      "description": "Recusa de pagamento exibida no fluxo",
+      "status": "APROVADO",
+      "duration_ms": 402
+    },
+    {
+      "id": "UI04",
+      "description": "Pagamento sem resposta apresenta pendência e opções de conferência simulada",
+      "status": "APROVADO",
+      "duration_ms": 450
+    },
+    {
+      "id": "UI05",
+      "description": "Larguras 360, 390 e 768 sem rolagem horizontal e controles de quantidade com 44 px",
+      "status": "APROVADO",
+      "duration_ms": 643
+    },
+    {
+      "id": "UI06",
+      "description": "Aviso de privacidade visível e fidelidade opcional desmarcada",
+      "status": "APROVADO",
+      "duration_ms": 565
+    },
+    {
+      "id": "UI07",
+      "description": "Controles ficam bloqueados durante o envio e até iniciar novo pedido",
+      "status": "APROVADO",
+      "duration_ms": 263
+    },
+    {
+      "id": "UI08",
+      "description": "Resposta perdida permite repetir o mesmo pedido sem nova baixa de estoque",
+      "status": "APROVADO",
+      "duration_ms": 269
+    },
+    {
+      "id": "UI09",
+      "description": "Rascunho mantém unidade, canal, produtos, cupom, fidelidade e pagamento ao recarregar",
+      "status": "APROVADO",
+      "duration_ms": 323
+    },
+    {
+      "id": "UI10",
+      "description": "Confirmação reaparece ao recarregar e novo pedido libera os controles",
+      "status": "APROVADO",
+      "duration_ms": 400
+    },
+    {
+      "id": "UI11",
+      "description": "Pendência sobrevive à recarga e pode ser aprovada ou recusada sem duplicar estoque e pontos",
+      "status": "APROVADO",
+      "duration_ms": 847
+    },
+    {
+      "id": "UI12",
+      "description": "Resposta perdida e recarga preservam o corpo e a chave para recuperar a mesma compra",
+      "status": "APROVADO",
+      "duration_ms": 321
+    },
+    {
+      "id": "UI13",
+      "description": "Falhas de catálogo impedem compra com dados antigos e permitem nova tentativa",
+      "status": "APROVADO",
+      "duration_ms": 2035
+    },
+    {
+      "id": "UI14",
+      "description": "Quantidade respeita estoque e limite de dez, com botões desabilitados nos limites",
+      "status": "APROVADO",
+      "duration_ms": 506
+    },
+    {
+      "id": "UI15",
+      "description": "Envio sem resposta termina em oito segundos e repete a compra sem duplicação",
+      "status": "APROVADO",
+      "duration_ms": 8702
+    },
+    {
+      "id": "UI16",
+      "description": "Sessão expirada pode ser atualizada preservando a tentativa de compra",
+      "status": "APROVADO",
+      "duration_ms": 307
+    },
+    {
+      "id": "UI17",
+      "description": "Recarregar durante o envio recupera o mesmo pedido sem uma nova compra",
+      "status": "APROVADO",
+      "duration_ms": 314
+    },
+    {
+      "id": "UI18",
+      "description": "Resposta perdida na conferência bloqueia a opção oposta e recarga recupera a aprovação",
+      "status": "APROVADO",
+      "duration_ms": 368
+    }
+  ],
+  "page_errors": [],
+  "runtime_error": "",
+  "environment": "Servidor e banco temporários, isolados da demonstração.",
+  "limitation": "Google Chrome desktop com redimensionamento; não substitui UAT nem teste em aparelho físico."
+}

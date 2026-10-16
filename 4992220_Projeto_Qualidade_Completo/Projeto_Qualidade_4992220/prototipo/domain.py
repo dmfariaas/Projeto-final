@@ -26,7 +26,7 @@ def normalize(data):
     items = data.get('items')
     if not isinstance(items, list) or not 1 <= len(items) <= 3:
         raise RuleError('CARRINHO_INVALIDO', 'Inclua entre um e três produtos diferentes.')
-    clean, seen = [], set()
+    normalized_items, seen = [], set()
     for item in items:
         if not isinstance(item, dict) or set(item) != {'sku', 'qty'}:
             raise RuleError('ITEM_INVALIDO', 'Informe produto e quantidade.')
@@ -36,7 +36,7 @@ def normalize(data):
         if type(qty) is not int or not 1 <= qty <= 10:
             raise RuleError('QUANTIDADE_INVALIDA', 'A quantidade deve ser inteira, de 1 a 10.')
         seen.add(sku)
-        clean.append({'sku': sku, 'qty': qty})
+        normalized_items.append({'sku': sku, 'qty': qty})
     coupon = data.get('coupon', '')
     if coupon not in ('', 'RAIZES10'):
         raise RuleError('CUPOM_INVALIDO', 'Cupom inválido. Use RAIZES10 na demonstração.')
@@ -49,13 +49,17 @@ def normalize(data):
     key = data.get('key')
     if not isinstance(key, str) or not re.fullmatch(r'[A-Za-z0-9_-]{8,80}', key):
         raise RuleError('CHAVE_INVALIDA', 'A chave do pedido deve ter entre 8 e 80 caracteres seguros.')
-    return dict(unit=unit, channel=channel, items=sorted(clean, key=lambda i: i['sku']), coupon=coupon, loyalty=loyalty, payment=payment, key=key)
+    return dict(unit=unit, channel=channel,
+                items=sorted(normalized_items, key=lambda item: item['sku']),
+                coupon=coupon, loyalty=loyalty, payment=payment, key=key)
 
 def totals(order):
-    subtotal = sum(PRODUCTS[x['sku']][1] * x['qty'] for x in order['items'])
+    subtotal = sum(PRODUCTS[item['sku']][1] * item['qty'] for item in order['items'])
+    # Arredonda o desconto ao centavo mais próximo, sem usar ponto flutuante.
     discount = (subtotal * 10 + 50) // 100 if order['coupon'] else 0
     total = subtotal - discount
     return subtotal, discount, total, total // 100 if order['loyalty'] else 0
 
 def fingerprint(order):
-    return hashlib.sha256(json.dumps({k:v for k,v in order.items() if k != 'key'}, sort_keys=True).encode()).hexdigest()
+    content = {field: value for field, value in order.items() if field != 'key'}
+    return hashlib.sha256(json.dumps(content, sort_keys=True).encode()).hexdigest()

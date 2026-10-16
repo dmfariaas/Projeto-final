@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-09-24T18:44:57.638603+00:00",
-  "html_sha256": "82a0222c6eee12fb74a24fde1df3b39ad3437bd3af081f0e09fd4b43785cde2a",
+  "timestamp_utc": "2026-09-28T18:38:38.275521+00:00",
+  "html_sha256": "b9e6a71a85174b1e61a4fb224793567b5dd54713a8db23deacfbde67ba424d0b",
   "changes": [
     "Paleta de areia, barro e verde-mandacaru",
     "Ilustrações vetoriais de pratos, sol e mandacaru inspiradas em xilogravura",
@@ -15,10 +15,11 @@
     1366
   ],
   "source": "interface.json",
-  "backend": "Conferência de pagamento pendente, recuperação de pedidos e tratamento de falhas integrados à demonstração local. Os 52 testes Python, 18 cenários de navegador e 200 pedidos de carga foram aprovados em 24 de setembro de 2026.",
-  "launcher_sha256": "eca76dd12cc9c1374b582020fbabdacde270e0a63c3d5b85af043458176b6b99",
+  "backend": "Revisão de legibilidade e tratamento de falhas. Rodada de 28 de setembro: 54 testes Python, 18 cenários no navegador e 200 pedidos de carga aprovados.",
+  "launcher_sha256": "d7061fb2c51eb5956d6959f02c2aaabd1441f24315506d024cd4514376e9dafc",
   "standalone_executions_passed": 3,
-  "interface_timestamp_utc": "2026-09-24T18:36:09.270000+00:00",
+  "interface_timestamp_utc": "2026-09-28T18:35:10.778Z",
   "screenshot_pixel_ratio": 2,
-  "version": "0.4"
+  "version": "0.5",
+  "nota_historica": "Registro da revisão de 28/09/2026. As verificações da consolidação posterior estão em consolidacao_2026-10-16.json."
 }

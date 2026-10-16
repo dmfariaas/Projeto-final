@@ -1,5 +1,6 @@
 """Persistência local SQLite. Não contém dados pessoais reais."""
 import sqlite3
+from contextlib import contextmanager
 from domain import UNITS, PRODUCTS
 
 class LocalConnection(sqlite3.Connection):
@@ -10,10 +11,19 @@ class LocalConnection(sqlite3.Connection):
             self.close()
 
 def connect(path):
-    db = sqlite3.connect(str(path), timeout=30, isolation_level=None, factory=LocalConnection)
-    db.row_factory = sqlite3.Row
-    db.execute('PRAGMA foreign_keys=ON')
-    return db
+    connection = sqlite3.connect(str(path), timeout=30, isolation_level=None, factory=LocalConnection)
+    connection.row_factory = sqlite3.Row
+    connection.execute('PRAGMA foreign_keys=ON')
+    return connection
+
+
+@contextmanager
+def transaction(path):
+    """Confirma o conjunto de alterações ou desfaz tudo antes de fechar a conexão."""
+    with connect(path) as connection:
+        # A chave e o estoque são conferidos sob a mesma trava de escrita.
+        connection.execute('BEGIN IMMEDIATE')
+        yield connection
 
 def initialize(path, stock=100):
     with connect(path) as db:

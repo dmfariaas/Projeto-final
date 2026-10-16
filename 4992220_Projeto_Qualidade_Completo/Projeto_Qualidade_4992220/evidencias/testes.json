@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-09-24T18:35:30.045451+00:00",
+  "timestamp_utc": "2026-09-28T18:34:08.322196+00:00",
   "python": "3.14.7",
   "os": "Windows",
   "machine": "AMD64",
@@ -8,369 +8,383 @@
       "id": "CC01",
       "description": "CC01 | 50 tentativas concorrentes com a mesma chave geram um pedido.",
       "status": "APROVADO",
-      "duration_ms": 594.193,
+      "duration_ms": 1140.176,
       "error": ""
     },
     {
       "id": "CC02",
       "description": "CC02 | 50 tentativas disputam dez unidades: dez aprovações e quarenta recusas de estoque.",
       "status": "APROVADO",
-      "duration_ms": 462.797,
+      "duration_ms": 795.569,
       "error": ""
     },
     {
       "id": "RG02",
       "description": "RG02 | Falhas em subtestes e na limpeza geram um único resultado por método.",
       "status": "APROVADO",
-      "duration_ms": 4.383,
+      "duration_ms": 3.288,
       "error": ""
     },
     {
       "id": "RG03",
       "description": "RG03 | Falha de rede no ensaio de carga salva detalhes e encerra com erro.",
       "status": "APROVADO",
-      "duration_ms": 585.628,
+      "duration_ms": 613.481,
       "error": ""
     },
     {
       "id": "API01",
       "description": "API01 | POST retorna 201; GET recupera os mesmos valores; repetição retorna 200.",
       "status": "APROVADO",
-      "duration_ms": 562.718,
+      "duration_ms": 571.874,
       "error": ""
     },
     {
       "id": "API02",
       "description": "API02 | POST sem sessão retorna 401 e não cria pedido.",
       "status": "APROVADO",
-      "duration_ms": 525.331,
+      "duration_ms": 526.794,
       "error": ""
     },
     {
       "id": "API03",
       "description": "API03 | JSON malformado retorna 400.",
       "status": "APROVADO",
-      "duration_ms": 515.63,
+      "duration_ms": 529.557,
       "error": ""
     },
     {
       "id": "API04",
       "description": "API04 | CPF e outros campos não previstos são rejeitados com 422.",
       "status": "APROVADO",
-      "duration_ms": 529.149,
+      "duration_ms": 527.175,
       "error": ""
     },
     {
       "id": "API05",
       "description": "API05 | Corpo acima de 16 KB retorna 413.",
       "status": "APROVADO",
-      "duration_ms": 530.112,
+      "duration_ms": 526.238,
       "error": ""
     },
     {
       "id": "API06",
       "description": "API06 | Catálogo correto e cabeçalhos no-store, nosniff e DENY.",
       "status": "APROVADO",
-      "duration_ms": 529.396,
+      "duration_ms": 528.914,
       "error": ""
     },
     {
       "id": "API07",
       "description": "API07 | Conferência exige sessão e proprietário, valida corpo e retorna 200 com replay explícito.",
       "status": "APROVADO",
-      "duration_ms": 603.68,
+      "duration_ms": 571.239,
       "error": ""
     },
     {
       "id": "API08",
       "description": "API08 | Banco ou arquivo local indisponível retorna 503 sem detalhes internos e permite recuperação.",
       "status": "APROVADO",
-      "duration_ms": 560.774,
+      "duration_ms": 576.187,
+      "error": ""
+    },
+    {
+      "id": "API09",
+      "description": "API09 | Cliente desconectado após commit não provoca segunda resposta nem duplica efeitos ao repetir.",
+      "status": "APROVADO",
+      "duration_ms": 541.147,
+      "error": ""
+    },
+    {
+      "id": "API10",
+      "description": "API10 | Corpo menor que Content-Length retorna 400 sem criar pedido, mesmo com JSON válido.",
+      "status": "APROVADO",
+      "duration_ms": 528.964,
       "error": ""
     },
     {
       "id": "RG01",
       "description": "RG01 | Credencial não ASCII retorna 401 e preserva a execução do servidor.",
       "status": "APROVADO",
-      "duration_ms": 524.065,
+      "duration_ms": 531.597,
       "error": ""
     },
     {
       "id": "RG04",
       "description": "RG04 | Segunda instância na mesma porta é recusada e a primeira continua saudável.",
       "status": "APROVADO",
-      "duration_ms": 525.211,
+      "duration_ms": 530.397,
       "error": ""
     },
     {
       "id": "PR01",
       "description": "PR01 | Aprovar pendência reduz estoque e soma pontos uma vez; consulta recupera os itens.",
       "status": "APROVADO",
-      "duration_ms": 35.524,
+      "duration_ms": 46.204,
       "error": ""
     },
     {
       "id": "PR02",
       "description": "PR02 | Recusar pendência e repetir a recusa preserva estoque e pontos.",
       "status": "APROVADO",
-      "duration_ms": 28.343,
+      "duration_ms": 37.512,
       "error": ""
     },
     {
       "id": "PR03",
       "description": "PR03 | Uma decisão terminal não pode ser invertida, inclusive em pedidos sem pendência.",
       "status": "APROVADO",
-      "duration_ms": 31.006,
+      "duration_ms": 42.939,
       "error": ""
     },
     {
       "id": "PR04",
       "description": "PR04 | Vinte aprovações simultâneas da mesma pendência têm um único efeito.",
       "status": "APROVADO",
-      "duration_ms": 191.831,
+      "duration_ms": 244.749,
       "error": ""
     },
     {
       "id": "PR05",
       "description": "PR05 | Aprovação e recusa concorrentes encerram a pendência com uma única decisão.",
       "status": "APROVADO",
-      "duration_ms": 30.553,
+      "duration_ms": 44.265,
       "error": ""
     },
     {
       "id": "PR06",
       "description": "PR06 | Duas pendências disputam as últimas dez unidades sem venda acima do estoque.",
       "status": "APROVADO",
-      "duration_ms": 47.265,
+      "duration_ms": 46.384,
       "error": ""
     },
     {
       "id": "PR07",
       "description": "PR07 | Falta de estoque mantém pendência sem baixa parcial e permite recusa posterior.",
       "status": "APROVADO",
-      "duration_ms": 34.911,
+      "duration_ms": 47.744,
       "error": ""
     },
     {
       "id": "PR08",
       "description": "PR08 | Somente o proprietário confere a pendência; pedido inexistente retorna 404.",
       "status": "APROVADO",
-      "duration_ms": 24.519,
+      "duration_ms": 29.956,
       "error": ""
     },
     {
       "id": "PR09",
       "description": "PR09 | A conferência aceita apenas o campo payment com approved ou declined.",
       "status": "APROVADO",
-      "duration_ms": 22.207,
+      "duration_ms": 29.019,
       "error": ""
     },
     {
       "id": "PR10",
       "description": "PR10 | Migração preserva dados; pendência antiga permite recusa e impede aprovação sem itens salvos.",
       "status": "APROVADO",
-      "duration_ms": 53.82,
+      "duration_ms": 70.521,
       "error": ""
     },
     {
       "id": "PR11",
       "description": "PR11 | Reinício recupera pendência de João Pessoa e aprova sem pontos quando a fidelidade está desmarcada.",
       "status": "APROVADO",
-      "duration_ms": 29.394,
+      "duration_ms": 33.581,
       "error": ""
     },
     {
       "id": "PR12",
       "description": "PR12 | Falha ao registrar a transição desfaz estoque, pontos e estado; nova tentativa pode concluir.",
       "status": "APROVADO",
-      "duration_ms": 38.418,
+      "duration_ms": 51.504,
       "error": ""
     },
     {
       "id": "SE01",
       "description": "SE01 | Outro cliente não acessa pedido alheio.",
       "status": "APROVADO",
-      "duration_ms": 19.075,
+      "duration_ms": 28.217,
       "error": ""
     },
     {
       "id": "SE02",
       "description": "SE02 | Operador da unidade incorreta recebe 403; unidade correta consulta.",
       "status": "APROVADO",
-      "duration_ms": 21.209,
+      "duration_ms": 24.94,
       "error": ""
     },
     {
       "id": "TS01",
       "description": "TS01 | Aprovar pedido em APP, WEB, TOTEM, BALCAO e PICKUP.",
       "status": "APROVADO",
-      "duration_ms": 569.854,
+      "duration_ms": 558.798,
       "error": ""
     },
     {
       "id": "TS02",
       "description": "TS02 | Recusa não altera estoque nem concede pontos.",
       "status": "APROVADO",
-      "duration_ms": 531.757,
+      "duration_ms": 531.904,
       "error": ""
     },
     {
       "id": "TS03",
       "description": "TS03 | Timeout fica pendente; repetição preserva o mesmo pedido.",
       "status": "APROVADO",
-      "duration_ms": 527.161,
+      "duration_ms": 529.952,
       "error": ""
     },
     {
       "id": "TS04",
       "description": "TS04 | Repetir pedido confirmado gera um pedido, 52 pontos e um evento.",
       "status": "APROVADO",
-      "duration_ms": 557.626,
+      "duration_ms": 561.023,
       "error": ""
     },
     {
       "id": "TS05",
       "description": "TS05 | Mesma chave com conteúdo alterado retorna conflito.",
       "status": "APROVADO",
-      "duration_ms": 526.374,
+      "duration_ms": 541.486,
       "error": ""
     },
     {
       "id": "TS06",
       "description": "TS06 | Pedido maior que estoque restante falha sem alteração parcial.",
       "status": "APROVADO",
-      "duration_ms": 530.367,
+      "duration_ms": 528.947,
       "error": ""
     },
     {
       "id": "TS07",
       "description": "TS07 | Compra em Recife preserva estoque da unidade João Pessoa.",
       "status": "APROVADO",
-      "duration_ms": 528.281,
+      "duration_ms": 527.532,
       "error": ""
     },
     {
       "id": "TS08",
       "description": "TS08 | Compra sem fidelidade confirma com zero pontos.",
       "status": "APROVADO",
-      "duration_ms": 527.759,
+      "duration_ms": 526.739,
       "error": ""
     },
     {
       "id": "TS09",
       "description": "TS09 | Cupom inexistente não cria pedido nem reduz estoque.",
       "status": "APROVADO",
-      "duration_ms": 530.305,
+      "duration_ms": 526.036,
       "error": ""
     },
     {
       "id": "TS10",
       "description": "TS10 | Quantidade zero retorna QUANTIDADE_INVALIDA.",
       "status": "APROVADO",
-      "duration_ms": 529.126,
+      "duration_ms": 523.511,
       "error": ""
     },
     {
       "id": "TS11",
       "description": "TS11 | Carrinho vazio retorna CARRINHO_INVALIDO.",
       "status": "APROVADO",
-      "duration_ms": 528.118,
+      "duration_ms": 527.865,
       "error": ""
     },
     {
       "id": "TS12",
       "description": "TS12 | Unidade ou canal desconhecido é rejeitado.",
       "status": "APROVADO",
-      "duration_ms": 525.115,
+      "duration_ms": 539.884,
       "error": ""
     },
     {
       "id": "TS13",
       "description": "TS13 | Produto inexistente e tentativa de injeção não alteram o banco.",
       "status": "APROVADO",
-      "duration_ms": 525.192,
+      "duration_ms": 526.01,
       "error": ""
     },
     {
       "id": "TS14",
       "description": "TS14 | Nova instância recupera pedido e reconhece sua chave.",
       "status": "APROVADO",
-      "duration_ms": 527.646,
+      "duration_ms": 527.142,
       "error": ""
     },
     {
       "id": "TS15",
       "description": "TS15 | Fidelidade acumula 104 pontos em duas unidades sem duplicação.",
       "status": "APROVADO",
-      "duration_ms": 527.392,
+      "duration_ms": 542.459,
       "error": ""
     },
     {
       "id": "TS16",
       "description": "TS16 | Resposta inválida do gateway desfaz a transação integralmente.",
       "status": "APROVADO",
-      "duration_ms": 523.364,
+      "duration_ms": 526.226,
       "error": ""
     },
     {
       "id": "TS17",
       "description": "TS17 | Cada resultado cria um evento sem identificador de cliente ou payload.",
       "status": "APROVADO",
-      "duration_ms": 557.785,
+      "duration_ms": 541.666,
       "error": ""
     },
     {
       "id": "TS18",
       "description": "TS18 | Consultar pedido inexistente retorna 404.",
       "status": "APROVADO",
-      "duration_ms": 529.406,
+      "duration_ms": 527.842,
       "error": ""
     },
     {
       "id": "TU01",
       "description": "TU01 | Valores exatos: 5800 - 580 = 5220 centavos; 52 pontos.",
       "status": "APROVADO",
-      "duration_ms": 0.107,
+      "duration_ms": 0.147,
       "error": ""
     },
     {
       "id": "TU02",
       "description": "TU02 | Sem cupom e sem fidelidade: total 5800 e zero pontos.",
       "status": "APROVADO",
-      "duration_ms": 0.059,
+      "duration_ms": 0.159,
       "error": ""
     },
     {
       "id": "TU03",
       "description": "TU03 | Aceitar 1 e 10; rejeitar 0, -1, 11, 1.5, string e booleano.",
       "status": "APROVADO",
-      "duration_ms": 0.185,
+      "duration_ms": 0.339,
       "error": ""
     },
     {
       "id": "TU04",
       "description": "TU04 | Produto repetido deve ser rejeitado antes do cálculo.",
       "status": "APROVADO",
-      "duration_ms": 0.058,
+      "duration_ms": 0.073,
       "error": ""
     },
     {
       "id": "TU05",
       "description": "TU05 | Rejeitar chave vazia, curta, excessiva ou com aspas.",
       "status": "APROVADO",
-      "duration_ms": 0.088,
+      "duration_ms": 0.141,
       "error": ""
     },
     {
       "id": "TU06",
       "description": "TU06 | Campos extras e corpo não estruturado são rejeitados.",
       "status": "APROVADO",
-      "duration_ms": 0.081,
+      "duration_ms": 0.194,
       "error": ""
     }
   ],
-  "total": 52,
-  "passed": 52,
+  "total": 54,
+  "passed": 54,
   "failures": 0,
   "errors": 0,
   "skipped": 0,

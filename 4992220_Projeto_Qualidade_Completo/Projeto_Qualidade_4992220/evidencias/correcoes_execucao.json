@@ -1,6 +1,6 @@
 {
-  "version": "0.4",
-  "timestamp_utc": "2026-09-24T18:44:57.638603+00:00",
+  "version": "0.5",
+  "timestamp_utc": "2026-09-28T18:38:38.275521+00:00",
   "changes": [
     {
       "description": "Cabeçalho de autorização não ASCII recebe HTTP 401 sem encerrar a conexão.",
@@ -146,6 +146,31 @@
         "API08"
       ],
       "status": "CORRIGIDO"
+    },
+    {
+      "description": "Desconexão do cliente durante a resposta não provoca uma segunda tentativa de resposta HTTP; o pedido gravado permanece recuperável pela mesma chave.",
+      "tests": [
+        "API09"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Corpo de pedido menor que o tamanho declarado é rejeitado antes de criar a compra, mesmo quando os bytes recebidos formam JSON válido.",
+      "tests": [
+        "API10"
+      ],
+      "status": "CORRIGIDO"
+    },
+    {
+      "description": "Controle transacional e efeitos de confirmação foram organizados em rotinas compartilhadas, mantendo os contratos da aplicação.",
+      "tests": [
+        "TS01",
+        "TS04",
+        "PR01",
+        "PR04",
+        "PR06"
+      ],
+      "status": "REVISADO"
     }
   ],
   "historical_measurement": "O tempo de correção de D01 preserva o fechamento original em defeito.json e não mede as revisões posteriores.",
@@ -167,17 +192,17 @@
     "executions_passed": 3,
     "persistent_order_verified": true,
     "evidence": "inicializador.json",
-    "launcher_sha256": "eca76dd12cc9c1374b582020fbabdacde270e0a63c3d5b85af043458176b6b99",
+    "launcher_sha256": "d7061fb2c51eb5956d6959f02c2aaabd1441f24315506d024cd4514376e9dafc",
     "explicit_port_verified": true,
-    "timestamp_utc": "2026-09-24T18:37:46.948839+00:00"
+    "timestamp_utc": "2026-09-28T18:36:23.990690+00:00"
   },
   "sources_sha256": {
-    "api.py": "2a39c9712f7bba2ca3db9ceca522acc3f6adba10efed65481c8ad4f797d2347d",
-    "domain.py": "8073ee69012ae0daeeee92be6b6422aa82acbcbd32ac00886986c57612fdd79e",
-    "index.html": "82a0222c6eee12fb74a24fde1df3b39ad3437bd3af081f0e09fd4b43785cde2a",
-    "repository.py": "26c0b0ccaa0501b970307e5b6a134f9834148b1131a294bd1636fd461578075a",
+    "api.py": "8c78e6373dc3c6b9795a02cbaab31f39b23e06dfc7e5d35a5b8555b1c6c883c3",
+    "domain.py": "ee3d3e63207e6809ac1711135a6dc37cc5c3e986124c2da6b7cd6063530ad949",
+    "index.html": "b9e6a71a85174b1e61a4fb224793567b5dd54713a8db23deacfbde67ba424d0b",
+    "repository.py": "85a01e79c7909a9316e9d434aa889a60919383a82df0d126766ed2958ca5e49e",
     "run_evidence.py": "8791da173595e2eedf5e84c827eb57b3431fdf4a97a7c3d000a123b94023c725",
-    "service.py": "0ee6f6d6b11e5114987dba5d661db5f3f5707bd481dca70e41fb5d44ce2c9a03",
-    "tests.py": "1685d318bd29faf794fd8016acf07628030916d8066fe2d5872830f617043869"
+    "service.py": "003f181a3f04f13f695f9ab5b1278fd7c567af8d006f904a355b5f10169e455b",
+    "tests.py": "3ce9d578af752a66fc2ed7032c2a3e0aa93db122c6ac09aee600d54855cffd76"
   }
 }

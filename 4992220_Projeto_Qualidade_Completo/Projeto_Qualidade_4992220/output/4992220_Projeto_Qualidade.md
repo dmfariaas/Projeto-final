@@ -36,13 +36,13 @@ Professor: Me. Rodrigo Nascimento.
 
 # RESUMO
 
-A confirmação de uma compra precisa corresponder ao valor pago, ao estoque disponível e aos pontos de fidelidade concedidos. Este trabalho examina essa relação no fluxo de finalização de pedidos da rede fictícia Raízes do Nordeste, considerando os canais aplicativo, web, totem, balcão e retirada. A proposta reúne oito requisitos funcionais e oito requisitos de qualidade, com critérios de aceitação, arquitetura em camadas, análise de riscos e testes ligados às respectivas evidências. Para verificar as regras, foi utilizado um protótipo web local com banco SQLite e respostas de pagamento simuladas. Foram aprovados 70 testes automatizados: 52 em Python e 18 no navegador. Na carga de 200 pedidos, com dez tarefas de envio concorrentes, o tempo médio foi de 58,867 ms e o percentil 95 foi de 208,004 ms. As verificações confirmaram os cálculos, o isolamento de estoque entre unidades, as restrições de acesso nos casos definidos e a prevenção de efeitos duplicados quando a mesma chave é reenviada. A execução inicial revelou uma falha no fechamento de conexões SQLite, registrada como D01 e corrigida antes do reteste. Os tempos obtidos descrevem o ambiente local, sem comunicação com um provedor de pagamento. Disponibilidade mensal, satisfação, aceitação de negócio, aparelhos físicos e estresse prolongado ainda precisam de avaliação. O protótipo permite demonstrar as regras e repetir os testes. Sua aplicação comercial depende dessas validações e das integrações previstas.
+A confirmação de uma compra precisa corresponder ao valor pago, ao estoque disponível e aos pontos de fidelidade concedidos. Este trabalho examina essa relação no fluxo de finalização de pedidos da rede fictícia Raízes do Nordeste, considerando os canais aplicativo, web, totem, balcão e retirada. A proposta reúne oito requisitos funcionais e oito requisitos de qualidade, com critérios de aceitação, arquitetura em camadas, análise de riscos e testes ligados às respectivas evidências. Para verificar as regras, foi utilizado um protótipo web local com banco SQLite e respostas de pagamento simuladas. Foram aprovados 72 testes automatizados: 54 em Python e 18 no navegador. Na carga de 200 pedidos, com dez tarefas de envio concorrentes, o tempo médio foi de 61,121 ms e o percentil 95 foi de 149,676 ms. As verificações confirmaram os cálculos, o isolamento de estoque entre unidades, as restrições de acesso nos casos definidos e a prevenção de efeitos duplicados quando a mesma chave é reenviada. A execução inicial revelou uma falha no fechamento de conexões SQLite, registrada como D01 e corrigida antes do reteste. Os tempos obtidos descrevem o ambiente local, sem comunicação com um provedor de pagamento. Disponibilidade mensal, satisfação, aceitação de negócio, aparelhos físicos e estresse prolongado ainda precisam de avaliação. O protótipo permite demonstrar as regras e repetir os testes. Sua aplicação comercial depende dessas validações e das integrações previstas.
 
 **Palavras-chave:** qualidade de software; pedidos; rastreabilidade; testes; franquias.
 
 # ABSTRACT
 
-An order confirmation should match the amount paid, the available stock, and the loyalty points awarded. This study examines that relationship during checkout in the fictional Raízes do Nordeste restaurant network, covering app, web, kiosk, counter, and pickup channels. The proposal defines eight functional and eight quality requirements, with acceptance criteria, a layered architecture, risk analysis, and tests linked to their evidence. A local web prototype with a SQLite database and simulated payment responses was used to check the rules. All 70 automated tests passed: 52 in Python and 18 in the browser. A workload of 200 orders, sent by ten concurrent workers, produced an average response time of 58.867 ms and a 95th percentile of 208.004 ms. The checks confirmed calculations, stock separation between locations, access restrictions in the defined cases, and prevention of duplicate effects when the same request key is reused. The initial execution revealed a SQLite connection-closing defect, recorded as D01 and corrected before retesting. The response times describe the local environment without communication with a payment provider. Monthly availability, satisfaction, business acceptance, physical devices, and sustained stress still require evaluation. The prototype supports demonstrations and repeatable testing. Commercial use depends on those assessments and the planned integrations.
+An order confirmation should match the amount paid, the available stock, and the loyalty points awarded. This study examines that relationship during checkout in the fictional Raízes do Nordeste restaurant network, covering app, web, kiosk, counter, and pickup channels. The proposal defines eight functional and eight quality requirements, with acceptance criteria, a layered architecture, risk analysis, and tests linked to their evidence. A local web prototype with a SQLite database and simulated payment responses was used to check the rules. All 72 automated tests passed: 54 in Python and 18 in the browser. A workload of 200 orders, sent by ten concurrent workers, produced an average response time of 61.121 ms and a 95th percentile of 149.676 ms. The checks confirmed calculations, stock separation between locations, access restrictions in the defined cases, and prevention of duplicate effects when the same request key is reused. The initial execution revealed a SQLite connection-closing defect, recorded as D01 and corrected before retesting. The response times describe the local environment without communication with a payment provider. Monthly availability, satisfaction, business acceptance, physical devices, and sustained stress still require evaluation. The prototype supports demonstrations and repeatable testing. Commercial use depends on those assessments and the planned integrations.
 
 **Keywords:** software quality; orders; traceability; testing; franchises.
 
@@ -109,18 +109,18 @@ An order confirmation should match the amount paid, the available stock, and the
     - 4.2.18 PR01 a PR12 Resolução de pendências – p. 30
   - 4.3 Validações complementares e humanas – p. 31
     - 4.3.1 Concorrência e segurança – p. 31
-    - 4.3.2 UAT01 Protocolo de aceitação e usabilidade – p. 31
+    - 4.3.2 UAT01 Protocolo de aceitação e usabilidade – p. 32
     - 4.3.3 Estresse e recuperação – p. 32
-    - 4.3.4 Recuperação e conclusão pela interface – p. 32
+    - 4.3.4 Recuperação e conclusão pela interface – p. 33
 - 5 PLANILHA DE MÉTRICAS – p. 34
   - 5.1 Coleta e responsabilidade – p. 34
 - 6 RELATÓRIO FINAL DE CONFORMIDADE – p. 35
   - 6.1 Matriz de rastreabilidade – p. 35
-    - 6.1.1 Cobertura funcional utilizada no indicador – p. 35
+    - 6.1.1 Cobertura funcional utilizada no indicador – p. 36
   - 6.2 Resultados e parecer – p. 36
-    - 6.2.1 Execução final – p. 36
+    - 6.2.1 Execução final – p. 37
     - 6.2.2 Defeito D01 e regressão – p. 37
-    - 6.2.3 Correções de execução – p. 37
+    - 6.2.3 Correções de execução – p. 38
     - 6.2.4 Parecer – p. 38
   - 6.3 Evidências da interface em computador – p. 39
   - 6.4 Evidências da interface móvel e privacidade – p. 40
@@ -495,7 +495,7 @@ Fonte: especificação e registros de verificação do projeto (2026).
 
 ### 4.1.1 Ambiente e dados
 
-Os testes foram executados com Python 3.14.7 em Windows AMD64, usando bibliotecas padrão, e com Google Chrome 153.0.8010.53, controlado por Playwright. O protótipo utiliza SQLite, que serializa as transações de escrita. Cada teste integrado de regras começa com um banco temporário novo. A exceção ocorre quando a própria verificação exige manter os dados entre etapas, como no teste de persistência.
+Os registros de 28 de setembro de 2026 foram obtidos com Python 3.14.7 em Windows AMD64, usando bibliotecas padrão, e com Google Chrome 154.0.8037.58, controlado por Playwright. O protótipo utiliza SQLite, que serializa as transações de escrita. Cada teste integrado de regras começa com um banco temporário novo. A exceção ocorre quando a própria verificação exige manter os dados entre etapas, como no teste de persistência.
 
 O pedido padrão reúne dois baiões e um suco, cupom RAIZES10, fidelidade selecionada e unidade REC. Quando a compra é confirmada, o resultado esperado é R$ 52,20 e 52 pontos. Os cenários indicam as alterações feitas nessa entrada. Como o código de cada pedido é gerado durante a execução, a conferência verifica sua criação ou manutenção entre respostas, sem exigir um identificador previamente fixado.
 
@@ -593,6 +593,8 @@ SE01 verifica a tentativa de consulta por outro cliente, e SE02, por operador de
 
 API07 verifica o contrato de resolução simulada: sessão obrigatória, acesso pelo proprietário, corpo válido e retorno HTTP 200 com indicação de repetição. API08 torna o banco ou o arquivo local indisponível durante a requisição e espera uma resposta 503 compreensível, sem detalhes internos. Ao retirar a falha, o serviço deve voltar a responder e permitir a conclusão da pendência. Os registros estão em EV01.
 
+API09 interrompe a conexão durante a resposta, depois de o pedido ser gravado. O serviço deve encerrar o envio sem tentar uma segunda resposta. Ao repetir a solicitação com a mesma chave, o teste exige a recuperação do pedido original, sem outra baixa de estoque, crédito de pontos ou evento. API10 envia um JSON válido com menos bytes que o tamanho declarado em Content-Length. O serviço deve rejeitar esse corpo incompleto com HTTP 400 e código JSON_INVALIDO, sem criar pedido. Os dois casos integram a revisão 0.5 e estão registrados em EV01.
+
 ### 4.3.2 UAT01 Protocolo de aceitação e usabilidade
 
 **Situação:** planejado. O protocolo prevê dez participantes adultos, com perfis de cliente e operação. Antes da tarefa, o moderador deverá explicar a finalidade da sessão e o uso de dados fictícios. Cada participante deverá selecionar a unidade, montar o pedido indicado, aplicar o cupom, conferir o total e interpretar uma confirmação ou pendência. Ainda não houve participação de funcionários reais ou de outros usuários.
@@ -625,9 +627,9 @@ Quadro 12 – Indicadores, metas e resultados
 
 | Indicador | Definição e resultado | Meta e decisão |
 |---|---|---|
-| Taxa de defeitos | Defeitos conhecidos em aberto / versões avaliadas: 0/1 na revisão 0.4. D01 e correções de execução concluídos. | Zero defeito crítico aberto para demonstração. Contagem não prova ausência de defeitos desconhecidos. |
+| Taxa de defeitos | Defeitos conhecidos em aberto / versões avaliadas: 0/1 na revisão 0.5. D01 e correções de execução concluídos. | Zero defeito crítico aberto para demonstração. Contagem não prova ausência de defeitos desconhecidos. |
 | Cobertura de testes | RF com ao menos um cenário automatizado / RF do recorte: 8/8 = 100%. | 100% dos oito RF. Ampliar critérios quando o escopo crescer. Não é cobertura de código. |
-| Tempo de resposta | Média: 58,867 ms. p95: 208,004 ms. 200 pedidos locais. | Média e p95 abaixo de 2.000 ms. Atende nesta execução local. |
+| Tempo de resposta | Média: 61,121 ms. p95: 149,676 ms. 200 pedidos locais. | Média e p95 abaixo de 2.000 ms. Atende nesta execução local. |
 | Disponibilidade | Verificações com serviço disponível / verificações previstas no mês. Não medido. | Pelo menos 99,5%. Implantar monitoramento externo antes da avaliação. |
 | Satisfação | Respostas 4 ou 5 / respostas válidas, escala de 1 a 5. Não medido. | Pelo menos 85%. Aplicar pesquisa após a tarefa de UAT. |
 | Tempo médio de correção | 0,335 hora entre falha e fechamento original de D01, n=1. Proxy local. | Até 24 h como meta proposta. Não representa histórico operacional. |
@@ -656,7 +658,7 @@ Quadro 13 – Rastreabilidade dos requisitos de qualidade
 | RQ02 Disponibilidade | Monitoramento mensal (EV06 prevista). | Não medido. |
 | RQ03 Segurança | SE01, SE02, API02, API04 (EV01). | Casos definidos aprovados. Autenticação real pendente. |
 | RQ04 Usabilidade | UI05, UI06 (EV03). UAT01 (EV05 prevista). | Layout verificado. Uso humano não medido. |
-| RQ05 Confiabilidade | TS02 a TS07, TS15, TS16, CC01, PR01 a PR12 (EV01). UI09 a UI12, UI15 a UI18 (EV03). | Consistência local, resolução simulada e retomada na mesma aba. |
+| RQ05 Confiabilidade | TS02 a TS07, TS15, TS16, CC01, API09, API10, PR01 a PR12 (EV01). UI09 a UI12, UI15 a UI18 (EV03). | Consistência local, rejeição de corpo incompleto, resolução simulada e retomada na mesma aba. |
 | RQ06 Observação | TS04, TS17, PR01 a PR07, PR12 (EV01). | Um evento de criação e um por transição efetiva, sem duplicação nos reenvios. |
 | RQ07 Concorrência | CC01 e CC02 (EV01). | Atendido com 50 tentativas e 20 threads. |
 | RQ08 Testabilidade | TU, TS, API e UI (EV01, EV03, EV04). | Oito RF com casos automatizados, sem medição de linhas. |
@@ -677,7 +679,7 @@ Quadro 14 – Cobertura dos requisitos funcionais
 | RF04 | TS02, TS03, TS16, PR01 a PR03, PR05, PR07, PR09 a PR11, UI01, UI03, UI04, UI11. |
 | RF05 | TS02, TS03, TS06, TS07, CC02, PR01, PR02, PR04 a PR07, PR11, PR12, UI11, UI14. |
 | RF06 | TU01, TU02, TS04, TS08, TS15, PR01, PR02, PR04 a PR07, PR11, PR12, UI11. |
-| RF07 | TS03, TS04, TS05, TS14, CC01, API01, PR01 a PR05, UI09, UI10, UI12, UI15 a UI18. |
+| RF07 | TS03, TS04, TS05, TS14, CC01, API01, API09, PR01 a PR05, UI09, UI10, UI12, UI15 a UI18. |
 | RF08 | SE01, SE02, TS18, API01, API02, API07, PR08. |
 
 Fonte: especificação e registros de verificação do projeto (2026).
@@ -690,9 +692,9 @@ O parecer considera os resultados dos testes, o comportamento sob carga e o trat
 
 ### 6.2.1 Execução final
 
-A verificação da revisão 0.4, de 24 de setembro de 2026, terminou com **52/52 testes em Python e 18/18 cenários no navegador aprovados**. A suíte Python reúne testes unitários, de sistema, segurança, concorrência, API, regressão e resolução de pendências. EV01 registra os identificadores e os resultados individuais. Na contagem, cada método corresponde a um teste, mesmo quando avalia várias entradas. As combinações de dados de um mesmo método, portanto, não são contabilizadas como aprovações separadas.
+A verificação da revisão 0.5, de 28 de setembro de 2026, terminou com **54/54 testes em Python e 18/18 cenários no navegador aprovados**. A suíte Python reúne testes unitários, de sistema, segurança, concorrência, API, regressão e resolução de pendências. EV01 registra os identificadores e os resultados individuais. Na contagem, cada método corresponde a um teste, mesmo quando avalia várias entradas. As combinações de dados de um mesmo método, portanto, não são contabilizadas como aprovações separadas.
 
-Durante a carga, foram confirmados 200 de 200 pedidos. O maior tempo de resposta foi de 1204,152 ms. A vazão média foi de 148,45 pedidos por segundo em uma janela de 1,347 segundos. A base estava nova e o pagamento era simulado, sem latência externa. Por isso, os valores servem para comparar execuções locais nas mesmas condições. Estimar a capacidade de atendimento da rede exigiria uma carga mais longa, infraestrutura de produção e comunicação com serviços externos.
+Durante a carga, foram confirmados 200 de 200 pedidos. O maior tempo de resposta foi de 1108,249 ms. A vazão média foi de 151,27 pedidos por segundo em uma janela de 1,322 segundos. A base estava nova e o pagamento era simulado, sem latência externa. Por isso, os valores servem para comparar execuções locais nas mesmas condições. Estimar a capacidade de atendimento da rede exigiria uma carga mais longa, infraestrutura de produção e comunicação com serviços externos.
 
 ### 6.2.2 Defeito D01 e regressão
 
@@ -709,6 +711,8 @@ As revisões de execução também passaram a verificar como o programa reage qu
 Na interface, UI07 impede mudanças no pedido durante o envio. UI08 simula a perda da resposta e repete a solicitação com o mesmo conteúdo e a mesma chave, sem nova baixa no estoque. A revisão também corrigiu uma falha que ocultava a confirmação quando o cardápio não era atualizado após a compra. UI01 agora verifica se a confirmação permanece visível nessa situação, acompanhada de um aviso sobre o estoque. Os ajustes e suas verificações estão relacionados em EV08.
 
 A revisão 0.4 amplia a recuperação: o rascunho, o resultado e a solicitação ainda sem resposta permanecem disponíveis após recarregar a mesma aba. O carregamento do cardápio pode ser repetido, e uma requisição sem resposta deixa de bloquear a tela após oito segundos. A conclusão simulada de pendências permite observar a confirmação ou a recusa mantendo o pedido original. Os cenários PR01 a PR12, API07, API08 e UI09 a UI18 verificam esses comportamentos e seus efeitos nos registros.
+
+A revisão 0.5 corrigiu duas falhas nas requisições. Uma desconexão depois da gravação podia levar o servidor a tentar responder novamente com erro 503. Também era possível aceitar um corpo menor que o tamanho declarado, caso o trecho recebido ainda formasse um JSON válido. O envio agora termina quando a conexão é interrompida, e o comprimento do corpo é conferido antes de processar o pedido. API09 e API10 verificam essas correções. A organização das transações em uma função comum mantém o fechamento da conexão e a confirmação ou reversão conjunta dos efeitos sobre pedido, estoque e pontos.
 
 ### 6.2.4 Parecer
 
@@ -773,7 +777,7 @@ Quadro 15 – Catálogo das evidências
 | EV01 | evidencias/testes.json e testes.txt: resultados individuais, ambiente e instante UTC. |
 | EV02 | evidencias/desempenho.json: 200 amostras, média, p95, máximo e condições da carga. |
 | EV03 | evidencias/interface.json e capturas PNG: 18 cenários no navegador, com banco temporário. |
-| EV04 | evidencias/fontes_sha256.json: impressão digital dos arquivos Python e HTML da execução de 24/09/2026, preservada como registro histórico. |
+| EV04 | evidencias/fontes_sha256.json: impressão digital dos arquivos Python e HTML da execução de 28/09/2026, preservada como registro histórico. |
 | EV05 | Protocolo UAT01 deste relatório. Resultado ainda não coletado. |
 | EV06 | Protocolo de disponibilidade RQ02. Resultado ainda não coletado. |
 | EV07 | evidencias/execucao_inicial.json, execucao_inicial.txt e defeito.json: falha D01 e seu fechamento original. Caminhos locais abreviados no registro textual. |
@@ -781,7 +785,7 @@ Quadro 15 – Catálogo das evidências
 
 Fonte: especificação e registros de verificação do projeto (2026).
 
-Os hashes de EV04 identificam os arquivos usados naquela execução. Como houve ajustes posteriores de formatação do código, eles não devem ser comparados com a versão atual como se fossem uma nova medição. A revisão editorial deste relatório preserva os resultados registrados e não substitui a execução dos testes.
+Os hashes de EV04 identificam os arquivos usados em 28 de setembro. Ajustes posteriores, entre eles a reabertura da demonstração que já ocupa a porta local, fazem parte da versão consolidada em outubro. Por isso, os hashes históricos não representam essa consolidação. Os resultados e tempos apresentados neste relatório correspondem às execuções de EV01, EV02 e EV03, sem substituir esses registros por medições de outra versão.
 
 ### 6.5.1 Reprodução local
 

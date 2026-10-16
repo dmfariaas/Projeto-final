@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-16",
+  "result": "passed",
+  "production_port_8765_touched": false,
+  "canonical_code_changed_by_validation": false,
+  "temporary_directory_has_spaces_and_accents": true,
+  "checks": [
+    {
+      "check": "avulso",
+      "passed": true,
+      "temporary_port": 52072,
+      "launcher_exit_code": 0,
+      "server_survived_launcher": true,
+      "reopened_same_process": true,
+      "database_preserved": true,
+      "order_replayed_without_duplicate": true,
+      "first_stdout": "Arquivos preparados. Abrindo a demonstracao...\r\nServidor iniciado. PID: 13632\r\nLog: <PASTA_TEMPORARIA>\\pasta com espaços e acentuação bcr7vd1f\\avulso\\dados isolados com acentuação\\dados\\servidor-52072.log\r\nDemonstração local: http://127.0.0.1:52072\r\nFechar este inicializador não encerra o servidor.\r\nPress any key to continue . . . \r\n",
+      "second_stdout": "Arquivos preparados. Abrindo a demonstracao...\r\nA demonstração já está em execução. Reutilizando o servidor.\r\nDemonstração local: http://127.0.0.1:52072\r\nFechar este inicializador não encerra o servidor.\r\nPress any key to continue . . . \r\n",
+      "payload_matches_canonical": true
+    },
+    {
+      "check": "pasta_completa",
+      "passed": true,
+      "temporary_port": 52086,
+      "launcher_exit_code": 0,
+      "server_survived_launcher": true,
+      "reopened_same_process": true,
+      "database_preserved": true,
+      "order_replayed_without_duplicate": true,
+      "first_stdout": "Servidor iniciado. PID: 39812\r\nLog: <PASTA_TEMPORARIA>\\pasta com espaços e acentuação bcr7vd1f\\pasta_completa\\prototipo\\servidor-52086.log\r\nDemonstração local: http://127.0.0.1:52086\r\nFechar este inicializador não encerra o servidor.\r\nPress any key to continue . . . \r\n",
+      "second_stdout": "A demonstração já está em execução. Reutilizando o servidor.\r\nDemonstração local: http://127.0.0.1:52086\r\nFechar este inicializador não encerra o servidor.\r\nPress any key to continue . . . \r\n",
+      "payload_matches_canonical": null,
+      "source_used": "Arquivos locais do pacote. Extração do payload não se aplica neste cenário."
+    },
+    {
+      "check": "bootstrap_port0_foreground",
+      "passed": true,
+      "temporary_port": 52104,
+      "api_bound_to_bootstrap_process": true,
+      "browser_suppressed_only_for_test": true,
+      "stdout": "Arquivos preparados. Abrindo a demonstracao...\nDemonstração local: http://127.0.0.1:52104\n"
+    },
+    {
+      "check": "conflicting_service_preserved",
+      "passed": true,
+      "temporary_port": 52106,
+      "launcher_exit_code": 1,
+      "no_server_started": true,
+      "no_database_created": true,
+      "stdout": "Arquivos preparados. Abrindo a demonstracao...\r\nA demonstracao nao iniciou. Confira a mensagem acima.\r\nPress any key to continue . . . \r\n",
+      "stderr": "Não foi possível abrir a demonstração.\r\nA porta 52106 está ocupada por outro serviço ou por uma demonstração que ainda não respondeu. Aguarde e tente novamente ou escolha outra porta com --port. O serviço existente foi preservado.\r\n"
+    }
+  ],
+  "nota_publicacao": "Caminhos absolutos da máquina foram abreviados nos registros de saída."
+}

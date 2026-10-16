@@ -470,6 +470,69 @@ class HttpTests(Base):
         self.assertEqual(self.req('/api/orders/'+pending['id']+'/payment',{'payment':'approved'})[1]['status'],'CONFIRMADO')
         self.assertEqual(self.req('/api/health')[0],200)
 
+    def test_API09_disconnect_after_commit_keeps_replay(self):
+        """API09 | Cliente desconectado após commit não provoca segunda resposta nem duplica efeitos ao repetir."""
+        from http.client import IncompleteRead
+        from socketserver import _SocketWriter
+        from unittest.mock import patch
+
+        handler = self.server.RequestHandlerClass
+        original_send_response = handler.send_response
+        original_write = _SocketWriter.write
+        response_codes = []
+        disconnected = threading.Event()
+
+        def record_response(instance, code, message=None):
+            response_codes.append(code)
+            return original_send_response(instance, code, message)
+
+        def disconnect_on_body(writer, data):
+            if data.startswith(b'{') and not disconnected.is_set():
+                disconnected.set()
+                raise BrokenPipeError('cliente fechou a conexão durante a resposta')
+            return original_write(writer, data)
+
+        request = Request(self.url + '/api/orders', data=json.dumps(payload()).encode(),
+                          headers={'Content-Type': 'application/json',
+                                   'Authorization': 'Bearer ' + self.server.demo_token})
+        with patch.object(handler, 'send_response', record_response), \
+             patch.object(_SocketWriter, 'write', disconnect_on_body):
+            with urlopen(request, timeout=5) as response:
+                try:
+                    response.read()
+                except IncompleteRead:
+                    pass
+
+        self.assertTrue(disconnected.is_set())
+        self.assertEqual(response_codes, [201])
+        code, result, _ = self.req('/api/orders', payload())
+        self.assertEqual((code, result['replayed']), (200, True))
+        self.assertEqual(self.value('SELECT COUNT(*) FROM orders'), 1)
+        self.assertEqual(self.value('SELECT COUNT(*) FROM events'), 1)
+        self.assertEqual(self.value('SELECT balance FROM points'), 52)
+        self.assertEqual(self.value('SELECT SUM(qty) FROM stock'), 57)
+
+    def test_API10_truncated_body_is_not_processed(self):
+        """API10 | Corpo menor que Content-Length retorna 400 sem criar pedido, mesmo com JSON válido."""
+        import socket
+        from http.client import HTTPResponse
+
+        body = json.dumps(payload()).encode()
+        headers = (f'POST /api/orders HTTP/1.0\r\n'
+                   f'Host: 127.0.0.1\r\n'
+                   f'Authorization: Bearer {self.server.demo_token}\r\n'
+                   f'Content-Type: application/json\r\n'
+                   f'Content-Length: {len(body) + 1}\r\n\r\n').encode()
+        with socket.create_connection(self.server.server_address, timeout=5) as client:
+            client.sendall(headers + body)
+            client.shutdown(socket.SHUT_WR)
+            with HTTPResponse(client) as response:
+                response.begin()
+                result = json.loads(response.read())
+                self.assertEqual((response.status, result.get('code')), (400, 'JSON_INVALIDO'))
+        self.assertEqual(self.value('SELECT COUNT(*) FROM orders'), 0)
+        self.assertEqual(self.req('/api/health')[0], 200)
+
     def test_RG01_non_ascii_authorization(self):
         """RG01 | Credencial não ASCII retorna 401 e preserva a execução do servidor."""
         request=Request(self.url+'/api/orders',data=json.dumps(payload()).encode(),

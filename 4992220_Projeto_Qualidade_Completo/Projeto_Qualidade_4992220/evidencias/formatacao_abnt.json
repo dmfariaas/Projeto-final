@@ -1,8 +1,8 @@
 {
+  "data_revisao": "2026-10-16",
   "documento": "4992220_Projeto_Qualidade.pdf",
   "paginas_fisicas": 45,
   "entradas_sumario_conferidas": 80,
-  "subsecoes_com_espacamento_conferido": 72,
   "quadros": 16,
   "figuras": 5,
   "formato": {
@@ -29,12 +29,11 @@
     ],
     "missing_identity": []
   },
-  "revisao_visual": "Páginas renderizadas e revisadas; títulos, fontes e continuidade de quadros conferidos.",
-  "identificacao_pendente": [],
-  "resultados_conferidos": {
-    "testes_aprovados": 70,
-    "media_ms": 58.867,
-    "p95_ms": 208.004
+  "sha256_pdf": "7c69ebad738b39d0151c9d68a31e8c108ce104d0928d5d28babdfa88425202e0",
+  "resultados_historicos_28_09_2026": {
+    "testes_aprovados": 72,
+    "media_ms": 61.121,
+    "p95_ms": 149.676
   },
-  "sha256_pdf": "1e5e39488e49d0718a7566db939321ebade1746b50316486dc863e3aeb240059"
+  "revisao_visual": "PDF renderizado e revisado. Sumário, margens e numeração conferidos."
 }

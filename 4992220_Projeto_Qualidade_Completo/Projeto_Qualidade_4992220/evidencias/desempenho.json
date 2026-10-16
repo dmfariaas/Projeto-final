@@ -1,1213 +1,1213 @@
 {
-  "timestamp_utc": "2026-09-24T18:35:49.032975+00:00",
+  "timestamp_utc": "2026-09-28T18:34:29.556270+00:00",
   "requests": 200,
   "workers": 10,
   "warmup": 5,
-  "mean_ms": 58.867,
-  "p95_ms": 208.004,
-  "max_ms": 1204.152,
-  "duration_s": 1.347,
-  "throughput_rps": 148.45,
+  "mean_ms": 61.121,
+  "p95_ms": 149.676,
+  "max_ms": 1108.249,
+  "duration_s": 1.322,
+  "throughput_rps": 151.27,
   "success": 200,
   "method": "HTTP localhost, SQLite local, gateway sem latência; p95 por posto mais próximo; warmup excluído",
   "samples": [
     {
       "index": 0,
-      "elapsed_ms": 9.891,
+      "elapsed_ms": 15.179,
       "ok": true,
       "error": ""
     },
     {
       "index": 1,
-      "elapsed_ms": 1204.152,
+      "elapsed_ms": 775.284,
       "ok": true,
       "error": ""
     },
     {
       "index": 2,
-      "elapsed_ms": 56.848,
+      "elapsed_ms": 17.436,
       "ok": true,
       "error": ""
     },
     {
       "index": 3,
-      "elapsed_ms": 768.637,
+      "elapsed_ms": 32.845,
       "ok": true,
       "error": ""
     },
     {
       "index": 4,
-      "elapsed_ms": 25.321,
+      "elapsed_ms": 141.07,
       "ok": true,
       "error": ""
     },
     {
       "index": 5,
-      "elapsed_ms": 12.714,
+      "elapsed_ms": 23.719,
       "ok": true,
       "error": ""
     },
     {
       "index": 6,
-      "elapsed_ms": 25.473,
+      "elapsed_ms": 60.781,
       "ok": true,
       "error": ""
     },
     {
       "index": 7,
-      "elapsed_ms": 162.606,
+      "elapsed_ms": 123.169,
       "ok": true,
       "error": ""
     },
     {
       "index": 8,
-      "elapsed_ms": 84.118,
+      "elapsed_ms": 75.35,
       "ok": true,
       "error": ""
     },
     {
       "index": 9,
-      "elapsed_ms": 37.529,
+      "elapsed_ms": 23.612,
       "ok": true,
       "error": ""
     },
     {
       "index": 10,
-      "elapsed_ms": 63.218,
+      "elapsed_ms": 22.472,
       "ok": true,
       "error": ""
     },
     {
       "index": 11,
-      "elapsed_ms": 19.297,
+      "elapsed_ms": 78.62,
       "ok": true,
       "error": ""
     },
     {
       "index": 12,
-      "elapsed_ms": 19.402,
+      "elapsed_ms": 286.47,
       "ok": true,
       "error": ""
     },
     {
       "index": 13,
-      "elapsed_ms": 10.549,
+      "elapsed_ms": 10.172,
       "ok": true,
       "error": ""
     },
     {
       "index": 14,
-      "elapsed_ms": 147.364,
+      "elapsed_ms": 14.848,
       "ok": true,
       "error": ""
     },
     {
       "index": 15,
-      "elapsed_ms": 21.131,
+      "elapsed_ms": 73.883,
       "ok": true,
       "error": ""
     },
     {
       "index": 16,
-      "elapsed_ms": 11.001,
+      "elapsed_ms": 17.799,
       "ok": true,
       "error": ""
     },
     {
       "index": 17,
-      "elapsed_ms": 34.122,
+      "elapsed_ms": 34.088,
       "ok": true,
       "error": ""
     },
     {
       "index": 18,
-      "elapsed_ms": 14.721,
+      "elapsed_ms": 16.336,
       "ok": true,
       "error": ""
     },
     {
       "index": 19,
-      "elapsed_ms": 77.218,
+      "elapsed_ms": 58.985,
       "ok": true,
       "error": ""
     },
     {
       "index": 20,
-      "elapsed_ms": 59.67,
+      "elapsed_ms": 19.11,
       "ok": true,
       "error": ""
     },
     {
       "index": 21,
-      "elapsed_ms": 82.773,
+      "elapsed_ms": 23.502,
       "ok": true,
       "error": ""
     },
     {
       "index": 22,
-      "elapsed_ms": 29.67,
+      "elapsed_ms": 322.435,
       "ok": true,
       "error": ""
     },
     {
       "index": 23,
-      "elapsed_ms": 547.64,
+      "elapsed_ms": 94.875,
       "ok": true,
       "error": ""
     },
     {
       "index": 24,
-      "elapsed_ms": 6.369,
+      "elapsed_ms": 18.186,
       "ok": true,
       "error": ""
     },
     {
       "index": 25,
-      "elapsed_ms": 11.682,
+      "elapsed_ms": 61.471,
       "ok": true,
       "error": ""
     },
     {
       "index": 26,
-      "elapsed_ms": 28.122,
+      "elapsed_ms": 27.79,
       "ok": true,
       "error": ""
     },
     {
       "index": 27,
-      "elapsed_ms": 9.486,
+      "elapsed_ms": 18.46,
       "ok": true,
       "error": ""
     },
     {
       "index": 28,
-      "elapsed_ms": 11.092,
+      "elapsed_ms": 59.859,
       "ok": true,
       "error": ""
     },
     {
       "index": 29,
-      "elapsed_ms": 18.565,
+      "elapsed_ms": 46.629,
       "ok": true,
       "error": ""
     },
     {
       "index": 30,
-      "elapsed_ms": 18.212,
+      "elapsed_ms": 13.592,
       "ok": true,
       "error": ""
     },
     {
       "index": 31,
-      "elapsed_ms": 37.72,
+      "elapsed_ms": 17.217,
       "ok": true,
       "error": ""
     },
     {
       "index": 32,
-      "elapsed_ms": 18.541,
+      "elapsed_ms": 91.059,
       "ok": true,
       "error": ""
     },
     {
       "index": 33,
-      "elapsed_ms": 49.09,
+      "elapsed_ms": 1108.249,
       "ok": true,
       "error": ""
     },
     {
       "index": 34,
-      "elapsed_ms": 16.392,
+      "elapsed_ms": 93.675,
       "ok": true,
       "error": ""
     },
     {
       "index": 35,
-      "elapsed_ms": 43.66,
+      "elapsed_ms": 37.686,
       "ok": true,
       "error": ""
     },
     {
       "index": 36,
-      "elapsed_ms": 22.028,
+      "elapsed_ms": 91.101,
       "ok": true,
       "error": ""
     },
     {
       "index": 37,
-      "elapsed_ms": 49.873,
+      "elapsed_ms": 14.491,
       "ok": true,
       "error": ""
     },
     {
       "index": 38,
-      "elapsed_ms": 30.748,
+      "elapsed_ms": 30.65,
       "ok": true,
       "error": ""
     },
     {
       "index": 39,
-      "elapsed_ms": 31.41,
+      "elapsed_ms": 11.51,
       "ok": true,
       "error": ""
     },
     {
       "index": 40,
-      "elapsed_ms": 52.363,
+      "elapsed_ms": 94.424,
       "ok": true,
       "error": ""
     },
     {
       "index": 41,
-      "elapsed_ms": 77.151,
+      "elapsed_ms": 18.577,
       "ok": true,
       "error": ""
     },
     {
       "index": 42,
-      "elapsed_ms": 28.917,
+      "elapsed_ms": 17.279,
       "ok": true,
       "error": ""
     },
     {
       "index": 43,
-      "elapsed_ms": 294.83,
+      "elapsed_ms": 16.489,
       "ok": true,
       "error": ""
     },
     {
       "index": 44,
-      "elapsed_ms": 11.653,
+      "elapsed_ms": 18.593,
       "ok": true,
       "error": ""
     },
     {
       "index": 45,
-      "elapsed_ms": 22.102,
+      "elapsed_ms": 23.506,
       "ok": true,
       "error": ""
     },
     {
       "index": 46,
-      "elapsed_ms": 34.949,
+      "elapsed_ms": 23.044,
       "ok": true,
       "error": ""
     },
     {
       "index": 47,
-      "elapsed_ms": 340.544,
+      "elapsed_ms": 24.445,
       "ok": true,
       "error": ""
     },
     {
       "index": 48,
-      "elapsed_ms": 89.044,
+      "elapsed_ms": 42.758,
       "ok": true,
       "error": ""
     },
     {
       "index": 49,
-      "elapsed_ms": 13.638,
+      "elapsed_ms": 27.362,
       "ok": true,
       "error": ""
     },
     {
       "index": 50,
-      "elapsed_ms": 45.328,
+      "elapsed_ms": 36.66,
       "ok": true,
       "error": ""
     },
     {
       "index": 51,
-      "elapsed_ms": 9.667,
+      "elapsed_ms": 12.11,
       "ok": true,
       "error": ""
     },
     {
       "index": 52,
-      "elapsed_ms": 13.01,
+      "elapsed_ms": 51.04,
       "ok": true,
       "error": ""
     },
     {
       "index": 53,
-      "elapsed_ms": 43.096,
+      "elapsed_ms": 62.425,
       "ok": true,
       "error": ""
     },
     {
       "index": 54,
-      "elapsed_ms": 10.495,
+      "elapsed_ms": 22.172,
       "ok": true,
       "error": ""
     },
     {
       "index": 55,
-      "elapsed_ms": 107.598,
+      "elapsed_ms": 32.982,
       "ok": true,
       "error": ""
     },
     {
       "index": 56,
-      "elapsed_ms": 29.378,
+      "elapsed_ms": 34.135,
       "ok": true,
       "error": ""
     },
     {
       "index": 57,
-      "elapsed_ms": 9.4,
+      "elapsed_ms": 14.48,
       "ok": true,
       "error": ""
     },
     {
       "index": 58,
-      "elapsed_ms": 29.769,
+      "elapsed_ms": 38.336,
       "ok": true,
       "error": ""
     },
     {
       "index": 59,
-      "elapsed_ms": 61.878,
+      "elapsed_ms": 40.528,
       "ok": true,
       "error": ""
     },
     {
       "index": 60,
-      "elapsed_ms": 24.202,
+      "elapsed_ms": 43.332,
       "ok": true,
       "error": ""
     },
     {
       "index": 61,
-      "elapsed_ms": 22.874,
+      "elapsed_ms": 13.455,
       "ok": true,
       "error": ""
     },
     {
       "index": 62,
-      "elapsed_ms": 11.282,
+      "elapsed_ms": 38.977,
       "ok": true,
       "error": ""
     },
     {
       "index": 63,
-      "elapsed_ms": 14.006,
+      "elapsed_ms": 48.456,
       "ok": true,
       "error": ""
     },
     {
       "index": 64,
-      "elapsed_ms": 58.364,
+      "elapsed_ms": 33.826,
       "ok": true,
       "error": ""
     },
     {
       "index": 65,
-      "elapsed_ms": 12.307,
+      "elapsed_ms": 47.384,
       "ok": true,
       "error": ""
     },
     {
       "index": 66,
-      "elapsed_ms": 11.947,
+      "elapsed_ms": 47.091,
       "ok": true,
       "error": ""
     },
     {
       "index": 67,
-      "elapsed_ms": 13.407,
+      "elapsed_ms": 21.565,
       "ok": true,
       "error": ""
     },
     {
       "index": 68,
-      "elapsed_ms": 42.274,
+      "elapsed_ms": 27.875,
       "ok": true,
       "error": ""
     },
     {
       "index": 69,
-      "elapsed_ms": 9.505,
+      "elapsed_ms": 35.802,
       "ok": true,
       "error": ""
     },
     {
       "index": 70,
-      "elapsed_ms": 42.745,
+      "elapsed_ms": 36.456,
       "ok": true,
       "error": ""
     },
     {
       "index": 71,
-      "elapsed_ms": 13.829,
+      "elapsed_ms": 75.362,
       "ok": true,
       "error": ""
     },
     {
       "index": 72,
-      "elapsed_ms": 60.094,
+      "elapsed_ms": 84.035,
       "ok": true,
       "error": ""
     },
     {
       "index": 73,
-      "elapsed_ms": 208.004,
+      "elapsed_ms": 30.757,
       "ok": true,
       "error": ""
     },
     {
       "index": 74,
-      "elapsed_ms": 59.835,
+      "elapsed_ms": 38.145,
       "ok": true,
       "error": ""
     },
     {
       "index": 75,
-      "elapsed_ms": 11.86,
+      "elapsed_ms": 39.755,
       "ok": true,
       "error": ""
     },
     {
       "index": 76,
-      "elapsed_ms": 14.196,
+      "elapsed_ms": 40.017,
       "ok": true,
       "error": ""
     },
     {
       "index": 77,
-      "elapsed_ms": 17.122,
+      "elapsed_ms": 55.774,
       "ok": true,
       "error": ""
     },
     {
       "index": 78,
-      "elapsed_ms": 47.508,
+      "elapsed_ms": 43.094,
       "ok": true,
       "error": ""
     },
     {
       "index": 79,
-      "elapsed_ms": 16.274,
+      "elapsed_ms": 50.345,
       "ok": true,
       "error": ""
     },
     {
       "index": 80,
-      "elapsed_ms": 47.062,
+      "elapsed_ms": 52.752,
       "ok": true,
       "error": ""
     },
     {
       "index": 81,
-      "elapsed_ms": 33.821,
+      "elapsed_ms": 60.647,
       "ok": true,
       "error": ""
     },
     {
       "index": 82,
-      "elapsed_ms": 11.045,
+      "elapsed_ms": 877.268,
       "ok": true,
       "error": ""
     },
     {
       "index": 83,
-      "elapsed_ms": 9.513,
+      "elapsed_ms": 25.184,
       "ok": true,
       "error": ""
     },
     {
       "index": 84,
-      "elapsed_ms": 18.847,
+      "elapsed_ms": 58.014,
       "ok": true,
       "error": ""
     },
     {
       "index": 85,
-      "elapsed_ms": 34.401,
+      "elapsed_ms": 41.041,
       "ok": true,
       "error": ""
     },
     {
       "index": 86,
-      "elapsed_ms": 56.309,
+      "elapsed_ms": 42.88,
       "ok": true,
       "error": ""
     },
     {
       "index": 87,
-      "elapsed_ms": 12.266,
+      "elapsed_ms": 43.637,
       "ok": true,
       "error": ""
     },
     {
       "index": 88,
-      "elapsed_ms": 13.5,
+      "elapsed_ms": 14.2,
       "ok": true,
       "error": ""
     },
     {
       "index": 89,
-      "elapsed_ms": 25.874,
+      "elapsed_ms": 46.8,
       "ok": true,
       "error": ""
     },
     {
       "index": 90,
-      "elapsed_ms": 15.79,
+      "elapsed_ms": 29.04,
       "ok": true,
       "error": ""
     },
     {
       "index": 91,
-      "elapsed_ms": 28.063,
+      "elapsed_ms": 28.3,
       "ok": true,
       "error": ""
     },
     {
       "index": 92,
-      "elapsed_ms": 33.77,
+      "elapsed_ms": 30.543,
       "ok": true,
       "error": ""
     },
     {
       "index": 93,
-      "elapsed_ms": 32.328,
+      "elapsed_ms": 32.305,
       "ok": true,
       "error": ""
     },
     {
       "index": 94,
-      "elapsed_ms": 37.348,
+      "elapsed_ms": 63.91,
       "ok": true,
       "error": ""
     },
     {
       "index": 95,
-      "elapsed_ms": 24.393,
+      "elapsed_ms": 35.545,
       "ok": true,
       "error": ""
     },
     {
       "index": 96,
-      "elapsed_ms": 88.247,
+      "elapsed_ms": 52.184,
       "ok": true,
       "error": ""
     },
     {
       "index": 97,
-      "elapsed_ms": 29.975,
+      "elapsed_ms": 83.769,
       "ok": true,
       "error": ""
     },
     {
       "index": 98,
-      "elapsed_ms": 60.793,
+      "elapsed_ms": 50.559,
       "ok": true,
       "error": ""
     },
     {
       "index": 99,
-      "elapsed_ms": 11.4,
+      "elapsed_ms": 24.677,
       "ok": true,
       "error": ""
     },
     {
       "index": 100,
-      "elapsed_ms": 25.829,
+      "elapsed_ms": 43.27,
       "ok": true,
       "error": ""
     },
     {
       "index": 101,
-      "elapsed_ms": 17.069,
+      "elapsed_ms": 16.244,
       "ok": true,
       "error": ""
     },
     {
       "index": 102,
-      "elapsed_ms": 104.518,
+      "elapsed_ms": 37.268,
       "ok": true,
       "error": ""
     },
     {
       "index": 103,
-      "elapsed_ms": 287.754,
+      "elapsed_ms": 71.666,
       "ok": true,
       "error": ""
     },
     {
       "index": 104,
-      "elapsed_ms": 777.011,
+      "elapsed_ms": 28.755,
       "ok": true,
       "error": ""
     },
     {
       "index": 105,
-      "elapsed_ms": 660.821,
+      "elapsed_ms": 47.139,
       "ok": true,
       "error": ""
     },
     {
       "index": 106,
-      "elapsed_ms": 8.073,
+      "elapsed_ms": 10.632,
       "ok": true,
       "error": ""
     },
     {
       "index": 107,
-      "elapsed_ms": 9.232,
+      "elapsed_ms": 42.098,
       "ok": true,
       "error": ""
     },
     {
       "index": 108,
-      "elapsed_ms": 9.744,
+      "elapsed_ms": 79.914,
       "ok": true,
       "error": ""
     },
     {
       "index": 109,
-      "elapsed_ms": 44.779,
+      "elapsed_ms": 149.351,
       "ok": true,
       "error": ""
     },
     {
       "index": 110,
-      "elapsed_ms": 8.658,
+      "elapsed_ms": 15.616,
       "ok": true,
       "error": ""
     },
     {
       "index": 111,
-      "elapsed_ms": 9.806,
+      "elapsed_ms": 25.826,
       "ok": true,
       "error": ""
     },
     {
       "index": 112,
-      "elapsed_ms": 37.305,
+      "elapsed_ms": 31.019,
       "ok": true,
       "error": ""
     },
     {
       "index": 113,
-      "elapsed_ms": 10.646,
+      "elapsed_ms": 229.854,
       "ok": true,
       "error": ""
     },
     {
       "index": 114,
-      "elapsed_ms": 12.538,
+      "elapsed_ms": 27.232,
       "ok": true,
       "error": ""
     },
     {
       "index": 115,
-      "elapsed_ms": 15.449,
+      "elapsed_ms": 33.249,
       "ok": true,
       "error": ""
     },
     {
       "index": 116,
-      "elapsed_ms": 82.504,
+      "elapsed_ms": 36.591,
       "ok": true,
       "error": ""
     },
     {
       "index": 117,
-      "elapsed_ms": 21.243,
+      "elapsed_ms": 12.793,
       "ok": true,
       "error": ""
     },
     {
       "index": 118,
-      "elapsed_ms": 26.512,
+      "elapsed_ms": 30.783,
       "ok": true,
       "error": ""
     },
     {
       "index": 119,
-      "elapsed_ms": 36.918,
+      "elapsed_ms": 46.852,
       "ok": true,
       "error": ""
     },
     {
       "index": 120,
-      "elapsed_ms": 46.727,
+      "elapsed_ms": 56.03,
       "ok": true,
       "error": ""
     },
     {
       "index": 121,
-      "elapsed_ms": 212.828,
+      "elapsed_ms": 43.737,
       "ok": true,
       "error": ""
     },
     {
       "index": 122,
-      "elapsed_ms": 6.982,
+      "elapsed_ms": 17.522,
       "ok": true,
       "error": ""
     },
     {
       "index": 123,
-      "elapsed_ms": 56.717,
+      "elapsed_ms": 14.484,
       "ok": true,
       "error": ""
     },
     {
       "index": 124,
-      "elapsed_ms": 8.57,
+      "elapsed_ms": 69.019,
       "ok": true,
       "error": ""
     },
     {
       "index": 125,
-      "elapsed_ms": 9.344,
+      "elapsed_ms": 41.65,
       "ok": true,
       "error": ""
     },
     {
       "index": 126,
-      "elapsed_ms": 110.478,
+      "elapsed_ms": 23.054,
       "ok": true,
       "error": ""
     },
     {
       "index": 127,
-      "elapsed_ms": 7.989,
+      "elapsed_ms": 19.283,
       "ok": true,
       "error": ""
     },
     {
       "index": 128,
-      "elapsed_ms": 9.525,
+      "elapsed_ms": 32.863,
       "ok": true,
       "error": ""
     },
     {
       "index": 129,
-      "elapsed_ms": 9.125,
+      "elapsed_ms": 47.751,
       "ok": true,
       "error": ""
     },
     {
       "index": 130,
-      "elapsed_ms": 11.166,
+      "elapsed_ms": 15.748,
       "ok": true,
       "error": ""
     },
     {
       "index": 131,
-      "elapsed_ms": 13.756,
+      "elapsed_ms": 67.283,
       "ok": true,
       "error": ""
     },
     {
       "index": 132,
-      "elapsed_ms": 23.399,
+      "elapsed_ms": 25.637,
       "ok": true,
       "error": ""
     },
     {
       "index": 133,
-      "elapsed_ms": 14.79,
+      "elapsed_ms": 14.232,
       "ok": true,
       "error": ""
     },
     {
       "index": 134,
-      "elapsed_ms": 31.265,
+      "elapsed_ms": 39.042,
       "ok": true,
       "error": ""
     },
     {
       "index": 135,
-      "elapsed_ms": 31.458,
+      "elapsed_ms": 107.748,
       "ok": true,
       "error": ""
     },
     {
       "index": 136,
-      "elapsed_ms": 31.659,
+      "elapsed_ms": 28.649,
       "ok": true,
       "error": ""
     },
     {
       "index": 137,
-      "elapsed_ms": 62.218,
+      "elapsed_ms": 15.065,
       "ok": true,
       "error": ""
     },
     {
       "index": 138,
-      "elapsed_ms": 9.581,
+      "elapsed_ms": 35.834,
       "ok": true,
       "error": ""
     },
     {
       "index": 139,
-      "elapsed_ms": 14.852,
+      "elapsed_ms": 26.376,
       "ok": true,
       "error": ""
     },
     {
       "index": 140,
-      "elapsed_ms": 24.385,
+      "elapsed_ms": 59.466,
       "ok": true,
       "error": ""
     },
     {
       "index": 141,
-      "elapsed_ms": 13.911,
+      "elapsed_ms": 36.107,
       "ok": true,
       "error": ""
     },
     {
       "index": 142,
-      "elapsed_ms": 20.359,
+      "elapsed_ms": 118.921,
       "ok": true,
       "error": ""
     },
     {
       "index": 143,
-      "elapsed_ms": 56.642,
+      "elapsed_ms": 32.508,
       "ok": true,
       "error": ""
     },
     {
       "index": 144,
-      "elapsed_ms": 40.364,
+      "elapsed_ms": 14.544,
       "ok": true,
       "error": ""
     },
     {
       "index": 145,
-      "elapsed_ms": 11.669,
+      "elapsed_ms": 118.758,
       "ok": true,
       "error": ""
     },
     {
       "index": 146,
-      "elapsed_ms": 17.153,
+      "elapsed_ms": 465.17,
       "ok": true,
       "error": ""
     },
     {
       "index": 147,
-      "elapsed_ms": 15.704,
+      "elapsed_ms": 71.356,
       "ok": true,
       "error": ""
     },
     {
       "index": 148,
-      "elapsed_ms": 55.581,
+      "elapsed_ms": 26.683,
       "ok": true,
       "error": ""
     },
     {
       "index": 149,
-      "elapsed_ms": 22.585,
+      "elapsed_ms": 38.753,
       "ok": true,
       "error": ""
     },
     {
       "index": 150,
-      "elapsed_ms": 114.849,
+      "elapsed_ms": 172.542,
       "ok": true,
       "error": ""
     },
     {
       "index": 151,
-      "elapsed_ms": 19.023,
+      "elapsed_ms": 12.954,
       "ok": true,
       "error": ""
     },
     {
       "index": 152,
-      "elapsed_ms": 29.013,
+      "elapsed_ms": 94.931,
       "ok": true,
       "error": ""
     },
     {
       "index": 153,
-      "elapsed_ms": 113.846,
+      "elapsed_ms": 15.865,
       "ok": true,
       "error": ""
     },
     {
       "index": 154,
-      "elapsed_ms": 12.322,
+      "elapsed_ms": 341.722,
       "ok": true,
       "error": ""
     },
     {
       "index": 155,
-      "elapsed_ms": 39.876,
+      "elapsed_ms": 17.527,
       "ok": true,
       "error": ""
     },
     {
       "index": 156,
-      "elapsed_ms": 51.0,
+      "elapsed_ms": 47.901,
       "ok": true,
       "error": ""
     },
     {
       "index": 157,
-      "elapsed_ms": 32.894,
+      "elapsed_ms": 14.236,
       "ok": true,
       "error": ""
     },
     {
       "index": 158,
-      "elapsed_ms": 15.086,
+      "elapsed_ms": 18.77,
       "ok": true,
       "error": ""
     },
     {
       "index": 159,
-      "elapsed_ms": 14.923,
+      "elapsed_ms": 35.942,
       "ok": true,
       "error": ""
     },
     {
       "index": 160,
-      "elapsed_ms": 46.383,
+      "elapsed_ms": 110.616,
       "ok": true,
       "error": ""
     },
     {
       "index": 161,
-      "elapsed_ms": 11.936,
+      "elapsed_ms": 9.512,
       "ok": true,
       "error": ""
     },
     {
       "index": 162,
-      "elapsed_ms": 14.406,
+      "elapsed_ms": 11.725,
       "ok": true,
       "error": ""
     },
     {
       "index": 163,
-      "elapsed_ms": 17.509,
+      "elapsed_ms": 63.592,
       "ok": true,
       "error": ""
     },
     {
       "index": 164,
-      "elapsed_ms": 151.569,
+      "elapsed_ms": 13.407,
       "ok": true,
       "error": ""
     },
     {
       "index": 165,
-      "elapsed_ms": 67.93,
+      "elapsed_ms": 16.623,
       "ok": true,
       "error": ""
     },
     {
       "index": 166,
-      "elapsed_ms": 11.901,
+      "elapsed_ms": 30.222,
       "ok": true,
       "error": ""
     },
     {
       "index": 167,
-      "elapsed_ms": 260.54,
+      "elapsed_ms": 17.597,
       "ok": true,
       "error": ""
     },
     {
       "index": 168,
-      "elapsed_ms": 9.244,
+      "elapsed_ms": 29.979,
       "ok": true,
       "error": ""
     },
     {
       "index": 169,
-      "elapsed_ms": 13.303,
+      "elapsed_ms": 13.72,
       "ok": true,
       "error": ""
     },
     {
       "index": 170,
-      "elapsed_ms": 32.614,
+      "elapsed_ms": 35.877,
       "ok": true,
       "error": ""
     },
     {
       "index": 171,
-      "elapsed_ms": 9.324,
+      "elapsed_ms": 15.561,
       "ok": true,
       "error": ""
     },
     {
       "index": 172,
-      "elapsed_ms": 122.364,
+      "elapsed_ms": 13.903,
       "ok": true,
       "error": ""
     },
     {
       "index": 173,
-      "elapsed_ms": 31.374,
+      "elapsed_ms": 27.615,
       "ok": true,
       "error": ""
     },
     {
       "index": 174,
-      "elapsed_ms": 76.776,
+      "elapsed_ms": 56.473,
       "ok": true,
       "error": ""
     },
     {
       "index": 175,
-      "elapsed_ms": 24.75,
+      "elapsed_ms": 34.335,
       "ok": true,
       "error": ""
     },
     {
       "index": 176,
-      "elapsed_ms": 45.777,
+      "elapsed_ms": 22.146,
       "ok": true,
       "error": ""
     },
     {
       "index": 177,
-      "elapsed_ms": 10.841,
+      "elapsed_ms": 45.998,
       "ok": true,
       "error": ""
     },
     {
       "index": 178,
-      "elapsed_ms": 14.639,
+      "elapsed_ms": 43.196,
       "ok": true,
       "error": ""
     },
     {
       "index": 179,
-      "elapsed_ms": 8.312,
+      "elapsed_ms": 45.227,
       "ok": true,
       "error": ""
     },
     {
       "index": 180,
-      "elapsed_ms": 11.292,
+      "elapsed_ms": 13.504,
       "ok": true,
       "error": ""
     },
     {
       "index": 181,
-      "elapsed_ms": 13.192,
+      "elapsed_ms": 12.636,
       "ok": true,
       "error": ""
     },
     {
       "index": 182,
-      "elapsed_ms": 15.484,
+      "elapsed_ms": 149.676,
       "ok": true,
       "error": ""
     },
     {
       "index": 183,
-      "elapsed_ms": 26.666,
+      "elapsed_ms": 65.162,
       "ok": true,
       "error": ""
     },
     {
       "index": 184,
-      "elapsed_ms": 11.362,
+      "elapsed_ms": 23.066,
       "ok": true,
       "error": ""
     },
     {
       "index": 185,
-      "elapsed_ms": 10.929,
+      "elapsed_ms": 27.531,
       "ok": true,
       "error": ""
     },
     {
       "index": 186,
-      "elapsed_ms": 65.799,
+      "elapsed_ms": 159.763,
       "ok": true,
       "error": ""
     },
     {
       "index": 187,
-      "elapsed_ms": 76.803,
+      "elapsed_ms": 61.279,
       "ok": true,
       "error": ""
     },
     {
       "index": 188,
-      "elapsed_ms": 14.776,
+      "elapsed_ms": 14.02,
       "ok": true,
       "error": ""
     },
     {
       "index": 189,
-      "elapsed_ms": 113.616,
+      "elapsed_ms": 14.008,
       "ok": true,
       "error": ""
     },
     {
       "index": 190,
-      "elapsed_ms": 31.974,
+      "elapsed_ms": 14.707,
       "ok": true,
       "error": ""
     },
     {
       "index": 191,
-      "elapsed_ms": 7.241,
+      "elapsed_ms": 12.904,
       "ok": true,
       "error": ""
     },
     {
       "index": 192,
-      "elapsed_ms": 9.56,
+      "elapsed_ms": 11.875,
       "ok": true,
       "error": ""
     },
     {
       "index": 193,
-      "elapsed_ms": 27.013,
+      "elapsed_ms": 11.988,
       "ok": true,
       "error": ""
     },
     {
       "index": 194,
-      "elapsed_ms": 8.933,
+      "elapsed_ms": 54.922,
       "ok": true,
       "error": ""
     },
     {
       "index": 195,
-      "elapsed_ms": 8.682,
+      "elapsed_ms": 19.276,
       "ok": true,
       "error": ""
     },
     {
       "index": 196,
-      "elapsed_ms": 45.374,
+      "elapsed_ms": 41.834,
       "ok": true,
       "error": ""
     },
     {
       "index": 197,
-      "elapsed_ms": 15.457,
+      "elapsed_ms": 15.619,
       "ok": true,
       "error": ""
     },
     {
       "index": 198,
-      "elapsed_ms": 25.257,
+      "elapsed_ms": 16.875,
       "ok": true,
       "error": ""
     },
     {
       "index": 199,
-      "elapsed_ms": 13.315,
+      "elapsed_ms": 14.619,
       "ok": true,
       "error": ""
     }

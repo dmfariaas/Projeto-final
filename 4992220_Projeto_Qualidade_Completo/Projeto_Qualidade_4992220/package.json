@@ -1,0 +1,18 @@
+{
+  "name": "raizes-do-nordeste-qa",
+  "version": "0.4.0",
+  "private": true,
+  "description": "Testes de interface do projeto de qualidade de software Raízes do Nordeste.",
+  "scripts": {
+    "test": "node qa_interface.mjs",
+    "format": "prettier --write qa_interface.mjs prototipo/index.html package.json .prettierrc.json",
+    "format:check": "prettier --check qa_interface.mjs prototipo/index.html package.json .prettierrc.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "prettier": "3.9.9"
+  }
+}

@@ -1,0 +1,9 @@
+Transcrição fiel da saída capturada na execução já realizada em 16/10/2026.
+Comando: python -B -m unittest tests
+Local: restaurante_github/4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220/prototipo
+
+......................................................
+----------------------------------------------------------------------
+Ran 54 tests in 20.023s
+
+OK

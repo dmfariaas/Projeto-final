@@ -55,7 +55,7 @@ python api.py --open-browser
 
 Acesse **http://127.0.0.1:8765** no computador em que o servidor foi iniciado. Esse é o endereço da execução local. Para compartilhar o restaurante, use o link público no início deste guia. No Windows, `py -3` pode substituir `python`. No Linux e no macOS, use `python3` se esse for o nome disponível. Para encerrar o servidor, pressione **Ctrl+C** no terminal.
 
-No Windows, também é possível abrir o arquivo [`ABRIR_RESTAURANTE_NORDESTINO.cmd`](ABRIR_RESTAURANTE_NORDESTINO.cmd) com dois cliques. Ele verifica o Python, inicia o restaurante em **http://127.0.0.1:8765/** e abre o navegador. Se a demonstração já estiver aberta nessa porta, o iniciador usa o servidor existente. Depois de reiniciar o computador, abra o iniciador novamente para voltar a usar o endereço local.
+No Windows, também é possível abrir o arquivo [`ABRIR_RESTAURANTE_NORDESTINO.cmd`](ABRIR_RESTAURANTE_NORDESTINO.cmd) com dois cliques. Ele verifica o Python, inicia o restaurante em **http://127.0.0.1:8765/** e abre o navegador quando o servidor estiver pronto. Se a demonstração já estiver aberta nessa porta, o iniciador usa o servidor existente. O servidor continua funcionando depois de fechar o iniciador. Depois de reiniciar o computador, abra o arquivo novamente para voltar a usar o endereço local.
 
 ### Banco de dados e porta
 
@@ -159,24 +159,24 @@ O segundo comando atualiza `testes.txt`, `testes.json`, `desempenho.json` e `fon
 Com **Node.js 20 ou superior**, npm e Google Chrome instalados, execute na pasta `4992220_Projeto_Qualidade_Completo/Projeto_Qualidade_4992220`:
 
 ```powershell
-npm install --no-save playwright
-node qa_interface.mjs
+npm ci
+npm test
 ```
 
-Se o PowerShell bloquear `npm.ps1`, use `npm.cmd install --no-save playwright`.
+Se o PowerShell bloquear `npm.ps1`, use `npm.cmd ci` e `npm.cmd test`.
 
 O script inicia um servidor com banco temporário e executa os testes no Chrome sem abrir uma janela. Os resultados e as capturas são atualizados em `evidencias`. As variáveis `DEMO_PYTHON` e `DEMO_EVIDENCE_DIR` permitem definir outro executável Python e outra pasta de saída.
 
 ### Resultados registrados
 
-As evidências acadêmicas de **24 de setembro de 2026**, referentes à versão local em Python e SQLite, apresentam os seguintes resultados:
+As evidências acadêmicas de **28 de setembro de 2026**, referentes à versão local em Python e SQLite, apresentam os seguintes resultados:
 
 | Verificação | Resultado | Fonte |
 | --- | --- | --- |
-| Testes Python | 52 de 52 aprovados | [testes.json][testes] |
+| Testes Python | 54 de 54 aprovados | [testes.json][testes] |
 | Testes de interface | 18 de 18 aprovados | [interface.json][interface] |
 | Ensaio de carga | 200 de 200 pedidos bem-sucedidos | [desempenho.json][desempenho] |
-| Tempo de resposta na carga | Média de 58,867 ms e percentil 95 de 208,004 ms | [desempenho.json][desempenho] |
+| Tempo de resposta na carga | Média de 61,121 ms e percentil 95 de 149,676 ms | [desempenho.json][desempenho] |
 
 Esses tempos foram obtidos na máquina de teste, com SQLite e pagamento simulado, sem a espera por um serviço externo. Eles variam com o ambiente e não permitem estimar o desempenho em produção. A cobertura de 100% citada no relatório significa que os oito requisitos funcionais têm testes associados. Esse indicador não mede a cobertura de código.
 
@@ -189,6 +189,7 @@ Os arquivos de evidências conservam os resultados daquela execução. Os hashes
 - [Planilha de métricas][planilha]: fórmulas, resultados individuais dos testes e amostras de carga.
 - [Guia da demonstração][guia]: instruções de uso e desenvolvimento do pacote.
 - [Evidências][evidencias]: arquivos de resultados e capturas da interface em desktop e mobile.
+- [Análise da consolidação](ANALISE_DO_PROJETO.md): diferenças encontradas, correções integradas e verificações de 16 de outubro de 2026.
 
 ## Limitações
 

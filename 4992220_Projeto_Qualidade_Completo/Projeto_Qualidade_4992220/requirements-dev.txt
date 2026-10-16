@@ -1,0 +1,2 @@
+# Apenas para formatação. O protótipo utiliza a biblioteca padrão do Python.
+black==26.5.1
