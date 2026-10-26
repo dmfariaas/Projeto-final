@@ -1,0 +1,16 @@
+{
+  "data": "2026-10-26",
+  "alteracao": "Inclusão do endereço público já existente como link clicável na introdução do PDF.",
+  "url": "https://dmfariaas.github.io/raizes-do-nordeste/",
+  "resposta_http_verificada": 200,
+  "pagina_pdf": 8,
+  "paginas_fisicas": 46,
+  "paginas_com_desenho_modificado": [
+    8
+  ],
+  "sha256_pdf_anterior": "4911f9e93a4a07145220bb9d44b7b05469cc6c07c60e69e5bc7e010fbb318a2b",
+  "sha256_pdf_atual": "1513ad9147f4d495d3e83a478da8dc285d4b4633fe5650f55caab020d78b902c",
+  "novas_execucoes_de_teste": false,
+  "novos_resultados_de_participantes": false,
+  "medicoes_historicas_preservadas": true
+}

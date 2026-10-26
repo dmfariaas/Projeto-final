@@ -138,6 +138,8 @@ O projeto analisa esse fluxo na rede fictícia Raízes do Nordeste, com atençã
 
 O trabalho reúne os cinco componentes solicitados no roteiro da disciplina Projeto Multidisciplinar, Trilha de Qualidade de Software: Documento de Requisitos, Plano de Qualidade, Plano de Testes, Planilha de Métricas e Relatório Final de Conformidade (Nascimento, 2026). As relações entre esses componentes permitem acompanhar cada regra desde sua definição até o resultado do teste correspondente.
 
+**Demonstração online:** https://dmfariaas.github.io/raizes-do-nordeste/
+
 ## 1.1 Objetivo geral
 
 Definir e avaliar uma estratégia de qualidade para a finalização de pedidos nos cinco canais da rede, com foco na consistência entre valores, pagamento, estoque e fidelidade, e identificar as condições necessárias para uma implantação real.
