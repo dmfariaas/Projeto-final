@@ -836,8 +836,6 @@ NASCIMENTO, Rodrigo. **Projeto multidisciplinar: trilha Qualidade de Software: r
 
 **Ferramenta e finalidade.** Na elaboração deste projeto, foram utilizados o ChatGPT e o assistente Codex, da OpenAI. A assistência compreendeu a preparação de versões iniciais do texto, a definição de requisitos e cenários de teste, a implementação e revisão do protótipo, a organização da planilha, a formatação do relatório e o apoio à execução das verificações e à publicação.
 
-**Participação do estudante.** Diego Monteiro de Farias forneceu a identificação, o curso e a cidade, definiu preferências de linguagem e identidade regional nordestina e escolheu a demonstração acadêmica com pagamentos simulados. Suas solicitações orientaram os ajustes. A assistência de IA abrangeu uma parte substancial da redação e da implementação.
-
 **Prompts principais, em versão reformulada.** Os itens abaixo resumem e reformulam solicitações efetivamente registradas na conversa, preservando seu sentido. A lista é uma seleção das orientações principais:
 
 1. Analise o roteiro, os requisitos, as entregas e os critérios de avaliação.
