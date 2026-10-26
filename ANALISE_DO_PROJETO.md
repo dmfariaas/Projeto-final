@@ -23,7 +23,7 @@ A comparação entre o GitHub e a pasta da Área de Trabalho encontrou melhorias
 | Demonstração online | 31 testes aprovados: 20 de regras e armazenamento e 11 de interface com DOM simulado. |
 | Instalação das ferramentas de interface | `npm ci` reproduziu as dependências do arquivo de versões. |
 | Formatação da interface e da automação | `npm run format:check` aprovado. |
-| Documento final | 45 páginas, 80 entradas de sumário, 16 quadros e 5 figuras. Margens, numeração e páginas renderizadas conferidas. |
+| Documento final | Na revisão documental de 26/10/2026, passou a 46 páginas e 81 entradas de sumário, com a declaração de uso de IA ao final. Permanecem 16 quadros e 5 figuras. Margens, numeração e páginas renderizadas conferidas. |
 | Publicação online | Página, JavaScript da interface e armazenamento responderam HTTP 200. Seus conteúdos coincidem com a versão do repositório público. |
 
 Os testes atuais foram executados separadamente dos registros acadêmicos. O relatório mantém as medições de 28 de setembro de 2026: 200 pedidos bem-sucedidos, média de 61,121 ms e p95 de 149,676 ms. Esses tempos descrevem aquela execução local. Os hashes de setembro identificam a versão histórica, enquanto `evidencias/consolidacao_2026-10-16.json` identifica as fontes consolidadas.

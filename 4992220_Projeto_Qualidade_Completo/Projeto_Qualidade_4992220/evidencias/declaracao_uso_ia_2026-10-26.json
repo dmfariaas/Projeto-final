@@ -1,0 +1,28 @@
+{
+  "data_revisao_documental": "2026-10-26",
+  "alteracao": "Inclusão de declaração final de uso de inteligência artificial e atualização do sumário.",
+  "ferramentas_declaradas": [
+    "ChatGPT",
+    "Codex (OpenAI)"
+  ],
+  "prompts_transcritos": 7,
+  "natureza_lista_prompts": "Seleção representativa, não histórico integral.",
+  "trechos_literais_identificados": [
+    "Resumo",
+    "Introdução",
+    "Conclusão"
+  ],
+  "pagina_declaracao_fisica": 46,
+  "numero_impresso_declaracao": 45,
+  "paginas_fisicas": 46,
+  "entradas_sumario": 81,
+  "sha256_pdf_anterior": "7c69ebad738b39d0151c9d68a31e8c108ce104d0928d5d28babdfa88425202e0",
+  "sha256_pdf_atual": "c2a8e0d5d371c6ad772d89bdac9aa5ce76d7465c4c0ae26df2e1b7766031e9e5",
+  "paginas_anteriores_com_desenho_modificado": [
+    5,
+    6,
+    7
+  ],
+  "demais_paginas_anteriores": "Conteúdo de desenho idêntico ao PDF anterior.",
+  "novos_testes_funcionais": false
+}

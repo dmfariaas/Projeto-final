@@ -128,6 +128,7 @@ An order confirmation should match the amount paid, the available stock, and the
     - 6.5.1 Reprodução local – p. 42
 - 7 CONCLUSÃO – p. 43
 - REFERÊNCIAS – p. 44
+- DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL – p. 45
 
 # 1 INTRODUÇÃO
 
@@ -830,3 +831,27 @@ ISO. **ISO/IEC 25010:2023**: systems and software engineering: systems and softw
 ISTQB. **Certified Tester Foundation Level syllabus**. Version 4.0.1. [S. l.]: ISTQB, 2024. Disponível em: https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf. Acesso em: 15 set. 2026.
 
 NASCIMENTO, Rodrigo. **Projeto multidisciplinar: trilha Qualidade de Software: rede Raízes do Nordeste**. [S. l.]: UNINTER, 2026. 18 p. Roteiro de atividade prática, arquivo identificado como revisão 0.3.
+
+# DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL
+
+**Ferramenta e finalidade.** Na elaboração deste projeto, foram utilizados o ChatGPT e o assistente Codex, da OpenAI. A assistência compreendeu a preparação de versões iniciais do texto, a definição de requisitos e cenários de teste, a implementação e revisão do protótipo, a organização da planilha, a formatação do relatório e o apoio à execução das verificações e à publicação.
+
+**Participação do estudante.** Diego Monteiro de Farias forneceu a identificação, o curso e a cidade, definiu preferências de linguagem e identidade regional nordestina e escolheu a demonstração acadêmica com pagamentos simulados. Suas solicitações orientaram os ajustes. A assistência de IA abrangeu uma parte substancial da redação e da implementação.
+
+**Principais prompts utilizados.** A seleção abaixo representa as orientações centrais da conversa e não constitui seu histórico completo. As transcrições preservam a redação enviada:
+
+1. “analise esse projeto para mim”.
+2. “nao tenho, seria do zero”.
+3. “siga normas da abnt para o trabalho”.
+4. “revise e deixe tudo perfeito, sem erros e humanizado”.
+5. “o site desse projeto deve estar 100% funcional”.
+6. “Demonstração acadêmica completa, com pagamentos simulados”.
+7. “todas as alterações que foram feitas ate aqui já foram subidas para o GitHub? faça uma análise do projeto, e depois suba para o GitHub.”
+
+**Conteúdo aproveitado.** As contribuições abrangem o Resumo, o Abstract e as seções 1 a 7, incluindo requisitos, planos, métricas e análise de conformidade. Exemplos da redação preparada com assistência:
+
+1. Resumo: “A confirmação de uma compra precisa corresponder ao valor pago, ao estoque disponível e aos pontos de fidelidade concedidos.”
+2. Introdução: “Ao comprar dois baiões e um suco, o cliente espera conferir o valor, receber a confirmação e retirar os produtos na unidade escolhida.”
+3. Conclusão: “A avaliação da finalização do pedido mostrou como as regras de valor, pagamento, estoque e fidelidade dependem umas das outras.”
+
+Também houve aproveitamento do código da interface, do serviço de pedidos, do armazenamento, dos testes automatizados, dos iniciadores e dos guias. Os resultados quantitativos permanecem vinculados às evidências de execução do projeto.

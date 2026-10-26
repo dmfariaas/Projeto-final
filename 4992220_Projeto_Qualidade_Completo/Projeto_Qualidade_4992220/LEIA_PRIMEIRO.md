@@ -4,6 +4,8 @@ Diego Monteiro de Farias · RU 4992220
 
 Consolidação de 16 de outubro de 2026. As medições acadêmicas deste relatório são de 28 de setembro de 2026. As verificações da versão consolidada estão registradas separadamente em `evidencias/consolidacao_2026-10-16.json`.
 
+Em 26 de outubro de 2026, foi acrescentada ao final do relatório uma declaração de uso de inteligência artificial, com a ferramenta utilizada, uma seleção dos prompts e exemplos dos trechos aproveitados.
+
 Para entregar o trabalho no AVA, use o PDF único. Para experimentar a versão local do restaurante, abra `INICIAR_DEMONSTRACAO.cmd`. O arquivo avulso `ABRIR_RESTAURANTE_NORDESTINO.cmd` também inicia essa versão.
 
 A [demonstração online](https://dmfariaas.github.io/raizes-do-nordeste/) pode ser aberta diretamente no navegador. Ela guarda os dados no próprio navegador e simula os pagamentos. As instruções de execução e as evidências deste pacote se referem à versão local, em Python e SQLite.

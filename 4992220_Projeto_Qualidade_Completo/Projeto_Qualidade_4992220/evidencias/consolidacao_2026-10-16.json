@@ -26,7 +26,7 @@
     "run_evidence.py": "1370bc16d0d9989f56085ef9e1fe1f9372fd14e22f5a896de26b02676cb82c07",
     "iniciar.py": "f79238f42c8b75bd714415d4ca2f2ef7bf4db640542a3b13d3b2cadf3b84b32c"
   },
-  "sha256_pdf": "7c69ebad738b39d0151c9d68a31e8c108ce104d0928d5d28babdfa88425202e0",
+  "sha256_pdf": "c2a8e0d5d371c6ad772d89bdac9aa5ce76d7465c4c0ae26df2e1b7766031e9e5",
   "sha256_planilha": "de57425d2c48a5dda68cb02cf383110fb05943ea96c798a12ac253acf692e2c0",
   "limites": [
     "Pagamento simulado",
@@ -35,5 +35,7 @@
   ],
   "inicializador": {
     "registro": "verificacao_2026-10-16/iniciador.json"
-  }
+  },
+  "sha256_pdf_consolidacao_16_10_2026": "7c69ebad738b39d0151c9d68a31e8c108ce104d0928d5d28babdfa88425202e0",
+  "revisao_documental_posterior": "declaracao_uso_ia_2026-10-26.json"
 }
