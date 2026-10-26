@@ -836,7 +836,7 @@ NASCIMENTO, Rodrigo. **Projeto multidisciplinar: trilha Qualidade de Software: r
 
 **Ferramenta e finalidade.** Na elaboração deste projeto, foram utilizados o ChatGPT e o assistente Codex, da OpenAI. A assistência compreendeu a preparação de versões iniciais do texto, a definição de requisitos e cenários de teste, a implementação e revisão do protótipo, a organização da planilha, a formatação do relatório e o apoio à execução das verificações e à publicação.
 
-**Prompts principais, em versão reformulada.** Os itens abaixo resumem e reformulam solicitações efetivamente registradas na conversa, preservando seu sentido. A lista é uma seleção das orientações principais:
+**Prompts principais.** Os itens abaixo resumem e reformulam solicitações efetivamente registradas na conversa, preservando seu sentido. A lista é uma seleção das orientações principais:
 
 1. Analise o roteiro, os requisitos, as entregas e os critérios de avaliação.
 2. Formate o trabalho conforme as normas ABNT aplicáveis ao roteiro.

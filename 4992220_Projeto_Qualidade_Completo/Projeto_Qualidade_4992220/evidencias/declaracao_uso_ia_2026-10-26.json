@@ -1,6 +1,6 @@
 {
   "data_revisao_documental": "2026-10-26",
-  "alteracao": "Remoção do parágrafo Participação do estudante na declaração final, conforme anotação no PDF.",
+  "alteracao": "Remoção da expressão em versão reformulada do título Prompts principais, conforme anotação no PDF.",
   "ferramentas_declaradas": [
     "ChatGPT",
     "Codex (OpenAI)"
@@ -16,8 +16,8 @@
   "numero_impresso_declaracao": 45,
   "paginas_fisicas": 46,
   "entradas_sumario": 81,
-  "sha256_pdf_anterior": "4aba2462df024cc60639463d212b52916c38c9e1d9b1aee395eba4c49cb537ce",
-  "sha256_pdf_atual": "ba98ab7749e6d821c2be1f72e2fc1688f0020b4bc82189bdfa43aa9db4ea654b",
+  "sha256_pdf_anterior": "ba98ab7749e6d821c2be1f72e2fc1688f0020b4bc82189bdfa43aa9db4ea654b",
+  "sha256_pdf_atual": "4911f9e93a4a07145220bb9d44b7b05469cc6c07c60e69e5bc7e010fbb318a2b",
   "paginas_anteriores_com_desenho_modificado": [
     46
   ],
