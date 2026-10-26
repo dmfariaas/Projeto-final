@@ -838,15 +838,14 @@ NASCIMENTO, Rodrigo. **Projeto multidisciplinar: trilha Qualidade de Software: r
 
 **Participação do estudante.** Diego Monteiro de Farias forneceu a identificação, o curso e a cidade, definiu preferências de linguagem e identidade regional nordestina e escolheu a demonstração acadêmica com pagamentos simulados. Suas solicitações orientaram os ajustes. A assistência de IA abrangeu uma parte substancial da redação e da implementação.
 
-**Principais prompts utilizados.** A seleção abaixo representa as orientações centrais da conversa e não constitui seu histórico completo. As transcrições preservam a redação enviada:
+**Prompts principais, em versão reformulada.** Os itens abaixo resumem e reformulam solicitações efetivamente registradas na conversa, preservando seu sentido. A lista é uma seleção das orientações principais:
 
-1. “analise esse projeto para mim”.
-2. “nao tenho, seria do zero”.
-3. “siga normas da abnt para o trabalho”.
-4. “revise e deixe tudo perfeito, sem erros e humanizado”.
-5. “o site desse projeto deve estar 100% funcional”.
-6. “Demonstração acadêmica completa, com pagamentos simulados”.
-7. “todas as alterações que foram feitas ate aqui já foram subidas para o GitHub? faça uma análise do projeto, e depois suba para o GitHub.”
+1. Analise o roteiro, os requisitos, as entregas e os critérios de avaliação.
+2. Formate o trabalho conforme as normas ABNT aplicáveis ao roteiro.
+3. Revise a ortografia, a gramática e a coerência, com linguagem clara e natural.
+4. Verifique os fluxos do restaurante e corrija as falhas de funcionamento.
+5. Prepare uma demonstração acadêmica completa, com pagamentos simulados.
+6. Revise o projeto e publique no GitHub os arquivos e as alterações pendentes.
 
 **Conteúdo aproveitado.** As contribuições abrangem o Resumo, o Abstract e as seções 1 a 7, incluindo requisitos, planos, métricas e análise de conformidade. Exemplos da redação preparada com assistência:
 
