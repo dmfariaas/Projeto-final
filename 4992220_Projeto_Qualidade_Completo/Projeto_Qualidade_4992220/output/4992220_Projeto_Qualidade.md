@@ -844,8 +844,7 @@ NASCIMENTO, Rodrigo. **Projeto multidisciplinar: trilha Qualidade de Software: r
 2. Formate o trabalho conforme as normas ABNT aplicáveis ao roteiro.
 3. Revise a ortografia, a gramática e a coerência, com linguagem clara e natural.
 4. Verifique os fluxos do restaurante e corrija as falhas de funcionamento.
-5. Prepare uma demonstração acadêmica completa, com pagamentos simulados.
-6. Revise o projeto e publique no GitHub os arquivos e as alterações pendentes.
+5. Revise o projeto e publique no GitHub os arquivos e as alterações pendentes.
 
 **Conteúdo aproveitado.** As contribuições abrangem o Resumo, o Abstract e as seções 1 a 7, incluindo requisitos, planos, métricas e análise de conformidade. Exemplos da redação preparada com assistência:
 

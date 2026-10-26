@@ -1,11 +1,11 @@
 {
   "data_revisao_documental": "2026-10-26",
-  "alteracao": "Revisão da lista de prompts na declaração final, com seis solicitações resumidas e reformuladas.",
+  "alteracao": "Revisão da lista de prompts na declaração final, com cinco solicitações resumidas e reformuladas conforme a seleção do estudante.",
   "ferramentas_declaradas": [
     "ChatGPT",
     "Codex (OpenAI)"
   ],
-  "prompts_reformulados": 6,
+  "prompts_reformulados": 5,
   "natureza_lista_prompts": "Seleção de solicitações efetivamente registradas, resumidas e reformuladas. Não são transcrições literais.",
   "trechos_literais_identificados": [
     "Resumo",
@@ -16,8 +16,8 @@
   "numero_impresso_declaracao": 45,
   "paginas_fisicas": 46,
   "entradas_sumario": 81,
-  "sha256_pdf_anterior": "c2a8e0d5d371c6ad772d89bdac9aa5ce76d7465c4c0ae26df2e1b7766031e9e5",
-  "sha256_pdf_atual": "657e73db7750d97690094d0450a6eeb5dae0e73460eb5d0c818d77b69ea6c9fb",
+  "sha256_pdf_anterior": "657e73db7750d97690094d0450a6eeb5dae0e73460eb5d0c818d77b69ea6c9fb",
+  "sha256_pdf_atual": "4aba2462df024cc60639463d212b52916c38c9e1d9b1aee395eba4c49cb537ce",
   "paginas_anteriores_com_desenho_modificado": [
     46
   ],
